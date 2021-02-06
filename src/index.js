@@ -1,0 +1,1 @@
+import Jinx from '../app/javascript/client/jinx'
