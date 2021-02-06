@@ -9,4 +9,7 @@
 #  updated_at   :datetime         not null
 #
 class BusinessAttribute < ApplicationRecord
+  belongs_to :business
+  
+  belongs_to :attribute
 end

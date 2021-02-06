@@ -8,4 +8,10 @@
 #  updated_at     :datetime         not null
 #
 class OperationHour < ApplicationRecord
+  has_many :business_operation_hours
+  has_many :businesses, through: :business_operation_hours
+
+  validates :operating_hour, presence: true
+
+  attr_accessor :operating_hour
 end

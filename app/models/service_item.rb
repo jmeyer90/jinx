@@ -11,4 +11,9 @@
 #  updated_at  :datetime         not null
 #
 class ServiceItem < ApplicationRecord
+  belongs_to :service
+
+  validates :name, :price, presence: true
+
+  attr_accessor :name, :price, :description
 end

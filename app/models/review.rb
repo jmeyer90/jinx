@@ -11,4 +11,11 @@
 #  updated_at  :datetime         not null
 #
 class Review < ApplicationRecord
+  belongs_to :business
+
+  belongs_to :user
+
+  validates :rating, presence: true
+
+  attr_accessor :body, :rating
 end

@@ -10,4 +10,24 @@
 #  updated_at   :datetime         not null
 #
 class Service < ApplicationRecord
+  SERVICE_TYPES = [
+    "Breakfast Menu",
+    "Brunch Menu",
+    "Lunch Menu",
+    "Dinner Menu",
+    "Cocktails",
+    "Wands",
+    "Wand Repair",
+    "Broomsticks",
+    "Potions",
+    "Curse Removals"
+  ]
+
+  belongs_to :business
+
+  has_many :service_items, dependent: :destroy
+
+  validates :service_type, inclusion: { in: SERVICE_TYPES }
+
+  attr_accessor :name, :service_type
 end

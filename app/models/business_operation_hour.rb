@@ -9,4 +9,7 @@
 #  updated_at         :datetime         not null
 #
 class BusinessOperationHour < ApplicationRecord
+  belongs_to :business
+  
+  belongs_to :operation_hour
 end
