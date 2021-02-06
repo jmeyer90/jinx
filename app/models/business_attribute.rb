@@ -1,0 +1,2 @@
+class BusinessAttribute < ApplicationRecord
+end
