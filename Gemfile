@@ -7,6 +7,8 @@ gem 'rails_12factor'
 gem 'jquery-rails'
 gem 'gon'
 gem 'figaro'
+gem 'react-rails'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
 # Use Uglifier as compressor for JavaScript assets
