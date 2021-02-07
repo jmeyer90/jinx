@@ -1,17 +1,19 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import NavComponent from '../components/nav/navComponent'
+import SplashComponent from '../components/splash/splashComponent'
+import FooterComponent from '../components/footer/footerComponent'
 
 const App = () =>{
   return(
     <>
-      <h1>App Component</h1>
-      {/* <Route path="/" component={ NavComponent } />
+      <Route path="/" component={ NavComponent } />
       <Route exact path="/" component={ SplashComponent } />
-      <Route path ="/search" component={ SearchResultsConstructor} />
+      {/* <Route path ="/search" component={ SearchResultsConstructor} />
       <Route path={`/businesses/:businessId`} component={ BusinessShowContainer } />
       <AuthRoute path="/signup" component={ SignUpComponent } />
-      <AuthRoute path="/login" component={ LoginComponent } />
-      <Route path="/" component={ Footer } /> */}
+      <AuthRoute path="/login" component={ LoginComponent } /> */}
+      <Route path="/" component={ FooterComponent } />
     </>
   )
 };
