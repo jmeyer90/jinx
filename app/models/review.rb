@@ -17,5 +17,6 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true
 
-  attr_accessor :body, :rating
+  # Having an attr_accessor stop items from being saved to the database
+  # attr_accessor :body, :rating
 end

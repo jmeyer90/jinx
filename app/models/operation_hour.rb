@@ -14,5 +14,6 @@ class OperationHour < ApplicationRecord
 
   validates :day, :biz_time, presence: true
 
-  attr_accessor :day, :biz_time
+  # Having an attr_accessor stop items from being saved to the database
+  # attr_accessor :day, :biz_time
 end

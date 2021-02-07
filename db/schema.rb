@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_182720) do
+ActiveRecord::Schema.define(version: 2021_02_07_195731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 2021_02_07_182720) do
 
   create_table "business_operation_hours", force: :cascade do |t|
     t.integer "business_id", null: false
-    t.integer "operation_hours_id", null: false
+    t.integer "operation_hour_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["business_id"], name: "index_business_operation_hours_on_business_id"
-    t.index ["operation_hours_id"], name: "index_business_operation_hours_on_operation_hours_id"
+    t.index ["operation_hour_id"], name: "index_business_operation_hours_on_operation_hour_id"
   end
 
   create_table "businesses", force: :cascade do |t|

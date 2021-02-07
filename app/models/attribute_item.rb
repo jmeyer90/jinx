@@ -11,13 +11,12 @@
 class AttributeItem < ApplicationRecord
   ATTRIBUTE_TYPES = [
     "Cuisine",
-    "Nieghborhood",
+    "Neighborhood",
     "Broomstick Dealership",
     "Potion Supply Store",
     "Emergency Curse Removals",
     "Wand Shop",
     "Misc Attribute",
-    "Nieghborhood",
     "Business Type"
   ]
 
@@ -27,5 +26,6 @@ class AttributeItem < ApplicationRecord
   validates :attribute_type, presence: true, inclusion: { in: ATTRIBUTE_TYPES }
   validates :name, presence: true
 
-  attr_accessor :name, :attribute_type
+  # Having an attr_accessor stop items from being saved to the databse
+  # attr_accessor :name, :attribute_type
 end

@@ -23,8 +23,9 @@ class Business < ApplicationRecord
 
   validates :name, :address, presence: true, uniqueness: true
   
-  attr_accessor :name
-  attr_reader :address
+  # Having an attr_accessor stop items from being saved to the database
+  # attr_accessor :name
+  # attr_reader :address
 
   def main_review
     reviews.first

@@ -29,5 +29,6 @@ class Service < ApplicationRecord
 
   validates :service_type, inclusion: { in: SERVICE_TYPES }
 
-  attr_accessor :name, :service_type
+  # Having an attr_accessor stop items from being saved to the database
+  # attr_accessor :name, :service_type
 end
