@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_205322) do
+ActiveRecord::Schema.define(version: 2021_02_07_182720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attributes", force: :cascade do |t|
+  create_table "attribute_items", force: :cascade do |t|
     t.string "attribute_type", null: false
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["attribute_type"], name: "index_attributes_on_attribute_type"
-    t.index ["name"], name: "index_attributes_on_name"
+    t.index ["attribute_type"], name: "index_attribute_items_on_attribute_type"
+    t.index ["name"], name: "index_attribute_items_on_name"
   end
 
   create_table "business_attributes", force: :cascade do |t|
     t.integer "business_id", null: false
-    t.integer "attribute_id", null: false
+    t.integer "attribute_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["attribute_id"], name: "index_business_attributes_on_attribute_id"
+    t.index ["attribute_item_id"], name: "index_business_attributes_on_attribute_item_id"
     t.index ["business_id"], name: "index_business_attributes_on_business_id"
   end
 
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 2021_02_06_205322) do
   end
 
   create_table "operation_hours", force: :cascade do |t|
-    t.datetime "operating_hour", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["operating_hour"], name: "index_operation_hours_on_operating_hour", unique: true
+    t.integer "day", null: false
+    t.integer "biz_time", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

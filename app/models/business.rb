@@ -12,7 +12,7 @@
 #
 class Business < ApplicationRecord
   has_many :business_attributes, dependent: :destroy
-  has_many :attributes, through: :business_attributes
+  has_many :attrs, through: :business_attributes
 
   has_many :business_operation_hours, dependent: :destroy
   has_many :operation_hours, through: :business_operation_hours

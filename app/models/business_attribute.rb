@@ -11,5 +11,5 @@
 class BusinessAttribute < ApplicationRecord
   belongs_to :business
   
-  belongs_to :attribute
+  belongs_to :attribute_item
 end

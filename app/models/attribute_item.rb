@@ -8,14 +8,17 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
-class Attribute < ApplicationRecord
+class AttributeItem < ApplicationRecord
   ATTRIBUTE_TYPES = [
     "Cuisine",
     "Nieghborhood",
     "Broomstick Dealership",
     "Potion Supply Store",
     "Emergency Curse Removals",
-    "Wand Shop"
+    "Wand Shop",
+    "Misc Attribute",
+    "Nieghborhood",
+    "Business Type"
   ]
 
   has_many :business_attributes, dependent: :destroy

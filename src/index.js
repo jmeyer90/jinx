@@ -1,1 +1,1 @@
-import Jinx from '../app/javascript/client/jinx'
+import Jinx from '../app/javascript/entry/jinx'
