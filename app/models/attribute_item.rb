@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: attributes
+# Table name: attribute_items
 #
 #  id             :bigint           not null, primary key
 #  attribute_type :string           not null

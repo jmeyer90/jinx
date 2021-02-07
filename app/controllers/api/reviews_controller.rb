@@ -16,6 +16,7 @@ class Api::ReviewsController < ApplicationController
       render json: show
     else
       render json: @review.errors.full_messages, status: 422
+    end
   end
 
   def create
