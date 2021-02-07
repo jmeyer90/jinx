@@ -3,9 +3,9 @@ class Api::BusinessesController < ApplicationController
   def index
     @businesses = Business.all.includes(
       :services,
-      :attributes, 
-      :operation_hours,
-      :main_review
+      :attrs, 
+      :operation_hours
+      # :main_review
     )
 
     if @businesses
@@ -34,7 +34,7 @@ class Api::BusinessesController < ApplicationController
       :address, 
       :latitude, 
       :longitude, 
-      :attributes, 
+      :attrs, 
       :reviews, 
       :operation_hours, 
       :services
