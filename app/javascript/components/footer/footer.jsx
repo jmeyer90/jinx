@@ -1,12 +1,12 @@
 import React from 'react';
 
-const FooterComponent = () =>{
+const Footer = () =>{
   return(
     <section className="footer-container">
-      <h1>FooterComponent Image</h1>
+      <h1>Footer Image</h1>
       {/* <img className="footer-img-src" src={window.footer} alt="mountain-footer"/> */}
     </section>
   )
 }
 
-export default FooterComponent;
+export default Footer;
