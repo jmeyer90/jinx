@@ -5,6 +5,7 @@ import SplashComponent from '../components/splash/splashComponent'
 import Business from '../components/businesses/business'
 import SessionForm from '../components/session/sessionForm'
 import Footer from '../components/footer/footer'
+import { AuthRoute, ProtectedRoute } from '../utils/route_util'
 
 const App = () =>{
   return(
@@ -13,8 +14,8 @@ const App = () =>{
       <Route exact path="/" component={ SplashComponent } />
       {/* <Route path ="/search" component={ SearchResultsConstructor} /> */}
       <Route path={`/businesses/:businessId`} component={ Business } />
-      {/* <AuthRoute path="/signup" component={ SessionForm } />
-      <AuthRoute path="/login" component={ LSessionForm } /> */}
+      <AuthRoute path="/signup" component={ SessionForm } />
+      <AuthRoute path="/login" component={ SessionForm } />
       <Route path="/" component={ Footer } />
     </>
   )

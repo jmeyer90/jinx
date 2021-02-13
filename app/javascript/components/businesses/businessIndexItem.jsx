@@ -1,8 +1,12 @@
 import React from 'react'
+import AvgBusinessRating from '../reviews/avgBusinessRating'
 
 const BusinessIndexItem = () => {
   return (
-    <p>Business Index Item</p>
+    <section>
+      <AvgBusinessRating />
+      <p>Business Index Item</p>
+    </section>
   )
 }
 
