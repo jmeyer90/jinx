@@ -8,7 +8,7 @@ import { fetchBusinesses } from '../../actions/business_actions'
 // if path = '/search', load all matching businesses
 
 const Businesses = () => {
-  const businesses = useSelector( state => state.businesses )
+  const businesses = useSelector( state => state.entities.businesses )
   const dispatch = useDispatch()
   const params = useParams()
 
@@ -18,7 +18,9 @@ const Businesses = () => {
 
   return (
     <ul className="businesses-container">
-      <BusinessIndexItem />
+      {Object.values(businesses).map(business => (
+        <BusinessIndexItem key={business.id} business={business}/>
+      ))}
     </ul>
   )
 }
