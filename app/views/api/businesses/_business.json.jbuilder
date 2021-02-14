@@ -8,5 +8,6 @@ json.extract! business,
   :attrs, 
   :operation_hours,
   :main_review_id,
-  :main_reviewer_id
+  :main_reviewer_id,
+  :average_rating
 

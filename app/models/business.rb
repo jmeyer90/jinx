@@ -43,4 +43,9 @@ class Business < ApplicationRecord
   def main_reviewer_id
     reviews.first.user.id
   end
+
+  def average_rating
+    rating = reviews.map{ |review| review.rating }
+    rating.sum / rating.length
+  end
 end

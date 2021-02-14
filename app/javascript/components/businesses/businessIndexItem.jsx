@@ -10,7 +10,7 @@ const BusinessIndexItem = ({business}) => {
   return (
     <section>
       <h2>{business.name}</h2>
-      <AvgBusinessRating />
+      <p>{business.average_rating}</p>
       <p>{user.f_name} {user.l_name}</p>
       <p>{review.body}</p>
     </section>
