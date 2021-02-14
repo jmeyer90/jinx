@@ -18,15 +18,14 @@ const Business = () => {
   const business = useSelector( state => state.entities.businesses[businessId] )
 
   useEffect(() => {
-    console.log(`params.businessId: ${businessId}`)
     dispatch(fetchBusiness(businessId))
   }, [dispatch])
 
   return (
     <section>
       <BusinessHeader business={business}/>
-      <BusinessImages businessId={businessId}/>
-      <AvgBusinessRating businessId={businessId}/>
+      <BusinessImages business={business}/>
+      <AvgBusinessRating business={business}/>
       <Map />
       <BusinessDetails business={business}/>
       <Reviews businessId={businessId}/>

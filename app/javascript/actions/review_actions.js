@@ -69,8 +69,8 @@ export const updateReview = (businessId, review) => dispatch =>{
   )
 }
 
-export const createReview = (businessId, review )=> dispatch => {
-  review.business_id = businessId;
+export const createReview = (businessId, rating, body )=> dispatch => {
+  const review= {businessId, rating, body};
 
   return (
     ReviewUtils.createReview(businessId, review)
