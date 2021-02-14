@@ -1,7 +1,7 @@
 import React from 'react'
 import AvgBusinessRating from '../reviews/avgBusinessRating'
 
-const BusinessIndexItem = () => {
+const BusinessIndexItem = () => {  
   return (
     <section>
       <AvgBusinessRating />
