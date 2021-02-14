@@ -6,6 +6,7 @@ json.extract! business,
   :latitude, 
   :services, 
   :attrs, 
-  :operation_hours, 
-  :main_review
+  :operation_hours,
+  :main_review_id,
+  :main_reviewer_id
 

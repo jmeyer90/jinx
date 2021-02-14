@@ -14,13 +14,13 @@ end
 
 json.reviews do
 
-  json.array! @reviews do |review|
+  json.array! @businesses do |business|
 
-    json.set! review.id do
+    json.set! business.main_review.id do
 
-      json.extract! review, :id, :body, :rating, :business_id
+      json.extract! business.main_review, :id, :body, :rating, :business_id
 
-      json.user_id review.user.id
+      json.user_id business.main_review.user.id
 
     end
 
@@ -30,11 +30,11 @@ end
 
 json.users do
 
-  json.array! @reviews do |review|
+  json.array! @businesses do |business|
 
-    json.set! review.user.id do
-      json.f_name review.user.f_name
-      json.l_name review.user.l_name
+    json.set! business.main_reviewer.id do
+      json.f_name business.main_reviewer.f_name
+      json.l_name business.main_reviewer.l_name
     end
 
   end

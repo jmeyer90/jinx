@@ -18,6 +18,7 @@ class Business < ApplicationRecord
   has_many :operation_hours, through: :business_operation_hours
 
   has_many :reviews, dependent: :destroy
+  has_many :reviewers, through: :reviews, source: :user
 
   has_many :services, dependent: :destroy
 
@@ -29,5 +30,17 @@ class Business < ApplicationRecord
 
   def main_review
     reviews.first
+  end
+
+  def main_review_id
+    reviews.first.id
+  end
+
+  def main_reviewer
+    reviews.first.user
+  end
+
+  def main_reviewer_id
+    reviews.first.user.id
   end
 end

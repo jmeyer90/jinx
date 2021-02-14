@@ -3,14 +3,16 @@ import { useSelector } from 'react-redux'
 import AvgBusinessRating from '../reviews/avgBusinessRating'
 
 const BusinessIndexItem = ({business}) => { 
-  // const user = useSelector(state => state.entities.users[business.main_review.user_id]) 
+  const review = useSelector(state => state.entities.reviews[business.main_review_id]) 
+  const user = useSelector(state => state.entities.users[business.main_reviewer_id])  
+
 
   return (
     <section>
       <h2>{business.name}</h2>
       <AvgBusinessRating />
-      {/* <p>{user.f_name} {user.l_name}</p> */}
-      <p>{business.main_review.body}</p>
+      <p>{user.f_name} {user.l_name}</p>
+      <p>{review.body}</p>
     </section>
   )
 }
