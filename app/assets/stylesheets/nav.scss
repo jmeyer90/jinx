@@ -1,0 +1,48 @@
+.nav-bar {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0 7px 0 gray;
+    background-color: #67b4e0;
+    margin: 0 0 4px 0;
+    position: sticky;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-content: center;
+    margin: 0 0 0 12px;
+    height: 55px;
+}
+
+.nav-logo-src {
+    width: 85px;
+}
+
+.session-buttons {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 55%;
+}
+
+.session-button {
+    height: 100%;
+    padding: 1px 3px;
+    margin: 0 5px 0 13px;
+    border: solid white 2px;
+    border-radius: 4px;
+    color: #452487;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: impact, fantasy;
+}
+
+.business-index-container {
+  border: solid lightgray 2px;
+border-radius: 15px;
+padding: 15px;
+display: flex;
+width: 50%;
+margin: 10px;
+}

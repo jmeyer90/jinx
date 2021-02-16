@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import BusinessIndexItem from './businessIndexItem'
 import { fetchBusinesses } from '../../actions/business_actions'
@@ -10,12 +9,11 @@ import { fetchBusinesses } from '../../actions/business_actions'
 const Businesses = () => {
   const businesses = useSelector( state => state.entities.businesses )
   const dispatch = useDispatch()
-  const params = useParams()
 
   useEffect(() => {
     dispatch(fetchBusinesses())
   }, [dispatch])
-
+  
   return (
     <ul className="businesses-container">
       {Object.values(businesses).map(business => (

@@ -19,22 +19,22 @@ const NavComponent = () => {
   }
 
   const loggedInActions = () => (
-    <span>
-      <button onClick={e => dispatch(logout())}>
+    <span className="session-buttons">
+      <button className="session-button" onClick={e => dispatch(logout())}>
         Log Out
       </button>
     </span>
   )
 
   const loggedOutActions = () => (
-    <span>
-      <button onClick={toggleModal}>
+    <span className="session-buttons">
+      <button className="session-button" onClick={toggleModal}>
         Login
       </button>
-      <Link to="/signup">
+      <Link className="session-button"to="/signup">
         Sign Up
       </Link>
-      <button onClick={loginDemoUser}>
+      <button className="session-button" onClick={loginDemoUser}>
         Demo User
       </button>
     </span>
@@ -42,8 +42,8 @@ const NavComponent = () => {
 
   return(
       <nav className="nav-bar">
-        <Link to="/">
-          <img className="nav-logo" src='assets/jinx_logo.png' alt="jinx-logo" />
+        <Link className="nav-logo" to="/">
+          <img className="nav-logo-src" src='assets/jinx_logo.png' alt="jinx-logo" />
         </Link>
         <SearchBar />
         {currentUserId ? loggedInActions() : loggedOutActions()}
