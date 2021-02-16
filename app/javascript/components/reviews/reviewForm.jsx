@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { createReview } from '../../actions/review_actions';
-import useInput from '../../utils/form_input'
 
 const POSSIBLE_RATINGS = [1,2,3,4,5];
 

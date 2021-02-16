@@ -6,7 +6,7 @@ const preloadedState = {
   reviewModal: false
 }
 
-const uiReducer = (state = preloadedState, action) => {
+const UIReducer = (state = preloadedState, action) => {
   Object.freeze(state)
   switch(action.type) {
     case NAV_MODAL:
@@ -24,4 +24,4 @@ const uiReducer = (state = preloadedState, action) => {
   }
 }
 
-export default uiReducer
+export default UIReducer
