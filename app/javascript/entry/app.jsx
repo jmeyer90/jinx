@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import NavComponent from '../components/nav/navComponent'
 import Splash from '../components/splash/splash'
 import Business from '../components/businesses/business'
-import SessionForm from '../components/session/sessionForm'
+import Login from '../components/session/login'
+import SignUp from '../components/session/signup'
 import Footer from '../components/footer/footer'
 import { AuthRoute, ProtectedRoute } from '../utils/route_util'
 
@@ -14,8 +15,8 @@ const App = () =>{
       <Route exact path="/" component={ Splash } />
       {/* <Route path ="/search" component={ SearchResultsConstructor} /> */}
       <Route path={`/businesses/:businessId`} component={ Business } />
-      <AuthRoute path="/signup" component={ SessionForm } />
-      <AuthRoute path="/login" component={ SessionForm } />
+      <AuthRoute path="/signup" component={ SignUp } />
+      <AuthRoute path="/login" component={ Login } />
       <Route path="/" component={ Footer } />
     </>
   )

@@ -18,13 +18,13 @@ const NavComponent = () => {
     dispatch(login(demoUserCredentials))
   }
 
-  const loggedInActions = () => {
+  const loggedInActions = () => (
     <span>
       <button onClick={e => dispatch(logout())}>
         Log Out
       </button>
     </span>
-  }
+  )
 
   const loggedOutActions = () => (
     <span>

@@ -37,18 +37,4 @@ const ReviewForm = () => {
   )
 }
 
-const selectRating = (setRating) => {
-  return (
-    <section>
-      {POSSIBLE_RATINGS.map((rating)=> (
-        <label key={rating}>
-          <input type='radio' name='rating' value={rating}
-          onChange={ e => setRating(e.target.value) } required/>
-      </label>
-      ))}
-    </section>
-  )
-}
-
-
 export default ReviewForm

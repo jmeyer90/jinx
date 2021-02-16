@@ -5,7 +5,6 @@ const BusinessesReducer = (state = {}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_BUSINESSES:
-      debugger
       const businesses = Object.values( action.businesses );
       businesses.forEach( business => {
         newState[business.id] = business;

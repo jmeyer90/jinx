@@ -1,5 +1,5 @@
-export const NAV_MODAL = "NAV_MODAL"
-export const REVIEW_MODAL = "REVIEW_MODAL"
+export const NAV_MODAL = {type: "NAV_MODAL"}
+export const REVIEW_MODAL = {type: "REVIEW_MODAL"}
 
 const preloadedState = {
   navModal: false,

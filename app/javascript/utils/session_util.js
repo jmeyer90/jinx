@@ -1,5 +1,5 @@
 export const demoUserCredentials = {
-  username: "demo@mail.com",
+  email: "demo@mail.com",
   password: "password"
 }
 

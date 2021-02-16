@@ -7,7 +7,7 @@ const SignUp = () => {
   const greeting = "Connect with the wonderful wizarding world near you."
   const disclamer = "You understand that Jinx may send you owls requesting your help for perilous quests filled with adventure and near certain death."
   const linkTitle = "Already on Jinx?"
-
+  
   return (
     <section>
       <p>{greeting}</p>

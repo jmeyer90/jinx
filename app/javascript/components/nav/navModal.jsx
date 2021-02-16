@@ -5,7 +5,7 @@ import {LOGIN} from '../../utils/sessionFormUtils'
 
 const NavModal = () => {
   const navModal = useSelector(state => state.navModal)
-  const render = navModal ? null : <SessionForm />
+  const render = navModal ? null : <SessionForm formDetails={LOGIN} />
 
   return (
     {render}
