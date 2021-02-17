@@ -1,8 +1,6 @@
 import React from 'react';
-import SearchBar from '../search/searchBar'
 import Businesses from '../businesses/businesses'
 
-// 
 const Splash = () => {
   
   return (
@@ -10,7 +8,7 @@ const Splash = () => {
       <figure className="splash-img">
         <img className="splash-img-src" src='assets/potions.jpg' alt="background-image" />
       </figure>
-      <SearchBar />
+      <section>Filters</section>
       <Businesses />
     </section>
   )

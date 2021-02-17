@@ -6,6 +6,7 @@
     margin: 0 0 4px 0;
     position: sticky;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
@@ -30,19 +31,28 @@
     height: 100%;
     padding: 1px 3px;
     margin: 0 5px 0 13px;
-    border: solid white 2px;
+    border: solid white 1px;
     border-radius: 4px;
     color: #452487;
     font-size: 16px;
     font-weight: 700;
     font-family: impact, fantasy;
+    background-color: transparent;
 }
 
-.business-index-container {
-  border: solid lightgray 2px;
-border-radius: 15px;
-padding: 15px;
-display: flex;
-width: 50%;
-margin: 10px;
+a.session-button {
+  padding: 3px;
 }
+
+button.session-button:hover{
+  transition-duration: 1s;
+  color: #67b4e0;
+  background-color: white;
+}
+
+a.session-button:hover{
+  transition-duration: 1s;
+  color: #67b4e0;
+  background-color: white;
+}
+

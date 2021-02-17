@@ -8,18 +8,20 @@ const BusinessIndexItem = ({business}) => {
 
   const displayUserReview = () => (
     user && review ? 
-      <section>
-        <p>{user.f_name} {user.l_name}</p>
-        <p>{review.body}</p>
+      <section className="business-index-review-container">
+        <p className="business-index-review-user">{user.f_name} {user.l_name}</p>
+        <p className="business-index-review-body">{review.body}</p>
       </section>
       : null
   )
 
   return (
     <Link className="business-index-container" to={`/businesses/${business.id}`}>
-      <h2>{business.name}</h2>
-      <p>{business.average_rating}</p>
-      {displayUserReview()}
+      <h2 className="business-index-title">{business.name}</h2>
+      <span className="business-index-description">
+        <p className="business-index-rating">{business.average_rating}</p>
+        {displayUserReview()}
+      </span>
     </Link>
     
   )
