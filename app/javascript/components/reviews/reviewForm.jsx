@@ -13,15 +13,16 @@ const ReviewForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault
-  
     dispatch(createReview(businessId, rating, body))
+    setBody("")
+    setRating(1)
   }
 
   return (
     <form onSubmit={e => handleSubmit(e) }>
       {POSSIBLE_RATINGS.map((rating)=> (
         <label key={rating}>
-          <input type='radio' name='rating' value={rating}
+          <input type='radio' name='review[rating]' value={rating}
           onChange={ e => setRating(e.target.value) } required/>
       </label>
       ))}

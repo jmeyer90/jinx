@@ -19,7 +19,7 @@ const receiveReviews = reviewsInfo => {
 const receiveReview = reviewInfo => {
   const review = reviewInfo.review;
   const user = reviewInfo.user;
-
+  debugger
   return {
     type: RECEIVE_REVIEW,
     review,
@@ -70,8 +70,7 @@ export const updateReview = (businessId, review) => dispatch =>{
 }
 
 export const createReview = (businessId, rating, body )=> dispatch => {
-  const review= {businessId, rating, body};
-
+  const review= {rating, body};
   return (
     ReviewUtils.createReview(businessId, review)
       .then(

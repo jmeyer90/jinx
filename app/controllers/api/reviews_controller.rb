@@ -3,8 +3,10 @@ class Api::ReviewsController < ApplicationController
     @reviews = Review.includes(:user).where(business: params[:business_id]).references(:reviews)
 
     if @reviews
+      # debugger
       render :index
     else
+      # debugger
       render json: @reviews.errors.full_messages, status: 422
     end
   end
@@ -21,11 +23,15 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.new(review_params)
+    @review.business_id = params[:business_id]
     @user = current_user
 
-    if @review.save!
+    # debugger
+    if @review.save
+      # debugger
       render :create
     else
+      # debugger
       render json: @review.errors.full_messages
     end
   end
@@ -50,6 +56,7 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:business_id, :rating, :body)
+    # debugger
+    params.require(:review).permit(:rating, :body)
   end
 end
