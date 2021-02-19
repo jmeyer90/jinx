@@ -2,6 +2,7 @@ class Api::ReviewsController < ApplicationController
   def index
     @reviews = Review.includes(:user).where(business: params[:business_id]).references(:reviews)
 
+    # debugger
     if @reviews
       # debugger
       render :index
@@ -26,12 +27,9 @@ class Api::ReviewsController < ApplicationController
     @review.business_id = params[:business_id]
     @user = current_user
 
-    # debugger
     if @review.save
-      # debugger
       render :create
     else
-      # debugger
       render json: @review.errors.full_messages
     end
   end
@@ -49,7 +47,9 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = current_user.reviews.find(params[:id])
+    # debugger
     @review.destroy!
+    # debugger
     render json: @review.id
   end
 

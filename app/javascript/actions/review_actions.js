@@ -19,7 +19,7 @@ const receiveReviews = reviewsInfo => {
 const receiveReview = reviewInfo => {
   const review = reviewInfo.review;
   const user = reviewInfo.user;
-  debugger
+  
   return {
     type: RECEIVE_REVIEW,
     review,
