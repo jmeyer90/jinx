@@ -13,13 +13,14 @@ const BusinessHours = ({business}) => {
       })
       if(dayHours.length == 0) dayHours.push("Closed")
       return(
-        <ul>{dayHours}</ul>
+        <ul>{dayHours.join(" - ")}</ul>
       )
   }
 
   function formatTime(time){
+    const ampm = time < 12 ? "AM" : "PM"
     return (
-      `${time%12}:00`
+      `${time%12}:00${ampm}`
     )
   }
 
