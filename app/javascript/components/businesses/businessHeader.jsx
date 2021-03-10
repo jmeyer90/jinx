@@ -1,8 +1,9 @@
 import React from 'react'
 
-const BusinessHeader = () => {
+const BusinessHeader = ({business}) => {
+  
   return (
-    <p>Business Header</p>
+    <h1>{business.name}</h1>
   )
 }
 

@@ -13,7 +13,6 @@ const ReviewIndexItem = ({review}) => {
       : null
   )
   
-  debugger
   return (
     <div>
       <p>User: {user.f_name} {user.l_name}</p>

@@ -44,6 +44,18 @@ class Business < ApplicationRecord
     reviews.first.user.id
   end
 
+  def attr_types
+    uniq_attr_types = []
+    attrs.each do |attr|
+      uniq_attr_types << attr.attribute_type unless uniq_attr_types.include?(attr.attribute_type)
+    end
+    uniq_attr_types
+  end
+
+  def operating_days
+    operation_hours.map(&:day)
+  end
+
   def average_rating
     rating = reviews.map{ |review| review.rating }
     rating.sum / rating.length

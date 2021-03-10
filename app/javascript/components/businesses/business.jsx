@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import BusinessHeader from './businessHeader'
 import BusinessImages from './buinessImages'
-import BusinessDetails from './businessDetails'
+import BusinessHeader from './businessHeader'
+import BusinessAttributes from './businessAttribtues'
+import BusinessContact from './businessContact'
 import AvgBusinessRating from '../reviews/avgBusinessRating'
 import Map from '../map/map'
+import BusinessHours from './buinessHours'
 import Reviews from '../reviews/reviews'
 import { useParams } from 'react-router-dom'
 import { fetchBusiness } from '../../actions/business_actions'
 
-// load business and associated reviews
-// only listen to reviews slice of state
 
 const Business = () => {
   const dispatch = useDispatch()
@@ -21,13 +21,26 @@ const Business = () => {
     dispatch(fetchBusiness(businessId))
   }, [dispatch])
 
+  const renderBusinessDetails = () => (
+    business ? 
+      <section className="business-details">
+        <BusinessHeader business={business}/>
+        <AvgBusinessRating business={business}/>
+        <section>
+          <h2>Location & Hours</h2>
+          <Map />
+          <BusinessHours business={business}/>
+        </section>
+        <BusinessAttributes business={business}/>
+      </section>
+      : null
+  )
+
   return (
-    <section>
-      <BusinessHeader business={business}/>
+    <section className="business-show-container">
       <BusinessImages business={business}/>
-      <AvgBusinessRating business={business}/>
-      <Map />
-      <BusinessDetails business={business}/>
+      {renderBusinessDetails()}
+      <BusinessContact />
       <Reviews businessId={businessId}/>
     </section>
   )

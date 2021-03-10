@@ -15,7 +15,6 @@ const UsersReducer = ( state={}, action ) => {
       return newState;
 
     case RECEIVE_REVIEWS:
-      debugger
       newState = action.users;
       return newState;
 

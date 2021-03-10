@@ -37,8 +37,10 @@ class Api::BusinessesController < ApplicationController
       :attrs, 
       :reviews, 
       :operation_hours, 
-      :services
-    )
+      :services,
+      :attr_types,
+      :operating_days
+      )
   end
 
 end

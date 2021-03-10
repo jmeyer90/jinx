@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BusinessImages = () => {
+const BusinessImages = ({business}) => {
   return (
     <ul>
-      <p>Business Image</p>
+      <p>Business Images</p>
     </ul>
   )
 }
