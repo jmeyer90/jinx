@@ -4,10 +4,10 @@ import BusinessImages from './buinessImages'
 import BusinessHeader from './businessHeader'
 import BusinessAttributes from './businessAttribtues'
 import BusinessContact from './businessContact'
-import AvgBusinessRating from '../reviews/avgBusinessRating'
 import Map from '../map/map'
 import BusinessHours from './buinessHours'
 import Reviews from '../reviews/reviews'
+import {displayRating} from '../../utils/displayUtils'
 import { useParams } from 'react-router-dom'
 import { fetchBusiness } from '../../actions/business_actions'
 
@@ -25,7 +25,7 @@ const Business = () => {
     business ? 
       <section className="business-details">
         <BusinessHeader business={business}/>
-        <AvgBusinessRating business={business}/>
+        <ul className="business-show-rating">{displayRating(business.average_rating)}</ul>
         <section>
           <h2>Location & Hours</h2>
           <Map />

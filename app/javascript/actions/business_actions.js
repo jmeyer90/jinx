@@ -1,5 +1,5 @@
 import * as BusinessUtils from '../utils/business_util';
-import { extractAsObj } from '../utils/action utils';
+import { extractAsObj } from '../utils/action_utils';
 
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";

@@ -1,5 +1,5 @@
 import * as ReviewUtils from '../utils/review_util';
-import { extractAsObj} from '../utils/action utils';
+import { extractAsObj} from '../utils/action_utils';
 
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const REVIEW_ERRORS = "REVIEW_ERRORS";
