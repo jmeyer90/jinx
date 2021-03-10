@@ -13,7 +13,7 @@ const BusinessHours = ({business}) => {
       })
       if(dayHours.length == 0) dayHours.push("Closed")
       return(
-        <ul>{dayHours.join(" - ")}</ul>
+        <ul className="business-op-hours-time">{dayHours.join(" - ")}</ul>
       )
   }
 
@@ -25,10 +25,10 @@ const BusinessHours = ({business}) => {
   }
 
   return(
-    <ul>
+    <ul className="business-op-hours-container">
       {days.map((day, idx) =>(
-        <li key={day}>
-          {day}
+        <li className="business-op-hours-index"key={day}>
+          <p className="business-op-hours-day">{day}</p>
           {displayDayHours(idx)}
         </li>
       ))}

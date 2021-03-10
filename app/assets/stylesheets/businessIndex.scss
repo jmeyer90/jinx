@@ -10,6 +10,7 @@
     padding: 15px;
     display: flex;
     width: 50%;
+    height: 75px;
     margin: 10px auto;
     color: #452487;
     font-size: 16px;
@@ -17,4 +18,16 @@
     font-family: impact, fantasy;
 }
 
+.business-index-title {
+  width: 30%;
+  padding-right: 10px;
+}
 
+.business-index-description {
+  width: 65%;
+}
+
+.business-index-review-body {
+  overflow: hidden;
+  height: 33px;
+}

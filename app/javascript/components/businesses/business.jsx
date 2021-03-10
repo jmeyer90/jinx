@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BusinessImages from './buinessImages'
-import BusinessHeader from './businessHeader'
 import BusinessAttributes from './businessAttribtues'
 import BusinessContact from './businessContact'
 import Map from '../map/map'
@@ -24,10 +23,10 @@ const Business = () => {
   const renderBusinessDetails = () => (
     business ? 
       <section className="business-details">
-        <BusinessHeader business={business}/>
+        <h1 className="business-header">{business.name}</h1>
         <ul className="business-show-rating">{displayRating(business.average_rating)}</ul>
         <section>
-          <h2>Location & Hours</h2>
+          <h2 className="business-section-header">Location & Hours</h2>
           <Map />
           <BusinessHours business={business}/>
         </section>

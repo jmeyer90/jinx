@@ -1,6 +1,7 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {deleteReview} from '../../actions/review_actions'
+import {displayRating} from '../../utils/displayUtils'
 
 const ReviewIndexItem = ({review}) => {
   const user = useSelector(state => state.entities.users[review.user_id])
@@ -16,7 +17,7 @@ const ReviewIndexItem = ({review}) => {
   return (
     <div>
       <p>User: {user.f_name} {user.l_name}</p>
-      <span>{review.rating}</span>
+      <span>{displayRating(review.rating)}</span>
       <p>{review.body}</p>
       {deleteButtonIfAuthor()}
     </div>

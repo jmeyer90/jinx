@@ -9,16 +9,16 @@ const BusinessAttributes = ({business}) => {
     });
 
     return (
-      <ul>{attr_names}</ul>
+      <ul className="business-attr-index">{attr_names}</ul>
     )
   }
 
   return (
-    <ul>
-      <h2>Known For</h2>
+    <ul className="business-attrs-container">
+      <h2 className="business-section-header">Known For</h2>
       {business.attr_types.map((attr_type) => (
-        <li key={attr_type}>
-          <h3>{attr_type}</h3>
+        <li className="business-attr-type-container" key={attr_type}>
+          <h3 className="business-section-subheader">{attr_type}</h3>
           {displayAttrs(attr_type)}
         </li>
       ))}

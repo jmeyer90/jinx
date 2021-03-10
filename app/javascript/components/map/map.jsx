@@ -2,7 +2,7 @@ import React from 'react'
 
 const Map = () => {
   return (
-    <p>Map</p>
+    <p className="map-container">Map</p>
   )
 }
 
