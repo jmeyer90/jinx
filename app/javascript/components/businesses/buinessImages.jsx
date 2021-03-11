@@ -3,7 +3,12 @@ import React from 'react'
 const BusinessImages = ({business}) => {
   return (
     <ul className="business-img-container">
-      <p>Business Images</p>
+      <li className="business-img-index">Business Images</li>
+      <li className="business-img-index">Business Images</li>
+      <li className="business-img-index">Business Images</li>
+      <li className="business-img-index">Business Images</li>
+      <li className="business-img-index">Business Images</li>
+      <li className="business-img-index">Business Images</li>
     </ul>
   )
 }

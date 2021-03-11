@@ -27,8 +27,10 @@ const Business = () => {
         <ul className="business-show-rating">{displayRating(business.average_rating)}</ul>
         <section>
           <h2 className="business-section-header">Location & Hours</h2>
-          <Map />
-          <BusinessHours business={business}/>
+          <section className="business-map-hours-container">
+            <Map />
+            <BusinessHours business={business}/>
+          </section>
         </section>
         <BusinessAttributes business={business}/>
       </section>
@@ -38,9 +40,11 @@ const Business = () => {
   return (
     <section className="business-show-container">
       <BusinessImages business={business}/>
-      {renderBusinessDetails()}
+      <section className="business-details-reviews-container">
+        {renderBusinessDetails()}
+        <Reviews businessId={businessId}/>
+      </section>
       <BusinessContact />
-      <Reviews businessId={businessId}/>
     </section>
   )
 }

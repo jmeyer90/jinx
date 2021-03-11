@@ -16,12 +16,14 @@ const BusinessAttributes = ({business}) => {
   return (
     <ul className="business-attrs-container">
       <h2 className="business-section-header">Known For</h2>
-      {business.attr_types.map((attr_type) => (
-        <li className="business-attr-type-container" key={attr_type}>
-          <h3 className="business-section-subheader">{attr_type}</h3>
-          {displayAttrs(attr_type)}
-        </li>
-      ))}
+      <ul className="business-attrs-section">
+        {business.attr_types.map((attr_type) => (
+          <li className="business-attr-type-container" key={attr_type}>
+            <h3 className="business-section-subheader">{attr_type}</h3>
+            {displayAttrs(attr_type)}
+          </li>
+        ))}
+      </ul>
     </ul>
   )
 }

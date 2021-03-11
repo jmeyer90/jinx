@@ -1,0 +1,84 @@
+.business-img-container {
+  display: flex;
+  height: 240px;
+}
+
+.business-img-index {
+  height: 240px;
+  width: 240px;
+}
+
+.business-details-reviews-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+}
+
+.business-header {
+  font-size: 25px;
+}
+
+.business-section-header {
+  font-size: 20px;
+}
+
+.business-map-hours-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.map-container {
+  width: 45%;
+}
+
+.business-op-hours-container{
+  width: 47%;
+}
+
+.business-op-hours-index {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+
+.business-op-hours-time {
+  width: 70%;
+}
+
+.business-contact-container {
+  position: absolute;
+  right: 20px;
+  top: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+  width: 240px;
+  line-height: 1.3;
+  padding: 10px;
+  border: solid lightgray 1px;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px 0 gray;
+}
+
+.business-attrs-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.business-attrs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.business-attr-type-container {
+  width: 40%;
+  padding: 15px;
+  line-height: 1.5;
+}
