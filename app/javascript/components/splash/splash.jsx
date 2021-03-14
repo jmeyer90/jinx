@@ -10,8 +10,10 @@ const Splash = () => {
       <figure className="splash-img">
         <img className="splash-img-src" src='assets/potions.jpg' alt="background-image" />
       </figure>
-      <LocationFilter />
-      <Businesses />
+      <section className="splash-details">
+        <LocationFilter />
+        <Businesses />
+      </section>
     </section>
   )
 }

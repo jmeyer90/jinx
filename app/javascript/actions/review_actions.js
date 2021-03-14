@@ -19,18 +19,26 @@ const receiveReviews = reviewsInfo => {
 const receiveReview = reviewInfo => {
   const review = reviewInfo.review;
   const user = reviewInfo.user;
+  const business = reviewInfo.business;
   
   return {
     type: RECEIVE_REVIEW,
     review,
-    user
+    user,
+    business
   }
 };
 
-const removeReview = reviewId => {
+const removeReview = reviewInfo => {
+  const reviewId = reviewInfo.reviewId;
+  const user = reviewInfo.user;
+  const business = reviewInfo.business;
+
   return {
     type: REMOVE_REVIEW,
-    reviewId
+    reviewId,
+    user,
+    business
   }
 };
 
@@ -84,8 +92,9 @@ export const deleteReview = reviewId => dispatch => {
   return (
     ReviewUtils.deleteReview(reviewId)
       .then(
-        reviewId => dispatch(removeReview(reviewId)),
+        reviewInfo => dispatch(removeReview(reviewInfo),
         errors => dispatch(reviewErrors(errors.responseJSON))
       )
+    )
   )
-}
+};

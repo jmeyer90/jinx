@@ -11,6 +11,8 @@ class Api::ReviewsController < ApplicationController
 
   def show
     @review = Review.includes(:user).find(params[:id])
+    @user = review.user
+    @business = review.business
 
     if @review
       render json: show
@@ -21,7 +23,8 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.new(review_params)
-    @review.business_id = params[:business_id]
+    @business = Business.find(params[:business_id])
+    @review.business = @business
     @user = current_user
 
     if @review.save
@@ -32,7 +35,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = current_user.reviews.find(params[:id])
+    @review = current_user.reviews.includes(:business).find(params[:id])
+    @business = @review.business
     @user = current_user
 
     if @review.update_attributes(review_params)
@@ -43,9 +47,12 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = current_user.reviews.find(params[:id])
+    @review = current_user.reviews.includes(:business).find(params[:id])
+    @business = @review.business
+    @user = current_user
+
     @review.destroy!
-    render json: @review.id
+    render :destroy
   end
 
   private

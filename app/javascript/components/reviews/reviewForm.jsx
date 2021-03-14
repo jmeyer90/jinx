@@ -12,7 +12,7 @@ const ReviewForm = () => {
   const { businessId } = useParams()
 
   const handleSubmit = (e) => {
-    e.preventDefault
+    e.preventDefault()
     dispatch(createReview(businessId, rating, body))
     setBody("")
     setRating(1)
@@ -33,7 +33,7 @@ const ReviewForm = () => {
         value={body} 
         onChange={ e => setBody(e.target.value) }/>
 
-      <button>Submit Review</button>
+      <button>Check-In</button>
     </form>
   )
 }

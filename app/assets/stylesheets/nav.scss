@@ -1,12 +1,14 @@
 .nav-bar {
     display: flex;
     width: 100%;
-    box-shadow: 0 0 7px 0 gray;
+    box-shadow: 1px 0px 10px 2px gray;
     background-color: #67b4e0;
     margin: 0 0 4px 0;
-    position: sticky;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-logo {
