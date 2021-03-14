@@ -3,10 +3,18 @@ import { login } from '../actions/session_actions'
 
 export const SIGN_UP = {
   formType: "sign-up",
-  action: createUser
+  action: createUser,
+  display: "webpage"
 }
 
 export const LOGIN = {
   formType: "login",
-  action: login
+  action: login,
+  display: "webpage"
+}
+
+export const LOGIN_MODAL = {
+  formType: "login",
+  action: login,
+  display: "webpage"
 }

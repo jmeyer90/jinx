@@ -9,15 +9,16 @@ const preloadedState = {
 const UIReducer = (state = preloadedState, action) => {
   Object.freeze(state)
   switch(action.type) {
-    case NAV_MODAL:
+    case "NAV_MODAL":
+      debugger
       return {
-        navModal: [action.navModal],
+        navModal: !state.navModal,
         reviewModal: false
       }
-    case REVIEW_MODAL:
+    case "REVIEW_MODAL":
       return {
         navModal: false,
-        reviewModal: [action.reviewModal]
+        reviewModal: !state.reviewModal
       }
     default:
       return state

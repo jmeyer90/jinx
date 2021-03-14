@@ -1,15 +1,16 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import SessionForm from '../session/sessionForm'
-import {LOGIN} from '../../utils/sessionFormUtils'
+import {LOGIN_MODAL} from '../../utils/sessionFormUtils'
 
 const NavModal = () => {
-  const navModal = useSelector(state => state.navModal)
-  const render = navModal ? null : <SessionForm formDetails={LOGIN} />
-
+  const navModal = useSelector(state => state.ui.navModal)
+  
   return (
-    {render}
+    navModal ? 
+      <SessionForm formDetails={LOGIN_MODAL}/>
+      : null
   )
 }
 
-export const NavModal
+export default NavModal

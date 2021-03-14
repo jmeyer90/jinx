@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import SearchBar from '../search/searchBar'
+import NavModal from './navModal'
 import {NAV_MODAL} from '../../reducers/ui/uiReducer'
 import {login, logout} from '../../actions/session_actions'
 import {demoUserCredentials} from '../../utils/session_util'
@@ -31,6 +32,7 @@ const NavComponent = () => {
       <button className="session-button" onClick={toggleModal}>
         Login
       </button>
+      <NavModal />
       <Link className="session-button"to="/signup">
         Sign Up
       </Link>
