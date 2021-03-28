@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import SearchBar from '../search/searchBar'
 import NavModal from './navModal'
-import {NAV_MODAL} from '../../reducers/ui/uiReducer'
+import {NAV_MODAL_ACTION} from '../../reducers/ui/uiReducer'
 import {login, logout} from '../../actions/session_actions'
 import {demoUserCredentials} from '../../utils/session_util'
 
@@ -12,7 +12,7 @@ const NavComponent = () => {
   const dispatch = useDispatch()
 
   const toggleModal = () => {
-    dispatch(NAV_MODAL)
+    dispatch(NAV_MODAL_ACTION)
   }
 
   const loginDemoUser = () => {

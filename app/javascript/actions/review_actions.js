@@ -67,18 +67,17 @@ export const fetchReview = reviewId => dispatch => {
   )
 }
 
-export const updateReview = (businessId, review) => dispatch =>{
+export const updateReview = (businessId, reviewId, review) => dispatch =>{
   return (
-    ReviewUtils.updateReview(businessId, review)
+    ReviewUtils.updateReview(businessId, reviewId, review)
     .then(
-      review => dispatch(receiveReview(review)),
+      reviewInfo => dispatch(receiveReview(reviewInfo)),
       errors => dispatch(reviewErrors(errors.responseJSON))
     )
   )
 }
 
-export const createReview = (businessId, rating, body )=> dispatch => {
-  const review= {rating, body};
+export const createReview = (businessId, review )=> dispatch => {
   return (
     ReviewUtils.createReview(businessId, review)
       .then(

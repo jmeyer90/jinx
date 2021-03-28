@@ -9,7 +9,7 @@ import Reviews from '../reviews/reviews'
 import { displayRating } from '../../utils/displayUtils'
 import { useParams } from 'react-router-dom'
 import { fetchBusiness } from '../../actions/business_actions'
-import { REVIEW_MODAL } from '../../reducers/ui/uiReducer'
+import { REVIEW_MODAL_ACTION } from '../../reducers/ui/uiReducer'
 
 
 const Business = () => {
@@ -44,7 +44,7 @@ const Business = () => {
 
   const renderFormButton = () => (
     loggedIn ?
-      <button onClick={() => dispatch(REVIEW_MODAL)}>Check-In</button>
+      <button onClick={() => dispatch(REVIEW_MODAL_ACTION)}>Check-In</button>
       : null
   )
   

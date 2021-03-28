@@ -39,7 +39,7 @@ class Api::ReviewsController < ApplicationController
     @business = @review.business
     @user = current_user
 
-    if @review.update_attributes(review_params)
+    if @review.update(review_params)
       render :update
     else
       render json: @review.errors.full_messages

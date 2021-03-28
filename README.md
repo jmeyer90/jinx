@@ -22,3 +22,19 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# To Do-
+
+* Edit Reviews
+* Upload Images
+* Google Maps
+* Styling
+* Search
+* Filter
+* User Profile
+* Saved Businesses
+* Friends
+* Websocket Notifications
+* Mobile design
+* Take images using built-in camera
+* Location services for where you currently are

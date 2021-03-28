@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import ReviewForm from './reviewForm'
 import ReviewIndexItem from './reviewIndexItem'
 import {fetchReviews} from '../../actions/review_actions'
+import {createReviewPartial} from '../../utils/review_util'
 
 // only listen to reviews lice of state
 const Reviews = ({businessId}) => {
@@ -11,7 +12,9 @@ const Reviews = ({businessId}) => {
   const dispatch = useDispatch()
 
   const displayReviewForm = () => (
-    currentUserId ? <ReviewForm /> : null
+    currentUserId ? 
+      <ReviewForm action={createReviewPartial.action} modal={createReviewPartial.modal}/> 
+    : null
   )
 
   useEffect(() => {

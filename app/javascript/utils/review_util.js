@@ -1,12 +1,24 @@
-export const fetchReviews = businessId => {
-  
-  return(
-    $.ajax({
-      url: `/api/businesses/${businessId}/reviews`,
-      method: "GET"
-    })
-  )
+export const createReviewModalPartial = {
+  action: "create",
+  modal: true
 };
+
+export const createReviewPartial = {
+  action: "create",
+  modal: false
+};
+
+export const editReviewPartial = {
+  action: "edit",
+  modal: false
+};
+
+export const fetchReviews = businessId =>(
+  $.ajax({
+    url: `/api/businesses/${businessId}/reviews`,
+    method: "GET"
+  })
+);
 
 export const fetchReview = (businessId, reviewId) => (
   $.ajax({
@@ -24,10 +36,10 @@ export const createReview = (businessId, review) => {
   })
 )}
 
-export const updateReview = (businessId, review)  => {
+export const updateReview = (businessId, reviewId, review)  => {
   return(
     $.ajax({
-      url: `/api/businesses/${businessId}/reviews/${review.id}`,
+      url: `/api/businesses/${businessId}/reviews/${reviewId}`,
       method: "PATCH",
       data: { review }
     })

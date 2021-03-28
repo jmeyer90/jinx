@@ -1,6 +1,6 @@
 import React from 'react';
 import Businesses from '../businesses/businesses'
-import LocationFilter from '../search/locationFilter'
+import Filter from '../search/filter'
 
 
 const Splash = () => {
@@ -10,8 +10,9 @@ const Splash = () => {
       <figure className="splash-img">
         <img className="splash-img-src" src='assets/potions.jpg' alt="background-image" />
       </figure>
+      <Filter category={"Attribute"}/>
       <section className="splash-details">
-        <LocationFilter />
+        <Filter category={"Location"}/>
         <Businesses />
       </section>
     </section>
