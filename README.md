@@ -25,10 +25,10 @@ Things you may want to cover:
 
 # To Do-
 
-* Edit Reviews
-* Upload Images
+* Upload Images w/ AWS
 * Google Maps
 * Styling
+* Review Modal
 * Search
 * Filter
 * User Profile
