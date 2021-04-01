@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { createReview, updateReview } from '../../actions/review_actions';
-
-const POSSIBLE_RATINGS = [1,2,3,4,5];
+import { POSSIBLE_RATINGS } from '../../utils/review_util'
 
 const ReviewForm = ({action, modal, review, setEdit}) => {
-  const [defaultBody, defaultReview] = review ? [review.body, review.rating] : ["", 1]
+  const [defaultBody, defaultReview] = review ? [review.body, review.rating] : ["", 5]
   const [body, setBody] = useState(defaultBody)
   const [rating, setRating] = useState(defaultReview)
   const dispatch = useDispatch()
