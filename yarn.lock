@@ -3289,9 +3289,7 @@
   dependencies:
     "global-prefix" "^3.0.0"
 
-"global-prefix@^1.0.1":
-
-"global-prefix@^3.0.0":
+"global-prefix@^1.0.1", "global-prefix@^3.0.0":
   "integrity" "sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg=="
   "resolved" "https://registry.npmjs.org/global-prefix/-/global-prefix-3.0.0.tgz"
   "version" "3.0.0"
@@ -5874,10 +5872,6 @@
     "cssesc" "^2.0.0"
     "indexes-of" "^1.0.1"
     "uniq" "^1.0.1"
-
-"postcss-selector-parser@^6.0.0":
-
-"postcss-selector-parser@^6.0.2":
 
 "postcss-svgo@^4.0.2":
   "integrity" "sha512-C6wyjo3VwFm0QgBy+Fu7gCYOkCmgmClghO+pjcxvrcBKtiKt0uCF+hvbMO1fyv5BMImRK90SMb+dwUnfbGd+jw=="
