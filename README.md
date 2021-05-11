@@ -31,8 +31,9 @@ Things you may want to cover:
 * Review Modal
 * Search
 * Filter
+* Like types (based of Yelp)
 * User Profile
-* Saved Businesses
+* Increase seeded data
 * Friends
 * Websocket Notifications
 * Mobile design
