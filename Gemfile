@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'gon'
 gem 'figaro'
 gem 'react-rails'
+gem "aws-sdk-s3"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
