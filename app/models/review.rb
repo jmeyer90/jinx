@@ -17,6 +17,6 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true
   
-  has_one_attached :image, dependent: destroy
-  validates :image, content_type: [:png, :jpg, :jpeg]
+  has_one_attached :image #, dependent: destroy
+  # validates :image, content_type: [:png, :jpg, :jpeg]
 end
