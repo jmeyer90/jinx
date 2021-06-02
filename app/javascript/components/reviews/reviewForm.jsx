@@ -11,6 +11,7 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
   const [body, setBody] = useState(defaultBody)
   const [rating, setRating] = useState(defaultReview)
   const [image, setImage] = useState(defaultImage)
+  const [imageUrl, setImageUrl] = useState(defaultImage)
   const dispatch = useDispatch()
   const { businessId } = useParams()
 
@@ -20,6 +21,7 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
     formData.append("review[body]", body)
     formData.append("review[rating]", rating)
     formData.append("review[image]", image)
+
     if (action == "create") {
       dispatch(createReview(businessId, formData))
     } else {
@@ -27,10 +29,32 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
       dispatch(updateReview(businessId, reviewId, formData))
       setEdit(false)
     }
+
     setBody("")
     setRating(1)
-    setImage("")
+    setImage(null)
+    setImageUrl(null)
   }
+
+  const handleImage = (e) => {
+    const file = e.currentTarget.files[0]
+    const fileReader = new FileReader()
+
+    fileReader.onloadend = () => {
+      setImage(file)
+      setImageUrl(fileReader.result)
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file)
+    }
+  }
+
+  const displayImagePreview = () => (
+    imageUrl ? 
+      <img src={imageUrl} alt="upload-photo-preview" />
+      : null
+  )
 
   return (
     <form onSubmit={e => handleSubmit(e) }>
@@ -47,7 +71,8 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
       })}
 
       <input type="file" 
-        onChange={ e => setImage(e.currentTarget.files[0])}/>
+        onChange={ e => handleImage(e)}/>
+      {displayImagePreview()}
 
       <input type="text" 
         name="review[body]" 
