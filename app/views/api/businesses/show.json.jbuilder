@@ -1,11 +1,7 @@
 json.partial! "api/businesses/business", business: @business
 
 json.reviews @reviews do |review|
-
-  json.set! review.id do
-    json.partial! "api/reviews/review", review: @review
-  end
-
+    json.partial! "api/reviews/review", review: review
 end
 
 json.users @reviews do |review|

@@ -50,14 +50,13 @@ const ReviewIndexItem = ({review}) => {
   )
 
   const displayImage = () => {
-    debugger
     return review.imageUrl ? 
       <img 
         className="review-index-image" 
         src={review.imageUrl}/>
       : null
   }
-
+  
   return (
     <div className="review-index-item">
       <p>User: {user.f_name} {user.l_name}</p>

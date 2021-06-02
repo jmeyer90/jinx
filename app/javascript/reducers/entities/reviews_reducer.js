@@ -15,10 +15,7 @@ const ReviewsReducer = (state={}, action) =>{
       return newState;
 
     case RECEIVE_REVIEWS:
-      const reviews = Object.values(action.reviews);
-      reviews.forEach( review =>(
-        newState[review.id] = review
-      ))
+      newState = action.reviews;
       return newState;
       
     case RECEIVE_REVIEW:

@@ -5,24 +5,31 @@ import { createReview, updateReview } from '../../actions/review_actions';
 import { POSSIBLE_RATINGS } from '../../utils/review_util'
 
 const ReviewForm = ({action, modal, review, setEdit}) => {
-  const [defaultBody, defaultReview] = review ? [review.body, review.rating] : ["", 5]
+  const [defaultBody, defaultReview, defaultImage ] = review ? 
+    [review.body, review.rating, review.imageUrl] 
+    : ["", 5, ""]
   const [body, setBody] = useState(defaultBody)
   const [rating, setRating] = useState(defaultReview)
+  const [image, setImage] = useState(defaultImage)
   const dispatch = useDispatch()
   const { businessId } = useParams()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const formReview = { body, rating }
+    const formData = new FormData()
+    formData.append("review[body]", body)
+    formData.append("review[rating]", rating)
+    formData.append("review[image]", image)
     if (action == "create") {
-      dispatch(createReview(businessId, formReview))
+      dispatch(createReview(businessId, formData))
     } else {
       const reviewId = review.id
-      dispatch(updateReview(businessId, reviewId, formReview))
+      dispatch(updateReview(businessId, reviewId, formData))
       setEdit(false)
     }
     setBody("")
     setRating(1)
+    setImage("")
   }
 
   return (
@@ -38,6 +45,10 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
           </label>
         )
       })}
+
+      <input type="form" 
+        value={image} 
+        onChange={ e => setImage(e.currentTarget.files[0])}/>
 
       <input type="text" 
         name="review[body]" 

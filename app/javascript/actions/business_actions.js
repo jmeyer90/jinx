@@ -19,7 +19,7 @@ const receiveBusinesses = businessesInfo =>{
 
 const receiveBusiness = business => {
   const reviews = extractAsObj(business, "reviews");
-  const users = extractAsObj(business, "users")
+  const users = extractAsObj(business, "users");
   return {
     type: RECEIVE_BUSINESS,
     business,

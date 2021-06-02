@@ -29,21 +29,25 @@ export const fetchReview = (businessId, reviewId) => (
   })
 );
 
-export const createReview = (businessId, review) => {
+export const createReview = (businessId, formData) => {
   return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews`,
     method: "POST",
-    data: { review }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 )}
 
-export const updateReview = (businessId, reviewId, review)  => {
+export const updateReview = (businessId, reviewId, formData)  => {
   return(
     $.ajax({
       url: `/api/businesses/${businessId}/reviews/${reviewId}`,
       method: "PATCH",
-      data: { review }
+      data: formData,
+      contentType: false,
+      processData: false
     })
   )
 }
