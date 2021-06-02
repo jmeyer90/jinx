@@ -12,7 +12,9 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+    debugger
     @user = User.new(user_params)
+    @user.default_image_if_unattached
 
     if @user.save!
       login!(@user)
@@ -25,7 +27,8 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :f_name, :l_name, :password, :zip_code)
+    debugger
+    params.require(:user).permit(:email, :f_name, :l_name, :password, :zip_code, :profile_image)
   end
 
 end

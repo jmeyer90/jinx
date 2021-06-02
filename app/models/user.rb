@@ -18,7 +18,7 @@ require 'securerandom'
 class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  has_one_attached :image #, dependent: destroy
+  has_one_attached :profile_image #, dependent: destroy
   # validates :image, content_type: [:png, :jpg, :jpeg]
 
   validates :email, :session_token, presence: true, uniqueness: true
@@ -56,5 +56,13 @@ class User < ApplicationRecord
     self.session_token = generate_session_token
     self.save!
     self.session_token
+  end
+
+  def default_image_if_unattached
+    unless profile_image.attached?
+      self.profile_image.attach(
+        io: File.open("/Users/justinmeyer/Desktop/Post Curriculum Studying/jinx/app/assets/images/wizard.jpg"), 
+        filename: "wizard.jpg")
+    end
   end
 end

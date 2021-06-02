@@ -8,6 +8,8 @@ const SessionForm = ({formDetails}) => {
   const [fName, setFName] = useState("")
   const [lName, setLName] = useState("")
   const [zipCode, setZipCode] = useState("")
+  const [image, setImage] = useState(null)
+  const [imageUrl, setImageUrl] = useState(null)
 
   const signUpFields = () => {
     if (formDetails.formType != "sign-up") return null
@@ -23,6 +25,7 @@ const SessionForm = ({formDetails}) => {
               onChange={e => setFName(e.target.value)} 
               required />
           </label>
+
           <label>
             <input className="user-name" 
               type="l_name" 
@@ -32,6 +35,7 @@ const SessionForm = ({formDetails}) => {
               required />
           </label>
         </section>
+
         <label>
           <input 
             type="integer" 
@@ -40,23 +44,50 @@ const SessionForm = ({formDetails}) => {
             onChange={e => setZipCode(e.target.value)} 
             required />
         </label>
+
+        <input type="file" onChange={ e => handleImage(e)}/>
+        {displayImagePreview()}
       </>
     )
   }
 
+  const handleImage = (e) => {
+    const file = e.currentTarget.files[0]
+    const fileReader = new FileReader()
+
+    fileReader.onloadend = () => {
+      setImage(file)
+      setImageUrl(fileReader.result)
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault
-    const user = {
-      email: email,
-      password: password
-    }
+    
+    const formData = new FormData()
+    formData.append("user[email]", email)
+    formData.append("user[password]", password)
+
     if (formDetails.formType == "sign-up") {
-      user["f_name"] = fName
-      user["l_name"] = lName
-      user["zip_code"] = zipCode
+      formData.append("user[f_name]", fName)
+      formData.append("user[l_name]", lName)
+      formData.append("user[zip_code]", zipCode)
+      formData.append("user[profile_image]", image)
     }
-    dispatch(formDetails.action(user))
+
+    debugger
+    dispatch(formDetails.action(formData))
   }
+
+  const displayImagePreview = () => (
+    imageUrl ?
+      <img src={imageUrl} alt="upload-photo-preview" />
+      : null
+  )
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>

@@ -26,6 +26,7 @@ class Api::ReviewsController < ApplicationController
     @business = Business.find(params[:business_id])
     @review.business = @business
     @user = current_user
+    debugger
 
     if @review.save
       render :create
@@ -38,20 +39,12 @@ class Api::ReviewsController < ApplicationController
     @review = current_user.reviews.includes(:business).find(params[:id])
     @business = @review.business
     @user = current_user
-    
-    debugger
-    if review_params['image'].instance_of?(String)
-      review_image = @review.image
-    else
-      review_image = review_params['image']
-    end
 
     update_review_data = {
       rating: review_params[:rating],
       body: review_params[:body]
     }
-
-    debugger
+    
     if @review.update(update_review_data) && @review.update_image(review_params[:image])
       render :update
     else
