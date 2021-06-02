@@ -19,4 +19,12 @@ class Review < ApplicationRecord
   
   has_one_attached :image #, dependent: destroy
   # validates :image, content_type: [:png, :jpg, :jpeg]
+
+  def update_image(image)
+    if image.instance_of?(String)
+      true
+    else
+      self.update(image: image)
+    end
+  end
 end
