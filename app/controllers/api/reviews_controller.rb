@@ -38,7 +38,6 @@ class Api::ReviewsController < ApplicationController
     @review = current_user.reviews.includes(:business).find(params[:id])
     @business = @review.business
     @user = current_user
-    debugger
 
     if @review.update(review_params)
       render :update

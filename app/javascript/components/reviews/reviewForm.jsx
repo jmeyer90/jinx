@@ -7,7 +7,7 @@ import { POSSIBLE_RATINGS } from '../../utils/review_util'
 const ReviewForm = ({action, modal, review, setEdit}) => {
   const [defaultBody, defaultReview, defaultImage ] = review ? 
     [review.body, review.rating, review.imageUrl] 
-    : ["", 5, ""]
+    : ["", 5, null]
   const [body, setBody] = useState(defaultBody)
   const [rating, setRating] = useState(defaultReview)
   const [image, setImage] = useState(defaultImage)
@@ -46,8 +46,7 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
         )
       })}
 
-      <input type="form" 
-        value={image} 
+      <input type="file" 
         onChange={ e => setImage(e.currentTarget.files[0])}/>
 
       <input type="text" 

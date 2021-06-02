@@ -23,7 +23,7 @@ const Reviews = ({businessId}) => {
 
   const mapReviewsToIndexItems = () => (
     <ul>
-      {Object.values(reviews).map(review =>(
+      {Object.values(reviews).reverse().map(review =>(
         <ReviewIndexItem key={review.id} review={review} />
       ))}
     </ul>
