@@ -3,8 +3,7 @@ json.partial! "api/businesses/business", business: @business
 json.reviews @reviews do |review|
 
   json.set! review.id do
-    json.extract! review, :id, :body, :rating, :business_id
-    json.user_id review.user.id
+    json.partial! "api/reviews/review", review: @review
   end
 
 end

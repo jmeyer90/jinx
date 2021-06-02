@@ -14,7 +14,7 @@ const ReviewIndexItem = ({review}) => {
   const reviewActionsIfAuthor = () => (
     currentUserId && user.id == currentUserId ? 
       displayReviewOrEditForm()
-      : null
+      : displayReview()
   )
   
   const displayReviewOrEditForm = () => (
@@ -29,12 +29,34 @@ const ReviewIndexItem = ({review}) => {
       <div className="review-details">
         <span>{displayRating(review.rating)}</span>
         <p>{review.body}</p>
+        {displayImage()}
         <div className="review-actions">
           <button onClick={e => setEdit(!edit)}>Edit</button>
           <button onClick={e => dispatch(deleteReview(review.id))}>Delete</button>
         </div>
       </div>
   )
+
+  const displayReview = () => (
+    <div className="review-details">
+      <span>{displayRating(review.rating)}</span>
+      <p>{review.body}</p>
+      {displayImage()}
+      {/* <div className="review-actions">
+        <button onClick={e => setEdit(!edit)}>Edit</button>
+        <button onClick={e => dispatch(deleteReview(review.id))}>Delete</button>
+      </div> */}
+    </div>
+  )
+
+  const displayImage = () => {
+    debugger
+    return review.imageUrl ? 
+      <img 
+        className="review-index-image" 
+        src={review.imageUrl}/>
+      : null
+  }
 
   return (
     <div className="review-index-item">
