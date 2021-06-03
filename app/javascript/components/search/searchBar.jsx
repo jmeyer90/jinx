@@ -7,11 +7,11 @@ const SearchBar = () => {
   const splashClassName = path == "/" ? "splash-" : ""
 
   return (
-    <form action="" className={`${splashClassName}search-bar`}>
-      <label className={`${splashClassName}search-label`}>Find</label>
+    <form action="" className={`search-bar`}>
+      <label className={`search-label`}>Find</label>
 
       <input type="text" 
-        className={`${splashClassName}search-input`}
+        className={`search-input`}
         placeholder="wand shops, broomstick repair, potions supply"/>
 
       <button className={`${splashClassName}search-button`}>🪄</button>
