@@ -4,13 +4,13 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 const Map = ({ business }) => {
 
   const businessLocation = {
-    lat: 41.3851, 
-    lng: 2.1734
+    lat: business.lat, 
+    lng: business.lng
   }
 
   const mapStyles = {
-    height: "100vh",
-    width: "100%"
+    height: "30vh",
+    width: "80%"
   };
 
   return (

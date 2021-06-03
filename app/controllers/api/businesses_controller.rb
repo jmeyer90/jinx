@@ -32,8 +32,8 @@ class Api::BusinessesController < ApplicationController
     params.require(:business).permit(
       :name, 
       :address, 
-      :latitude, 
-      :longitude, 
+      :lat, 
+      :lng, 
       :attrs, 
       :reviews, 
       :operation_hours, 

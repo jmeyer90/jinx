@@ -54,9 +54,9 @@ attr32 = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Pets All
 attr33 = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Wheelchair Accessible")
 
 # Seed Business
-business1 = Business.create!(name: "Filona's Fanciful Foods", address:"address1", latitude: -37.872125, longitude: 175.682933)
-business2 = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", latitude: -37.872125, longitude: 175.682933)
-business3 = Business.create!(name: "Windburg's Wonderful Wands", address:"address3", latitude: -37.872125, longitude: 175.682933)
+business1 = Business.create!(name: "Filona's Fanciful Foods", address:"address1", lat: -37.872125, lng: 175.682933)
+business2 = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", lat: -37.872125, lng: 175.682933)
+business3 = Business.create!(name: "Windburg's Wonderful Wands", address:"address3", lat: -37.872125, lng: 175.682933)
 
 # Seed OperationHour
 sunOpen = OperationHour.create!(day: 0, biz_time: 10)
