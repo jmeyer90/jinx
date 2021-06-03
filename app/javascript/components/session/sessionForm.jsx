@@ -79,7 +79,6 @@ const SessionForm = ({formDetails}) => {
       formData.append("user[profile_image]", image)
     }
 
-    debugger
     dispatch(formDetails.action(formData))
   }
 

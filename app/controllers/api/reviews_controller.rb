@@ -26,7 +26,6 @@ class Api::ReviewsController < ApplicationController
     @business = Business.find(params[:business_id])
     @review.business = @business
     @user = current_user
-    debugger
 
     if @review.save
       render :create
