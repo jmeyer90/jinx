@@ -14,7 +14,7 @@ const SearchBar = () => {
         className={`${splashClassName}search-input`}
         placeholder="wand shops, broomstick repair, potions supply"/>
 
-      <button className={`${splashClassName}search-button`}>🔍</button>
+      <button className={`${splashClassName}search-button`}>🪄</button>
     </form>
   )
 }
