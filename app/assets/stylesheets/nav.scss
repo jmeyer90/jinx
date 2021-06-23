@@ -31,30 +31,37 @@
 
 .session-button {
     height: 100%;
-    padding: 1px 3px;
+    padding: 5px 20px;
     margin: 0 5px 0 13px;
-    border: solid white 1px;
     border-radius: 4px;
-    color: #533A95;
+    color: #81cef9;
     font-size: 16px;
-    font-weight: 700;
-    font-family: impact, fantasy;
+    font-weight: 1000;
+    font-family: arial;
     background-color: transparent;
+    text-shadow: -1px 1px 0 white,
+                  1px 1px 0 white,
+                  1px -1px 0 white,
+                  -1px -1px 0 white;
+}
+
+button.session-button {
+  border: solid white 1px;
 }
 
 a.session-button {
-  padding: 3px;
+  border-bottom: solid white 1px;
 }
 
-button.session-button:hover{
+.session-button:hover{
   transition-duration: 1s;
   color: #81cef9;
   background-color: white;
 }
 
-a.session-button:hover{
-  transition-duration: 1s;
-  color: #81cef9;
-  background-color: white;
-}
+// a.session-button:hover{
+//   transition-duration: 1s;
+//   color: #81cef9;
+//   background-color: white;
+// }
 

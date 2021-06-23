@@ -37,7 +37,7 @@ const NavComponent = () => {
         Login
       </button>
       <NavModal />
-      <Link className={`$session-button`}to="/signup">
+      <Link className={`session-button`}to="/signup">
         Sign Up
       </Link>
       <button className={`session-button`} onClick={loginDemoUser}>
