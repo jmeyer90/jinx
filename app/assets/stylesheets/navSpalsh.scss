@@ -9,11 +9,15 @@
 
 .splash-nav-logo {
     margin: 0 auto;
-    height: 250px;
+    height: 250px;  
+
 }
 
 .splash-nav-logo-src {
     height: 100%;
+    filter: drop-shadow(3px 2px 0 #f5f5f5);
+    position: relative;
+    width: 230px;
 }
 
 // .search-bar {
