@@ -2,13 +2,11 @@ import React from 'react'
 
 const Filter = ({categories}) => {
   return (
-    <section>
-      <ul>
+      <ul className="filter-container">
         {categories.map((category, idx) => (
-          <li key={idx} >{category}</li>
+          <p key={idx} className="filter-item">{category}</p>
         ))}
       </ul>
-    </section>
   )
 }
 

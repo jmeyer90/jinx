@@ -10,11 +10,15 @@ const Splash = () => {
       <figure className="splash-img">
         <img className="splash-img-src" src='assets/potions.jpg' alt="background-image" />
       </figure>
-      <h2>Find the Best Businesses in Town</h2>
-      <Filter categories={["Wand Shops", "Broomstick Repair", "Restaurants", "Curse Removal"]}/>
       <section className="splash-details">
-        <h2>Jinx New York</h2>
-        <Filter categories={["New York", "San Francisco", "Chicago", "Austin", "London"]}/>
+        <section className="filter-section">
+          <h2 className="filter-header">Find the Best Businesses in Town</h2>
+          <Filter categories={["Wand Shops", "Broomstick Repair", "Restaurants", "Curse Removal"]} />
+        </section>
+        <section className="filter-section">
+          <h2 className="filter-header">Jinx New York</h2>
+          <Filter categories={["New York", "San Francisco", "Chicago", "Austin", "London"]}/>
+        </section>
         <Businesses />
       </section>
     </section>
