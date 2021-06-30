@@ -23,24 +23,21 @@ const BusinessIndexItem = ({business}) => {
   )
 
   const displayAttributes = () => (
-    <ul className="business-index-attribute-container">
-      {attributes.map(attr => (
-        <p key={`${attr}`} className="business-index-attribute">{attr}</p>
-      ))}
-    </ul>
+        <p className="business-index-attributes">{attributes.join(", ")}</p>
   )
 
   return (
     <Link className="business-index-container" to={`/businesses/${business.id}`}>
       <img className="business-index-image" src="" alt="business review image" />
-      <h2 className="business-index-title">{business.name}</h2>
-      <secrtion className="business-index-description">
-        <span>
+      <section className="business-index-description">
+        <h2 className="business-index-title">{business.name}</h2>
+        <span className="business-index-rating-container">
           <ul className="business-index-rating">{displayRating(business.average_rating)}</ul>
-          <p className="business-index-num-revuiews">10 reviews</p>
+          <p className="business-index-num-reviews">10 reviews</p>
         </span>
         {displayAttributes()}
-      </secrtion>
+        <p>Location</p>
+      </section>
     </Link>
     
   )

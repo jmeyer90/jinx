@@ -11,13 +11,16 @@
   border: solid lightgray 1px;
   border-radius: 5px;
   box-shadow: 0 1px 0px 0 gray;
-  padding: 15px;
   display: flex;
-  width: 250px;
-  height: 75px;
+  width: 300px;
+  height: 100%;
   margin: 10px auto;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 550;
+}
+
+.business-index-image {
+  height: 150px;
 }
 
 .business-index-title {
@@ -26,12 +29,21 @@
 }
 
 .business-index-description {
-  width: 65%;
+  padding: 10px;
+  line-height: 1.5;
   color: black;
   font-size: 15px;
 }
 
-.business-index-review-body {
-  overflow: hidden;
-  height: 33px;
+.business-index-rating-container {
+  display: flex;
 }
+
+.business-index-num-reviews {
+  font-size: 14px;
+  color: gray;
+}
+
+// .business-index-atributes {
+//   display: ;
+// }
