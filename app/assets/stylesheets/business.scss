@@ -31,10 +31,15 @@
   line-height: 2;
 }
 
+.business-info-container {
+  width: 1200px;
+  margin: auto;
+}
+
 .business-details-reviews-container{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 85%;
   margin: auto;
   padding: 15px;
 }

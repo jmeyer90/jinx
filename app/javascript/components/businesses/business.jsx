@@ -51,11 +51,13 @@ const Business = () => {
   return (
     <section className="business-show-container">
       <BusinessImages business={business}/>
-      <section className="business-details-reviews-container">
-        {renderBusinessDetails()}
-        <Reviews businessId={businessId}/>
+      <section className="business-info-container">
+        <section className="business-details-reviews-container">
+          {renderBusinessDetails()}
+          <Reviews businessId={businessId}/>
+        </section>
+        <BusinessContact />
       </section>
-      <BusinessContact />
     </section>
   )
 }
