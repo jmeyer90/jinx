@@ -74,7 +74,8 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
         onChange={ e => handleImage(e)}/>
       {displayImagePreview()}
 
-      <input type="text" 
+      <input type="text"
+        className="review-body"
         name="review[body]" 
         placeholder="Write a review" 
         value={body} 

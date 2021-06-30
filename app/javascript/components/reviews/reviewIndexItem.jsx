@@ -28,7 +28,7 @@ const ReviewIndexItem = ({review}) => {
       :
       <div className="review-details">
         {displayRating(review.rating)}
-        <p>{review.body}</p>
+        <p className="review-body">{review.body}</p>
         {displayImage()}
         <div className="review-actions">
           <button className="review-form-button" onClick={e => setEdit(!edit)}>Edit</button>
@@ -40,7 +40,7 @@ const ReviewIndexItem = ({review}) => {
   const displayReview = () => (
     <div className="review-details">
       {displayRating(review.rating)}
-      <p>{review.body}</p>
+      <p className="review-body">{review.body}</p>
       {displayImage()}
     </div>
   )
@@ -55,8 +55,10 @@ const ReviewIndexItem = ({review}) => {
   
   return (
     <div className="review-index-item">
-      <img className="review-user-profile-image" src="" alt="user profile image" />
-      <p className="review-username">{user.f_name} {user.l_name}</p>
+      <section className="review-user-info">
+        <img className="review-user-profile-image" src="" alt="user profile image" />
+        <p className="review-username">{user.f_name} {user.l_name}</p>
+      </section>
       {reviewActionsIfAuthor()}
     </div>
   )
