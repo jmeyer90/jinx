@@ -20,7 +20,7 @@ const Splash = () => {
           <Filter section="location-" categories={["New York", "San Francisco", "Chicago", "Austin", "London"]}/>
         </section>
         <div className="hor-line"></div>
-        <h3 className="splash-subheader">Magically Wonderfull Businesses</h3>
+        <h3 className="splash-subheader">Magically Marvelous Businesses</h3>
         <Businesses />
       </section>
     </section>

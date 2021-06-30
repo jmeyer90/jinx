@@ -10,7 +10,7 @@ export const displayRating = rating => {
     )
   })
 
-  return ratingImgs
+  return <span className="ratings-container">{ratingImgs}</span>
 }
 
 

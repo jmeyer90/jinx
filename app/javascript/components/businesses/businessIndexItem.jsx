@@ -32,7 +32,7 @@ const BusinessIndexItem = ({business}) => {
       <section className="business-index-description">
         <h2 className="business-index-title">{business.name}</h2>
         <span className="business-index-rating-container">
-          <ul className="business-index-rating">{displayRating(business.average_rating)}</ul>
+          {displayRating(business.average_rating)}
           <p className="business-index-num-reviews">10 reviews</p>
         </span>
         {displayAttributes()}

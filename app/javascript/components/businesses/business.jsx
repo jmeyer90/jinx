@@ -27,7 +27,7 @@ const Business = () => {
       <section className="business-details">
         <section className="business-header">
           <h1 className="business-name">{business.name}</h1>
-          <ul className="business-show-rating">{displayRating(business.average_rating)}</ul>
+          {displayRating(business.average_rating)}
           {renderFormButton()}
         </section>
         <section className="loaction-hours">
