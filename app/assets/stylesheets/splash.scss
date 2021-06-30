@@ -17,5 +17,18 @@
 .splash-details {
   width: 1000px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
+.splash-header {
+    font-size: 21px;
+    color: #533A95;
+    margin-bottom: 15px;
+}
+
+.splash-subheader {
+    font-size: 18px;
+    color: #533A95;
+    margin: 40px auto 15px
+}
