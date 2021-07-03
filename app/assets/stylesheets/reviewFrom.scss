@@ -1,0 +1,48 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+}
+
+.review-form-title {
+    font-size: 20px;
+    margin: auto;
+    padding: 20px;
+    font-weight: 1000;
+}
+
+.review-form-input-fields {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+}
+
+.review-form-radio-section {
+    display: flex;
+}
+
+.review-form-subtitle {
+    font-size: 15px;
+    color: gray;
+    padding: 5px;
+}
+
+.review-form-image-upload {
+    padding: 20px 0px;
+}
+
+.review-form-body {
+    width: 100%;
+    height: 300px;
+    border: none;
+    background-color: #f5f5f5;
+    resize: none;
+}
+
+textarea::placeholder {
+    font-weight: 700;
+}

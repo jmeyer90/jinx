@@ -32,6 +32,7 @@
 }
 
 .business-info-container {
+  display: flex;
   width: 1200px;
   margin: auto;
 }
@@ -82,9 +83,8 @@
 }
 
 .business-contact-container {
-  position: fixed;
-  right: 20px;
-  top: 290px;
+  position: sticky;
+  top: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

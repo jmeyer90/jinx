@@ -56,32 +56,44 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
       : null
   )
 
-  return (
-    <form onSubmit={e => handleSubmit(e) }>
-      <h1>{action}</h1>
-      {POSSIBLE_RATINGS.map((possibleRating)=> {
+  const radioButtons = () => (
+      POSSIBLE_RATINGS.map((possibleRating) => {
         const checked = possibleRating == rating
         return (
-          <label key={possibleRating}>
-            <input type='radio' name='review[rating]' value={possibleRating}
-            onChange={ e => setRating(e.target.value) } required
-            checked={checked}/>
-          </label>
+          <input className="review-form-radio-button"
+            key={possibleRating}
+            type='radio'
+            name='review[rating]'
+            value={possibleRating}
+            onChange={e => setRating(e.target.value)} required
+            checked={checked} />
         )
-      })}
+      })
+  )
 
-      <input type="file" 
-        onChange={ e => handleImage(e)}/>
-      {displayImagePreview()}
+  return (
+    <form className="review-form" onSubmit={e => handleSubmit(e) }>
+      <h1 className="review-form-title">{action}</h1>
+      
+      <section className="review-form-input-fields">
+        <section className="review-form-radio-section">
+          <ul className="review-form-radio-ul">{radioButtons()}</ul>
+          <p className="review-form-subtitle">Select your rating</p>
+        </section>
 
-      <input type="text"
-        className="review-body"
-        name="review[body]" 
-        placeholder="Write a review" 
-        value={body} 
-        onChange={ e => setBody(e.target.value) }/>
+        <input className="review-form-image-upload" type="file"
+          onChange={ e => handleImage(e)}/>
+        {displayImagePreview()}
 
-      <button>Check-In</button>
+        <textarea
+          className="review-form-body"
+          name="review[body]" 
+          placeholder="By golly, what a joyfull occassion! The dancing choloates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff." 
+          value={body} 
+          onChange={ e => setBody(e.target.value) }/>
+      </section>
+
+      <button className="review-form-button">Check-In</button>
     </form>
   )
 }
