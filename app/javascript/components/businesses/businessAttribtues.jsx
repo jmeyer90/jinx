@@ -2,14 +2,14 @@ import React from 'react'
 
 const BusinessAttributes = ({business}) => {
   function displayAttrs(attr_type) {
-    const attr_names = []
+    const attr_names = [];
 
     business.attrs.forEach(attr => {
       if(attr.attribute_type == attr_type) attr_names.push(attr.name);
     });
 
     return (
-      <ul className="business-attr-index">{attr_names}</ul>
+      <ul className="business-attr-index">{attr_names.join(", ")}</ul>
     )
   }
 
