@@ -88,7 +88,7 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
         <textarea
           className="review-form-body"
           name="review[body]" 
-          placeholder="By golly, what a joyfull occassion! The dancing choloates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff." 
+          placeholder="By golly, what a joyfull occassion! The dancing chocolates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff!" 
           value={body} 
           onChange={ e => setBody(e.target.value) }/>
       </section>

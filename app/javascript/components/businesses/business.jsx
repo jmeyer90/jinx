@@ -44,7 +44,7 @@ const Business = () => {
 
   const renderFormButton = () => (
     loggedIn ?
-      <button onClick={() => dispatch(REVIEW_MODAL_ACTION)}>Check-In</button>
+      <button onClick={() => dispatch(REVIEW_MODAL_ACTION)}>Write a Review</button>
       : null
   )
   

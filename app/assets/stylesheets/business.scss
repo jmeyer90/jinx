@@ -7,12 +7,14 @@
 
 .business-show-container button {
   border-radius: 4px;
-  background-color: transparent;
+  background-color: white;
   font-weight: 700;
   font-family: inherit;
-  padding: 4px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 16px;
   color: #533A95;
+  width: 200px;
+  margin-top: 20px;
 }
 
 .business-img-container {
@@ -95,6 +97,7 @@
   border: solid lightgray 1px;
   border-radius: 15px;
   box-shadow: 0 1px 2px 0 gray;
+  background-color: white;
 }
 
 .business-contact-index {
