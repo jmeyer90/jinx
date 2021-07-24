@@ -11,9 +11,24 @@
     align-items: center;
 }
 
+.session-title {
+    font-weight: 700;
+    font-size: 23px;
+    color: #533A95;
+    margin: 10px;
+}
+
+.session-text {
+    font-size: 15px;
+    width: 80%;
+    text-align: center;
+}
+
 .session-form {
     display: flex;
     flex-direction: column;
+    margin: 10px 0 23px;
+    width: 100%;
 }
 
 .session-label {
@@ -31,4 +46,32 @@
     display: flex;
     width: 89%;
     margin: auto;
+}
+
+.session-submit {
+    width: 83%;
+    align-self: center;
+    padding: 8px;
+    font-size: 16px;
+    color: #533A95;
+    background-color: #f5f5f5;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.session-link-container {
+    display: flex;
+    align-self: last baseline;
+    justify-content: space-between;
+    width: 175px;
+    height: 20px;
+    margin: 20px;
+}
+
+.session-link-container-top {
+    display: flex;
+    justify-content: space-between;
+    width: 155px;
+    height: 20px;
+    margin: 20px;
 }

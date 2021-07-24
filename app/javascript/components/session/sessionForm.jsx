@@ -91,6 +91,12 @@ const SessionForm = ({formDetails}) => {
       : null
   )
 
+  const buttonText = () => (
+    formDetails.formType == "sign-up" ? 
+      "Sign Up"
+      : "Log In"
+  )
+
   return (
     <form className="session-form"
       onSubmit={(e) => handleSubmit(e)}>
@@ -113,7 +119,7 @@ const SessionForm = ({formDetails}) => {
           onChange={e => setPassword(e.target.value) } 
           required />
       </label>
-      <input className="submit" type="submit" value={formDetails.formType} />
+      <input className="session-submit" type="submit" value={buttonText()} />
     </form>
   )
 }

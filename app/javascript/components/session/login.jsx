@@ -9,22 +9,25 @@ const Login = () => {
 
   return (
     <section className="session-container">
-      <h1 className="session-title">Log In to Jinx</h1>
-      {SignUpLink("top")}
-      <SessionForm formDetails={LOGIN}/>
-      <p>{disclamer}</p>
-      {SignUpLink("bottom")}
+      <div className="session-details">
+        <h1 className="session-title">Log In to Jinx</h1>
+        {SignUpLink("-top")}
+        <SessionForm formDetails={LOGIN}/>
+        <p className="session-text">{disclamer}</p>
+        {SignUpLink("")}
+      </div>
+      <img className="session-image" src="" alt="Jinx Logo" />
     </section>
   )
 }
 
 function SignUpLink(placement){
-  const linkTitle = "New to Jinx?"
+  const linkHeader = "New to Jinx?"
 
   return (
-    <div className={`${placement}`}>
-      {linkTitle}
-      <Link to="/signup">Sign Up</Link>
+    <div className={`session-link-container${placement}`}>
+      <p className="session-link-header">{linkHeader}</p>
+      <Link className="session-link" to="/signup">Sign Up</Link>
     </div>
   )
 } 

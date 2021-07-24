@@ -12,9 +12,9 @@ const SignUp = () => {
     <section className="session-container">
       <div className="session-details">
         <h1 className="session-title">Sign Up for Jinx</h1>
-        <p className="session-greeting">{greeting}</p>
+        <p className="session-text">{greeting}</p>
         <SessionForm formDetails={SIGN_UP}/>
-        <p className="session-disclaimer">{disclamer}</p>
+        <p className="session-text">{disclamer}</p>
         <div className="session-link-container">
           <p className="session-link-header">{linkHeader}</p>
           <Link className="session-link" to="/login">Log In</Link>
