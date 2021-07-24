@@ -8,8 +8,8 @@ const Login = () => {
   const disclamer = "By logging in, you agree to solemnly swear you are up to no good"
 
   return (
-    <section>
-      <h1>Login</h1>
+    <section className="session-container">
+      <h1 className="session-title">Log In to Jinx</h1>
       {SignUpLink("top")}
       <SessionForm formDetails={LOGIN}/>
       <p>{disclamer}</p>
