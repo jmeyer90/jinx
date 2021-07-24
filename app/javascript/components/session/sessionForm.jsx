@@ -17,7 +17,7 @@ const SessionForm = ({formDetails}) => {
     return (
       <>
         <section className="name-section">
-          <label>
+          <label className="session-input">
             <input className="user-name" 
               type="f_name" 
               placeholder="First Name" 
@@ -26,7 +26,7 @@ const SessionForm = ({formDetails}) => {
               required />
           </label>
 
-          <label>
+          <label className="session-input">
             <input className="user-name" 
               type="l_name" 
               placeholder="Last Name" 
@@ -36,7 +36,7 @@ const SessionForm = ({formDetails}) => {
           </label>
         </section>
 
-        <label>
+        <label className="session-input">
           <input 
             type="integer" 
             placeholder="Zip Code" 
@@ -45,8 +45,8 @@ const SessionForm = ({formDetails}) => {
             required />
         </label>
 
-        <input type="file" onChange={ e => handleImage(e)}/>
-        {displayImagePreview()}
+        {/* <input type="file" onChange={ e => handleImage(e)}/>
+        {displayImagePreview()} */}
       </>
     )
   }
@@ -89,27 +89,30 @@ const SessionForm = ({formDetails}) => {
   )
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <label>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={ email } 
-          onChange={ e => setEmail(e.target.value) } 
-          required />
-      </label>
-      {signUpFields()}
-      <label>
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={e => setPassword(e.target.value) } 
-          required />
-      </label>
-      <input className="submit" type="submit" value={formDetails.formType} />
-    </form>
-    
+    <div className="session-container">
+      <form className="session-form"
+        onSubmit={(e) => handleSubmit(e)}>
+        <label className="session-input">
+          <input 
+            type="email" 
+            placeholder="Email" 
+            value={ email } 
+            onChange={ e => setEmail(e.target.value) } 
+            required />
+        </label>
+        {signUpFields()}
+        <label className="session-input">
+          <input 
+            type="password" 
+            placeholder="Password" 
+            value={password} 
+            onChange={e => setPassword(e.target.value) } 
+            required />
+        </label>
+        <input className="submit" type="submit" value={formDetails.formType} />
+      </form>
+      <img className="session-image" src="" alt="Jinx Logo" />
+    </div>
   )
 }
 
