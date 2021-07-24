@@ -33,7 +33,9 @@ const Business = () => {
         <section className="loaction-hours">
           <h2 className="business-section-header">Location & Hours</h2>
           <section className="business-map-hours-container">
-            <Map business={business}/>
+            <div className="business-map-container">
+              <Map business={business}/>
+            </div>
             <BusinessHours business={business}/>
           </section>
         </section>
