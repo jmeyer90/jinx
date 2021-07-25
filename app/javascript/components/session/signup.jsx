@@ -20,7 +20,7 @@ const SignUp = () => {
           <Link className="session-link" to="/login">Log In</Link>
         </div>
       </div>
-      <img className="session-image" src="" alt="Jinx Logo" />
+      <img className="session-image" src={window.circleLogo} alt="Jinx Logo" />
     </section>
   )
 }

@@ -9,8 +9,8 @@ const Map = ({ business }) => {
   }
 
   const mapStyles = {
-    height: "30vh",
-    width: "80%"
+    height: "40vh",
+    // width: "80%"
   };
 
   return (
