@@ -1,8 +1,10 @@
 .review-form {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 650px;
     margin: auto;
+    align-items: center;
+    padding: 10px;
 }
 
 .review-form-title {
@@ -18,7 +20,7 @@
     border: solid 1px gray;
     border-radius: 5px;
     padding: 20px;
-    width: 100%;
+    width: 600px;
 }
 
 .review-form-radio-section {
