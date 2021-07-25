@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const SessionForm = ({formDetails}) => {
   const dispatch = useDispatch()
+  const errors = useSelector(state => state.errors.sessionErrors)
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [fName, setFName] = useState("")
@@ -108,6 +111,14 @@ const SessionForm = ({formDetails}) => {
   return (
     <form className={`session-form ${modalClassName()}`}
       onSubmit={(e) => handleSubmit(e)}>
+      {formDetails.modal ? 
+        <ul className="errors-container">
+          {errors.map((error, idx) => (
+            <p key={idx} className="error">{error}</p>
+          ))}
+        </ul>
+        : null
+      }
       <label className="session-label">
         <input 
           className="session-input"

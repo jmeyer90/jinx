@@ -17,8 +17,8 @@ const SignUp = () => {
         <h1 className="session-title">Sign Up for Jinx</h1>
         <p className="session-text">{greeting}</p>
         <ul className="errors-container">
-          {errors.map(error => (
-            <p className="error">{error}</p>
+          {errors.map((error, idx) => (
+            <p key={idx} className="error">{error}</p>
           ))}
         </ul>
         <SessionForm formDetails={SIGN_UP}/>

@@ -15,8 +15,8 @@ const Login = () => {
         <h1 className="session-title">Log In to Jinx</h1>
         {SignUpLink("-top")}
         <ul className="errors-container">
-          {errors.map(error => (
-            <p className="error">{error}</p>
+          {errors.map((error, idx) => (
+            <p key={idx} className="error">{error}</p>
           ))}
         </ul>
         <SessionForm formDetails={LOGIN}/>
