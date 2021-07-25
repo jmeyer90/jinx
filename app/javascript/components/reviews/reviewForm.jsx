@@ -57,7 +57,10 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
 
   const displayImagePreview = () => (
     imageUrl ? 
-      <img src={imageUrl} alt="upload-photo-preview" />
+      <img 
+        className="review-image-preview"
+        src={imageUrl} 
+        alt="upload-photo-preview" />
       : null
   )
 
