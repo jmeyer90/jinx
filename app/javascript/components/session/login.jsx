@@ -16,7 +16,7 @@ const Login = () => {
         <p className="session-text">{disclamer}</p>
         {SignUpLink("")}
       </div>
-      <img className="session-image" src="" alt="Jinx Logo" />
+      <img className="session-image" src={window.circleLogo} alt="Jinx Logo" />
     </section>
   )
 }

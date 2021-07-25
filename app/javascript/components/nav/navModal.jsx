@@ -11,8 +11,13 @@ const NavModal = () => {
   return (
     navModal ? 
       <>
+        <div className="modal-background" onClick={() => dispatch(NAV_MODAL_ACTION)}>
+        </div>
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
           <SessionForm formDetails={LOGIN_MODAL}/>
+        </div>
       </>
+      
       : null
   )
 }

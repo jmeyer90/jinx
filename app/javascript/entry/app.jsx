@@ -7,6 +7,7 @@ import Login from '../components/session/login'
 import SignUp from '../components/session/signup'
 import Footer from '../components/footer/footer'
 import { AuthRoute, ProtectedRoute } from '../utils/route_util'
+import NavModal from '../components/nav/navModal';
 
 const App = () =>{
   return(
