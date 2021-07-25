@@ -5,9 +5,7 @@ export const fetchUser = userId => (
   })
 );
 
-export const createUser = user => {
-  debugger
-  return(
+export const createUser = user => (
   $.ajax({
     url: `/api/users`,
     method: "POST",
@@ -15,4 +13,4 @@ export const createUser = user => {
     processData: false,
     contentType: false,
   })
-)};
+);

@@ -60,8 +60,9 @@ class User < ApplicationRecord
 
   def default_image_if_unattached
     unless profile_image.attached?
+      wizard = image_path("wizard.jpg")
       self.profile_image.attach(
-        io: File.open("/Users/justinmeyer/Desktop/Post Curriculum Studying/jinx/app/assets/images/wizard.jpg"), 
+        io: File.open(wizard), 
         filename: "wizard.jpg")
     end
   end

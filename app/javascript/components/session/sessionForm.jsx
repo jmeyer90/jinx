@@ -24,7 +24,7 @@ const SessionForm = ({formDetails}) => {
               placeholder="First Name" 
               value={fName} 
               onChange={e => setFName(e.target.value)} 
-              required />
+            />
           </label>
 
           <label className="session-label">
@@ -34,7 +34,7 @@ const SessionForm = ({formDetails}) => {
               placeholder="Last Name" 
               value={lName} 
               onChange={e => setLName(e.target.value)} 
-              required />
+            />
           </label>
         </section>
 
@@ -45,7 +45,7 @@ const SessionForm = ({formDetails}) => {
             placeholder="Zip Code" 
             value={zipCode} 
             onChange={e => setZipCode(e.target.value)} 
-            required />
+          />
         </label>
 
         <input type="file" onChange={ e => handleImage(e)}/>
@@ -105,7 +105,6 @@ const SessionForm = ({formDetails}) => {
     formDetails.modal ? "login-modal-form" : ""
   )
 
-  // debugger
   return (
     <form className={`session-form ${modalClassName()}`}
       onSubmit={(e) => handleSubmit(e)}>
@@ -116,7 +115,7 @@ const SessionForm = ({formDetails}) => {
           placeholder="Email" 
           value={ email } 
           onChange={ e => setEmail(e.target.value) } 
-          required />
+        />
       </label>
       {signUpFields()}
       <label className="session-label">
@@ -126,7 +125,7 @@ const SessionForm = ({formDetails}) => {
           placeholder="Password" 
           value={password} 
           onChange={e => setPassword(e.target.value) } 
-          required />
+        />
       </label>
       <input className="session-submit" type="submit" value={buttonText()} />
     </form>

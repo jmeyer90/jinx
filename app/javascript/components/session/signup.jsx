@@ -2,8 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import SessionForm from './sessionForm'
 import { SIGN_UP } from '../../utils/sessionFormUtils'
+import { useSelector } from 'react-redux'
 
 const SignUp = () => {
+  const errors = useSelector(state => state.errors.usersErrors)
+
   const greeting = "Connect with the wonderful wizarding world near you."
   const disclamer = "You understand that Jinx may send you owls requesting your help for perilous quests filled with adventure and near certain death."
   const linkHeader = "Already on Jinx?"
@@ -13,6 +16,11 @@ const SignUp = () => {
       <div className="session-details">
         <h1 className="session-title">Sign Up for Jinx</h1>
         <p className="session-text">{greeting}</p>
+        <ul className="errors-container">
+          {errors.map(error => (
+            <p className="error">{error}</p>
+          ))}
+        </ul>
         <SessionForm formDetails={SIGN_UP}/>
         <p className="session-text">{disclamer}</p>
         <div className="session-link-container">
