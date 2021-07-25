@@ -5,12 +5,14 @@ export const fetchUser = userId => (
   })
 );
 
-export const createUser = formData => (
+export const createUser = user => {
+  debugger
+  return(
   $.ajax({
     url: `/api/users`,
     method: "POST",
-    data: formData,
+    data: user,
     processData: false,
     contentType: false,
   })
-);
+)};

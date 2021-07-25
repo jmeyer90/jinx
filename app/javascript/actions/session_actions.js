@@ -20,7 +20,7 @@ const sessionErrors = (errors) => {
 }
 
 export const login = user => dispatch => (
-  SessionUtil.createSession( user )
+  SessionUtil.createSession(user)
     .then( 
       user => dispatch( loginUser( user.id )),
       errors => dispatch( sessionErrors( errors.responseJSON ))

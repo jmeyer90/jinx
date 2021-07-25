@@ -48,8 +48,8 @@ const SessionForm = ({formDetails}) => {
             required />
         </label>
 
-        {/* <input type="file" onChange={ e => handleImage(e)}/>
-        {displayImagePreview()} */}
+        <input type="file" onChange={ e => handleImage(e)}/>
+        {displayImagePreview()}
       </>
     )
   }
@@ -69,20 +69,24 @@ const SessionForm = ({formDetails}) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault
-    
-    const formData = new FormData()
-    formData.append("user[email]", email)
-    formData.append("user[password]", password)
-
+    e.preventDefault()
+    let user
+      
     if (formDetails.formType == "sign-up") {
-      formData.append("user[f_name]", fName)
-      formData.append("user[l_name]", lName)
-      formData.append("user[zip_code]", zipCode)
-      formData.append("user[profile_image]", image)
+      user = new FormData()
+      user.append("user[email]", email)
+      user.append("user[password]", password)
+      user.append("user[f_name]", fName)
+      user.append("user[l_name]", lName)
+      user.append("user[zip_code]", zipCode)
+      user.append("user[profile_image]", image)
+    } else {
+      user = {}
+      user.email = email
+      user.password = password
     }
 
-    dispatch(formDetails.action(formData))
+    dispatch(formDetails.action(user))
   }
 
   const displayImagePreview = () => (

@@ -24,8 +24,8 @@ export const fetchUser = userId => dispatch =>(
   )
 );
 
-export const createUser = formData => dispatch => (
-  UserUtil.createUser( formData )
+export const createUser = user => dispatch => (
+  UserUtil.createUser( user )
   .then( 
     user => dispatch(receiveUser(user)),
     errors => dispatch( userErrors ( errors.responseJSON ))
