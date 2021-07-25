@@ -22,15 +22,20 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.new(review_params)
-    @business = Business.find(params[:business_id])
-    @review.business = @business
-    @user = current_user
-
-    if @review.save
-      render :create
+    begin
+      @review = current_user.reviews.new(review_params)
+    rescue
+      render json: ["Please attach a photo"], status: 402
     else
-      render json: @review.errors.full_messages
+      @business = Business.find(params[:business_id])
+      @review.business = @business
+      @user = current_user
+
+      if @review.save
+        render :create
+      else
+        render json: @review.errors.full_messages
+      end
     end
   end
 

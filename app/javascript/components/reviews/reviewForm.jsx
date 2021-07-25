@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { createReview, updateReview } from '../../actions/review_actions';
 import { POSSIBLE_RATINGS } from '../../utils/review_util'
 import { REVIEW_MODAL_ACTION } from "../../reducers/ui/uiReducer"
 
 const ReviewForm = ({action, review, setEdit, modal}) => {
+  const dispatch = useDispatch()
+  const { businessId } = useParams()
+  const errors = useSelector(state => state.errors.reviewErrors)
+
   const [defaultBody, defaultReview, defaultImage ] = review ? 
     [review.body, review.rating, review.imageUrl] 
     : ["", 5, null]
+  
   const [body, setBody] = useState(defaultBody)
   const [rating, setRating] = useState(defaultReview)
   const [image, setImage] = useState(defaultImage)
   const [imageUrl, setImageUrl] = useState(defaultImage)
-  const dispatch = useDispatch()
-  const { businessId } = useParams()
+  
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,8 +29,8 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
 
     if (action == "create") {
       dispatch(createReview(businessId, formData))
-      .then(()=> {
-        if(modal) dispatch(REVIEW_MODAL_ACTION)
+      .then((reviewAction )=> {
+        if(modal && reviewAction.review) dispatch(REVIEW_MODAL_ACTION)
       })
       
     } else {
@@ -82,6 +86,12 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
   return (
     <form className="review-form" onSubmit={e => handleSubmit(e) }>
       <h1 className="review-form-title">{action}</h1>
+
+      <ul className="errors-container">
+        {errors.map((error, idx) => (
+          <p key={idx} className="error">{error}</p>
+        ))}
+      </ul>
       
       <section className="review-form-input-fields">
         <section className="review-form-radio-section">
