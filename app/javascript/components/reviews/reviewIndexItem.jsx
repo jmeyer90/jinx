@@ -56,7 +56,7 @@ const ReviewIndexItem = ({review}) => {
   return (
     <div className="review-index-item">
       <section className="review-user-info">
-        <img className="review-user-profile-image" src="" alt="user profile image" />
+        <img className="review-user-profile-image" src={window.wizard} alt="user profile image" />
         <p className="review-username">{user.f_name} {user.l_name}</p>
       </section>
       {reviewActionsIfAuthor()}

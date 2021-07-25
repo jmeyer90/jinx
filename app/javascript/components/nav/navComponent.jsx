@@ -49,7 +49,7 @@ const NavComponent = () => {
   return(
       <nav className={`${ splashClassName }nav-bar`}>
       <Link className={`${splashClassName }nav-logo`} to="/">
-        <img className={`${splashClassName }nav-logo-src`} src='assets/jinx_logo.png' alt="jinx-logo" />
+        <img className={`${splashClassName }nav-logo-src`} src={window.navLogo} alt="jinx-logo" />
         </Link>
         <SearchBar />
         {currentUserId ? loggedInActions() : loggedOutActions()}

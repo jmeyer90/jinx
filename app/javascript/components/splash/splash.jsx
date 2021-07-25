@@ -8,7 +8,7 @@ const Splash = () => {
   return (
     <section className="splash">
       <figure className="splash-img">
-        <img className="splash-img-src" src='assets/potions.jpg' alt="background-image" />
+        <img className="splash-img-src" src={window.splashImage} alt="background-image" />
       </figure>
       <section className="splash-details">
         <section className="filter-section">

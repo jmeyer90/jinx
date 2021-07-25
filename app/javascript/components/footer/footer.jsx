@@ -20,7 +20,7 @@ const Footer = () =>{
           </a>
         </section>
       </section>
-      <img className="footer-img-src" src="assets/mountain-footer.jpg" alt="mountain-footer"/>
+      <img className="footer-img-src" src={window.footer} alt="mountain-footer"/>
     </section>
   )
 }
