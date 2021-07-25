@@ -97,8 +97,13 @@ const SessionForm = ({formDetails}) => {
       : "Log In"
   )
 
+  const modalClassName = () => (
+    formDetails.modal ? "login-modal-form" : ""
+  )
+
+  // debugger
   return (
-    <form className="session-form"
+    <form className={`session-form ${modalClassName()}`}
       onSubmit={(e) => handleSubmit(e)}>
       <label className="session-label">
         <input 

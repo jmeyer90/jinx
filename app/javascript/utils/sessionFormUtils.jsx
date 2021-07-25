@@ -16,5 +16,6 @@ export const LOGIN = {
 export const LOGIN_MODAL = {
   formType: "login",
   action: login,
-  display: "webpage"
+  display: "webpage",
+  modal: true
 }
