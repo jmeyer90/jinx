@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { createReview, updateReview } from '../../actions/review_actions';
 import { POSSIBLE_RATINGS } from '../../utils/review_util'
+import { REVIEW_MODAL_ACTION } from "../../reducers/ui/uiReducer"
 
-const ReviewForm = ({action, modal, review, setEdit}) => {
+const ReviewForm = ({action, review, setEdit, modal}) => {
   const [defaultBody, defaultReview, defaultImage ] = review ? 
     [review.body, review.rating, review.imageUrl] 
     : ["", 5, null]
@@ -24,6 +25,10 @@ const ReviewForm = ({action, modal, review, setEdit}) => {
 
     if (action == "create") {
       dispatch(createReview(businessId, formData))
+      .then(()=> {
+        if(modal) dispatch(REVIEW_MODAL_ACTION)
+      })
+      
     } else {
       const reviewId = review.id
       dispatch(updateReview(businessId, reviewId, formData))

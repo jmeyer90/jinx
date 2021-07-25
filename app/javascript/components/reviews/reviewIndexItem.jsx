@@ -6,6 +6,8 @@ import {editReviewPartial} from '../../utils/review_util'
 import ReviewForm from './reviewForm'
 
 const ReviewIndexItem = ({review}) => {
+  if (!review) return null
+
   const user = useSelector(state => state.entities.users[review.user_id])
   const currentUserId = useSelector(state => state.session.currentUserId)
   const [edit, setEdit] = useState(false)
@@ -53,6 +55,7 @@ const ReviewIndexItem = ({review}) => {
       : null
   }
   
+  debugger
   return (
     <div className="review-index-item">
       <section className="review-user-info">

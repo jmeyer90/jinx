@@ -13,7 +13,7 @@ const Reviews = ({businessId}) => {
 
   const displayReviewForm = () => (
     currentUserId ? 
-      <ReviewForm action={createReviewPartial.action} modal={createReviewPartial.modal}/> 
+      <ReviewForm action={createReviewPartial.action}/> 
     : null
   )
 

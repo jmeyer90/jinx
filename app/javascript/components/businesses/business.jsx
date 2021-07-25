@@ -10,6 +10,7 @@ import { displayRating } from '../../utils/displayUtils'
 import { useParams } from 'react-router-dom'
 import { fetchBusiness } from '../../actions/business_actions'
 import { REVIEW_MODAL_ACTION } from '../../reducers/ui/uiReducer'
+import ReviewModal from '../reviews/reviewModal'
 
 
 const Business = () => {
@@ -55,6 +56,7 @@ const Business = () => {
       <BusinessImages business={business}/>
       <section className="business-info-container">
         <section className="business-details-reviews-container">
+          <ReviewModal />
           {renderBusinessDetails()}
           <Reviews businessId={businessId}/>
         </section>
