@@ -24,6 +24,16 @@ json.service_items do
     end
 end
 
+
+json.services do 
+    json.array! @services do |service|
+        json.set! service.id do
+            json.business_id, service.business.id
+            json.extract! service, :name
+        end
+    end
+end
+
 json.attribute_items do
     json.array! @attribute_items do |attribute_item|
         json.set! attribute_item.id do
