@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
       resources :reviews, only: [ :index, :show, :create, :update]
 
+      get 'search_load', on: :collection
+
+      get 'search', on: :collection
+
     end
 
     resources :reviews, only: :destroy 

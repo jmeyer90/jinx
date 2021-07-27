@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import usePath from '../../utils/path_util'
 
 const SearchBar = () => {
-  const path = usePath()
+  const {results, setResults} = useState({})
 
+  const path = usePath()
   const splashClassName = path == "/" ? "splash-" : ""
 
   return (
