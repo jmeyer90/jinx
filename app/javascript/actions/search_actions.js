@@ -6,11 +6,12 @@ export const LOAD_SEARCHABLES = "LOAD_SEARCHABLES";
 
 const receiveSearchables = searchables =>{
   return ({
+    type: LOAD_SEARCHABLES,
     businesses: searchables.businesses,
     menuItems: searchables.menu_items,
     serviceItems: searchables.service_items,
     services: searchables.services,
-    attributeItems: searchables.attribute_items
+    attributeItems: searchables.attribute_items,
   })
 }
 
