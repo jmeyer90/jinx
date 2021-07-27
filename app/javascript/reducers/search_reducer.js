@@ -11,6 +11,10 @@ const SearchReducer = ( state={}, action )=>{
       newState.services = action.services
       newState.attributeItems = action.attributeItems
 
+      // action.businesses.map(business =>{
+      //   newState.businesses
+      // })
+
       return newState
     default:
       return state
