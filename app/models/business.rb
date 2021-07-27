@@ -33,7 +33,7 @@ class Business < ApplicationRecord
   def self.extract_all(businesses, association)
     all_items = []
     
-    businesses.map {|business| all_items += business[association] }
+    businesses.map {|business| all_items += business.send(association) }
 
     all_items
   end
@@ -82,7 +82,7 @@ class Business < ApplicationRecord
         "Brunch Menu",
         "Lunch Menu",
         "Dinner Menu",
-        "Cocktails"].includes?(service_item.service_type)
+        "Cocktails"].include?(service_item.service_type)
     end
   end
 
@@ -92,7 +92,7 @@ class Business < ApplicationRecord
         "Brunch Menu",
         "Lunch Menu",
         "Dinner Menu",
-        "Cocktails"].includes?(service_item.service_type)
+        "Cocktails"].include?(service_item.service_type)
     end
   end
 end

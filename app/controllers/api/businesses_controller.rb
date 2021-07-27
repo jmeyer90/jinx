@@ -28,8 +28,7 @@ class Api::BusinessesController < ApplicationController
 
   def search_load
     @businesses = Business.all.includes(
-      :menu_items,
-      :non_menu_service_items,
+      :service_items,
       :services
     )
     

@@ -1,7 +1,7 @@
 json.businesses do 
     json.array! @businesses do |business|
-        json.set! @business.id do
-            json.extract! @business, :name
+        json.set! business.id do
+            json.extract! business, :name
         end
     end
 end
@@ -35,7 +35,7 @@ json.services do
 end
 
 json.attribute_items do
-    json.array! @attribute_items do |attribute_item|
+    json.array! @attrs do |attribute_item|
         json.set! attribute_item.id do
             json.extract! attribute_item, :name
         end

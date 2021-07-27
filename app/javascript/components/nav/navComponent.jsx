@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import SearchBar from '../search/searchBar'
@@ -7,11 +7,16 @@ import {NAV_MODAL_ACTION} from '../../reducers/ui/uiReducer'
 import {login, logout} from '../../actions/session_actions'
 import {demoUserCredentials} from '../../utils/session_util'
 import usePath from '../../utils/path_util';
+import { loadSearchableItems } from '../../actions/search_actions';
 
 const NavComponent = () => {
   const currentUserId = useSelector(state => state.session.currentUserId)
   const dispatch = useDispatch()
   const path = usePath()
+
+  useEffect(() => {
+    dispatch(loadSearchableItems())
+  })
 
   const splashClassName = path == "/" ? "splash-" : ""
 

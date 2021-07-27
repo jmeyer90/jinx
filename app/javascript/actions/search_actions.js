@@ -17,7 +17,7 @@ const receiveSearchables = searchables =>{
 
 export const loadSearchableItems = () => dispatch => {
   return(
-    searchUtils.loadSearchables.then(
+    searchUtils.loadSearchables().then(
       searchables => dispatch(receiveSearchables(searchables))
     )
   )
