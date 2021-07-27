@@ -36,6 +36,7 @@ class Api::BusinessesController < ApplicationController
     @service_items = Business.extract_all(@businesses, :non_menu_service_items)
     @services = Business.extract_all(@businesses, :services)
     @attrs = AttributeItem.all
+    debugger
 
     if @businesses
       render :search_load

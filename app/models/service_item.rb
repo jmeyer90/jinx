@@ -12,6 +12,7 @@
 #
 class ServiceItem < ApplicationRecord
   belongs_to :service
+  has_one :business, through: :service, source: :business
 
   validates :name, :price, presence: true
 
