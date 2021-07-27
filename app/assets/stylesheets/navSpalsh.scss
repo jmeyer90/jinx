@@ -28,6 +28,8 @@
     border: none;
     padding: 2px;
     border-radius: 0 5px 5px 0;
+    color: white;
+    text-shadow: none;
 }
 
 .splash-session-buttons {
@@ -36,4 +38,14 @@
     position: absolute;
     right: 0;
     top: 30px;
+}
+
+.splash-session-buttons button{
+    color: white;
+    text-shadow: none;
+}
+
+.splash-session-buttons a{
+    color: white;
+    text-shadow: none;
 }
