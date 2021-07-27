@@ -15,6 +15,10 @@ class ServiceItem < ApplicationRecord
 
   validates :name, :price, presence: true
 
+  def service_type
+    service.service_type
+  end
+
   # Having an attr_accessor stop items from being saved to the database
   # attr_accessor :name, :price, :description
 end

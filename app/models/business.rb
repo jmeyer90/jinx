@@ -19,14 +19,25 @@ class Business < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :reviewers, through: :reviews, source: :user
+  has_many :review_images, through: :reviews, source: :image
 
   has_many :services, dependent: :destroy
+  has_many :service_items, through: :services, source: :service_items
 
   validates :name, :address, presence: true, uniqueness: true
   
   # Having an attr_accessor stop items from being saved to the database
   # attr_accessor :name
   # attr_reader :address
+
+  def self.extract_all(businesses, association)
+    all_items = []
+    
+    businesses.map {|business| all_items += business[association] }
+
+    all_items
+  end
+
 
   def main_review
     reviews.first
@@ -44,6 +55,10 @@ class Business < ApplicationRecord
     reviews.first.user.id
   end
 
+  def main_image
+    review_images.first
+  end
+
   def attr_types
     uniq_attr_types = []
     attrs.each do |attr|
@@ -59,5 +74,25 @@ class Business < ApplicationRecord
   def average_rating
     rating = reviews.map{ |review| review.rating }
     rating.sum / rating.length
+  end
+
+  def menu_items
+    service_items.filter do |service_item|
+      ["Breakfast Menu",
+        "Brunch Menu",
+        "Lunch Menu",
+        "Dinner Menu",
+        "Cocktails"].includes?(service_item.service_type)
+    end
+  end
+
+  def non_menu_service_items
+    service_items.reject do |service_item|
+      ["Breakfast Menu",
+        "Brunch Menu",
+        "Lunch Menu",
+        "Dinner Menu",
+        "Cocktails"].includes?(service_item.service_type)
+    end
   end
 end

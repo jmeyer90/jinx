@@ -26,6 +26,29 @@ class Api::BusinessesController < ApplicationController
     end
   end
 
+  def search_load
+    @businesses = Business.all.includes(
+      :menu_items,
+      :non_menu_service_items,
+      :services
+    )
+    
+    @menu_items = Business.extract_all(@businesses, :menu_items)
+    @service_items = Business.extract_all(@businesses, :non_menu_service_items)
+    @services = Business.extract_all(@businesses, :services)
+    @attrs = AttributeItem.all
+
+    if @businesses
+      render :search_load
+    else
+      render json: @businesses.errors.full_messages, status: 422
+    end
+  end
+
+  def search
+
+  end
+
   private
   
   def business_params
