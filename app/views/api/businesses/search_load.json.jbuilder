@@ -1,42 +1,32 @@
 json.businesses do 
-    @businesses.each do |business|
-        json.set! business.id do
-            json.extract! business, :name
-        end
+    json.array! @businesses do |business|
+        json.extract! business, :name, :id
     end
 end
 
 json.menu_items do 
     json.array! @menu_items do |menu_item|
-        json.set! menu_item.id do
-            json.business_id menu_item.business.id
-            json.extract! menu_item, :name
-        end
+        json.business_id menu_item.business.id
+        json.extract! menu_item, :name, :id
     end
 end
 
 json.service_items do 
     json.array! @service_items do |service_item|
-        json.set! service_item.id do
-            json.business_id service_item.business.id
-            json.extract! service_item, :name
-        end
+        json.business_id service_item.business.id
+        json.extract! service_item, :name, :id
     end
 end
 
 json.services do 
     json.array! @services do |service|
-        json.set! service.id do
-            json.business_id service.business.id
-            json.extract! service, :name
-        end
+        json.business_id service.business.id
+        json.extract! service, :name, :id
     end
 end
 
 json.attribute_items do
     json.array! @attrs do |attribute_item|
-        json.set! attribute_item.id do
-            json.extract! attribute_item, :name
-        end
+        json.extract! attribute_item, :name, :id
     end
 end

@@ -29,3 +29,26 @@
     padding: 2px;
     border-radius: 0 5px 5px 0;
 }
+
+.search-drop-down {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 1px 0px 5px 2px gray;
+    width: 770px;
+    margin-left: 60px;
+    line-height: 1.2;
+}
+
+.search-drop-down-category {
+    margin-bottom: 7px;
+}
+
+.search-drop-down-title {
+    color: #533A95;
+    font-size: 18px;
+}
+
+.search-drop-down-item {
+    font-weight: 600;
+}

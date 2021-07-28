@@ -21,15 +21,18 @@ const SearchBar = () => {
       tempResults.menuItems = filter(searchables.menuItems, input)
       tempResults.attributeItems = filter(searchables.attributeItems, input)
       tempResults.services = filter(searchables.services, input)
+      console.log("tempResults", tempResults)
       setResults(tempResults)
     }
   }
 
   const filter = (searchCategory, input) => {
-    // debugger
     if(searchCategory) {
       return searchCategory.filter(searchItem =>
-        searchItem.name && searchItem.name.includes(input)
+        searchItem.name && 
+        searchItem.name.split(" ").some(word =>{
+          return word.toLowerCase().startsWith(input.toLowerCase())
+        })
       )
     }
   }
