@@ -19,8 +19,11 @@ const SearchDropDown = ({filteredResults}) => {
         )
     }
 
+    const handleClick = (category, name) => {
+        console.log(category, name)
+    }
+
     const displayCategory = category => {
-        console.log(category)
         if(filteredResults[category] && filteredResults[category].length > 0){
             return (
                 <section className="search-drop-down-category">
@@ -28,7 +31,9 @@ const SearchDropDown = ({filteredResults}) => {
                     <ul className="search-drop-down-items">
                         {filteredResults[category].slice(0, 5).map(result => (
                             <p className="search-drop-down-item" 
-                                key={result.name}>
+                                key={result.name}
+                                onClick={() =>handleClick(category, result.name)}
+                            >
                                 {result.name}
                             </p>
                         ))}
