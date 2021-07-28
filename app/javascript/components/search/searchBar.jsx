@@ -46,7 +46,8 @@ const SearchBar = () => {
       <form className={`search-bar`} onSubmit={handleSubmit}>
         <label className={`search-label`}>Find</label>
   
-        <input type="text" 
+        <input type="text"
+          id="search-input" 
           className={`search-input`}
           placeholder="wand shops, broomstick repair, potions supply"
           onChange={handleInput}/>
@@ -54,7 +55,7 @@ const SearchBar = () => {
         <button className={`${splashClassName}search-button`}>🪄</button>
       </form>
       {results ?
-        <SearchDropDown filteredResults={results} />
+        <SearchDropDown filteredResults={results} setResults={setResults} />
         : null
       }
     </div>

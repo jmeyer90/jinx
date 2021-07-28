@@ -46,11 +46,10 @@ export const fetchBusinesses = () => dispatch =>{
 };
 
 export const fetchBusiness = businessId => dispatch =>{
-  
   return(
-  BusinessUtils.fetchBusiness( businessId )
-  .then( 
-    business => dispatch( receiveBusiness( business )),
-    errors => dispatch( businessErrors( errors.responseJSON ))
+    BusinessUtils.fetchBusiness( businessId )
+    .then( 
+      business => dispatch( receiveBusiness( business )),
+      errors => dispatch( businessErrors( errors.responseJSON ))
   )
 )}

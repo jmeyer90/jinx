@@ -1,6 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { fetchBusiness } from '../../actions/business_actions'
 
-const SearchDropDown = ({filteredResults}) => {
+const SearchDropDown = ({filteredResults, setResults}) => {
+    const history = useHistory()
+    const dispatch = useDispatch()
+
     const categories = {
         businesses: "Businesses",
         menuItems: "Menu Items",
@@ -19,8 +25,19 @@ const SearchDropDown = ({filteredResults}) => {
         )
     }
 
-    const handleClick = (category, name) => {
-        console.log(category, name)
+    const handleClick = (category, result) => {
+        if(category == "businesses") {
+            console.log(result)
+            dispatch(fetchBusiness(result.id))
+                .then(action => 
+                    history.push(`/businesses/${action.business.id}`)
+                ).then(() => setResults(null)
+                ).then(() => 
+                    document.getElementById("search-input").value = ""
+                )
+        } else {
+            console.log(result)
+        }
     }
 
     const displayCategory = category => {
@@ -32,7 +49,7 @@ const SearchDropDown = ({filteredResults}) => {
                         {filteredResults[category].slice(0, 5).map(result => (
                             <p className="search-drop-down-item" 
                                 key={result.name}
-                                onClick={() =>handleClick(category, result.name)}
+                                onClick={() =>handleClick(category, result)}
                             >
                                 {result.name}
                             </p>
