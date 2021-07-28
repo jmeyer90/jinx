@@ -38,6 +38,55 @@ class Business < ApplicationRecord
     all_items
   end
 
+  def self.general_seach(search_term)
+    businesses = Business.where("name ILIKE :name", name: "#{search_term[:name]}%")
+    businesses += Business.find_by_attribute(search_term)
+    businesses += Business.find_by_menu_item(search_term)
+    businesses += Business.find_by_service(search_term)
+  end
+
+  def self.category_search(search_hash)
+    if search_hash.has_key?(:name)
+      Business.where("name ILIKE :name", name: "#{search_hash[:name]}%")
+
+    elsif search_hash.has_key?(:attrs)
+      Business.find_by_attribute(search_hash[:attrs])
+
+    elsif search_hash.has_key?(:menu_items)
+      Business.find_by_menu_item(search_hash[:menu_items])
+
+    elsif search_hash.has_key?(:services)
+      Business.find_by_service(search_hash[:services])
+    end
+  end
+
+  def self.find_by_attribute
+    AtrtributeItem.includes(:business)
+      .where("name ILIKE :name", name: "#{search_hash[:name]}%")
+      .extract_ssociated(:business)
+  end
+
+  def self.find_by_menu_item(search_term)
+    ServiceItem.includes(:business)
+      .where(
+        "name ILIKE :name && service_type IN :menus", 
+        name: "#{search_term}%", 
+        menus:Service.menu_types
+      ).extract_ssociated(:business)
+  end
+
+  def self.find_by_service(search_term)
+    businesses = Service.includes(:business)
+      .where("name ILIKE :name", name: "#{search_term}%")
+      .extract_ssociated(:business)
+
+    businesses += ServiceItem.includes(:business)
+      .where(
+        "name ILIKE :name && service_type NOT IN :menus", 
+        name: "#{search_term}%", 
+        menus: Service.menu_types
+      ).extract_ssociated(:business)
+  end
 
   def main_review
     reviews.first
@@ -78,21 +127,14 @@ class Business < ApplicationRecord
 
   def menu_items
     service_items.filter do |service_item|
-      ["Breakfast Menu",
-        "Brunch Menu",
-        "Lunch Menu",
-        "Dinner Menu",
-        "Cocktails"].include?(service_item.service_type)
+      service_item.menu_item?
     end
   end
 
   def non_menu_service_items
     service_items.reject do |service_item|
-      ["Breakfast Menu",
-        "Brunch Menu",
-        "Lunch Menu",
-        "Dinner Menu",
-        "Cocktails"].include?(service_item.service_type)
+      service_item.menu_item?
     end
   end
+
 end

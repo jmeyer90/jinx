@@ -44,8 +44,14 @@ class Api::BusinessesController < ApplicationController
     end
   end
 
-  def search
+  def search_results
+    if business_params.has_key?(:general)
+      # @businesses = Business.general_seach(business_params[:general])
+    else
+      # @businesses = Business.category_search(business_params)
+    end
 
+    render json: search_results
   end
 
   private
@@ -57,11 +63,9 @@ class Api::BusinessesController < ApplicationController
       :lat, 
       :lng, 
       :attrs, 
-      :reviews, 
-      :operation_hours, 
       :services,
-      :attr_types,
-      :operating_days
+      :general,
+      :menu_items
       )
   end
 

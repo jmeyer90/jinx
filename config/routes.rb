@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
       get 'search_load', on: :collection
 
-      get 'search', on: :collection
+      get 'search_results', on: :collection
 
     end
 

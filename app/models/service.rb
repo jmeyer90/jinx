@@ -29,6 +29,16 @@ class Service < ApplicationRecord
 
   validates :service_type, inclusion: { in: SERVICE_TYPES }
 
+  def self.menu_types 
+    [
+      "Breakfast Menu",
+      "Brunch Menu",
+      "Lunch Menu",
+      "Dinner Menu",
+      "Cocktails"
+    ]
+  end
+
   # Having an attr_accessor stop items from being saved to the database
   # attr_accessor :name, :service_type
 end
