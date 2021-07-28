@@ -7,13 +7,8 @@ const SearchReducer = ( state={}, action )=>{
     case LOAD_SEARCHABLES:
       newState.businesses = action.businesses
       newState.menuItems = action.menuItems
-      newState.serviceItems = action.serviceItems
       newState.services = action.services
       newState.attributeItems = action.attributeItems
-
-      // action.businesses.map(business =>{
-      //   newState.businesses
-      // })
 
       return newState
     default:

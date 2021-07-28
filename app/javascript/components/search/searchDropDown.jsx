@@ -1,13 +1,19 @@
 import React from 'react'
 
 const SearchDropDown = (fitleredResults) => {
+    const categories = {
+        businesses: "Businesses",
+        menuItems: "Menu Items",
+        services: "Services",
+        attributeItems: "Business Attributes & Ammenities"
+    }
+
     return (
         <div className="search-drop-down">
-            <section>
-                <h1>Businesses</h1>
-                <h1>Attribute1</h1>
-                <h1>Attribute2</h1>
-            </section>
+            {displayCategory(fitleredResults.businesses)}
+            {displayCategory(fitleredResults.menuItems)}
+            {displayCategory(fitleredResults.attributeItems)}
+            {displayCategory(fitleredResults.services)}
         </div>
     )
 }
