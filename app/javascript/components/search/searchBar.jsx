@@ -37,9 +37,13 @@ const SearchBar = () => {
     }
   }
 
+  const handleSubmit = e => {
+    console.log(results)
+  }
+
   return (
     <div className="search-container">
-      <form action="" className={`search-bar`}>
+      <form className={`search-bar`} onSubmit={handleSubmit}>
         <label className={`search-label`}>Find</label>
   
         <input type="text" 
