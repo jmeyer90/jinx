@@ -27,15 +27,15 @@
     justify-content: center;
     border: solid lightgray 1px;
     border-radius: 5px;
-    height: 200px;
-    width: 200px;
+    height: 210px;
+    width: 210px;
     background-color: white;
 }
 
 .business-type-img {
     height: 85%;
     width: 93%;
-    padding: 3px;
+    padding: 7px 3px 3px 3px;
 }
 
 .business-type-filter-text {
@@ -44,4 +44,5 @@
     width: 100%;
     font-size: 15px;
     font-weight: 1000;
+    padding: 6px 0px 10px 0px;
 }
