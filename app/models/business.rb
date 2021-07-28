@@ -39,7 +39,7 @@ class Business < ApplicationRecord
   end
 
   def self.general_seach(search_term)
-    businesses = Business.where("name ILIKE :name", name: "#{search_term[:name]}%")
+    businesses = Business.where("name ILIKE :name", name: "#{search_term}%")
     businesses += Business.find_by_attribute(search_term)
     businesses += Business.find_by_menu_item(search_term)
     businesses += Business.find_by_service(search_term)
@@ -63,7 +63,7 @@ class Business < ApplicationRecord
   def self.find_by_attribute
     AtrtributeItem.includes(:business)
       .where("name ILIKE :name", name: "#{search_hash[:name]}%")
-      .extract_ssociated(:business)
+      .extract_associated(:businesses)
   end
 
   def self.find_by_menu_item(search_term)
@@ -71,21 +71,21 @@ class Business < ApplicationRecord
       .where(
         "name ILIKE :name && service_type IN :menus", 
         name: "#{search_term}%", 
-        menus:Service.menu_types
-      ).extract_ssociated(:business)
+        menus: Service.menu_types
+      ).extract_associated(:business)
   end
 
   def self.find_by_service(search_term)
     businesses = Service.includes(:business)
       .where("name ILIKE :name", name: "#{search_term}%")
-      .extract_ssociated(:business)
+      .extract_associated(:business)
 
     businesses += ServiceItem.includes(:business)
       .where(
         "name ILIKE :name && service_type NOT IN :menus", 
         name: "#{search_term}%", 
         menus: Service.menu_types
-      ).extract_ssociated(:business)
+      ).extract_associated(:business)
   end
 
   def main_review
