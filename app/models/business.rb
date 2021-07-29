@@ -47,7 +47,6 @@ class Business < ApplicationRecord
   end
 
   def self.category_search(search_hash)
-    debugger
     if search_hash.has_key?(:name)
       Business.where("name ILIKE :name", name: "#{search_hash[:name]}%")
 
@@ -58,7 +57,6 @@ class Business < ApplicationRecord
       Business.find_by_menu_item(search_hash[:menu_items])
 
     elsif search_hash.has_key?(:services)
-      debugger
       Business.find_by_services(search_hash[:services])
     end
   end
