@@ -38,14 +38,16 @@ class Business < ApplicationRecord
     all_items
   end
 
-  def self.general_seach(search_term)
+  def self.general_search(search_term)
     businesses = Business.where("name ILIKE :name", name: "#{search_term}%")
     businesses += Business.find_by_attribute(search_term)
     businesses += Business.find_by_menu_item(search_term)
-    businesses += Business.find_by_service(search_term)
+    businesses += Business.find_by_services(search_term)
+    businesses.uniq
   end
 
   def self.category_search(search_hash)
+    debugger
     if search_hash.has_key?(:name)
       Business.where("name ILIKE :name", name: "#{search_hash[:name]}%")
 
@@ -56,7 +58,8 @@ class Business < ApplicationRecord
       Business.find_by_menu_item(search_hash[:menu_items])
 
     elsif search_hash.has_key?(:services)
-      Business.find_by_service(search_hash[:services])
+      debugger
+      Business.find_by_services(search_hash[:services])
     end
   end
 
@@ -79,7 +82,7 @@ class Business < ApplicationRecord
       .uniq
   end
 
-  def self.find_by_service(search_term)
+  def self.find_by_services(search_term)
     businesses = Service
       .where("name ILIKE :term1 OR name ILIKE :term2 OR service_type ILIKE :term1 OR service_type ILIKE :term2", 
         term1: "#{search_term}%", 

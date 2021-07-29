@@ -6,10 +6,6 @@ const ReviewsReducer = (state={}, action) =>{
   Object.freeze( state );
   let newState={};
   switch (action.type) {
-    case RECEIVE_BUSINESSES:
-      newState = action.reviews;
-      return newState;
-
     case RECEIVE_BUSINESS:
       newState = action.reviews;
       return newState;

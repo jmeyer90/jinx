@@ -6,14 +6,10 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const BUSINESS_ERRORS = "BUSINESS_ERRORS";
 
 const receiveBusinesses = businessesInfo =>{
-  const reviews = extractAsObj(businessesInfo, "reviews");
-  const users = extractAsObj(businessesInfo, "users");
   const businesses = extractAsObj(businessesInfo, "businesses");
   return {
     type: RECEIVE_BUSINESSES,
-    businesses,
-    reviews,
-    users
+    businesses
   }
 };
 

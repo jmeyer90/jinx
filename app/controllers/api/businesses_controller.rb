@@ -46,12 +46,18 @@ class Api::BusinessesController < ApplicationController
 
   def search_results
     if business_params.has_key?(:general)
-      @businesses = Business.general_seach(business_params[:general])
+      @businesses = Business.includes(
+        :services,
+        :attrs, 
+      ).general_search(business_params[:general])
     else
-      @businesses = Business.category_search(business_params)
+      @businesses = Business.includes(
+        :services,
+        :attrs, 
+      ).category_search(business_params)
     end
 
-    render json: search_results
+    render :search_results
   end
 
   private

@@ -6,10 +6,6 @@ const UsersReducer = ( state={}, action ) => {
   Object.freeze( state );
   let newState;
   switch (action.type) {
-    case RECEIVE_BUSINESSES:
-      newState = action.users;
-      return newState;
-
     case RECEIVE_BUSINESS:
       newState = action.users;
       return newState;
