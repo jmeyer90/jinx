@@ -60,32 +60,47 @@ class Business < ApplicationRecord
     end
   end
 
-  def self.find_by_attribute
-    AtrtributeItem.includes(:business)
-      .where("name ILIKE :name", name: "#{search_hash[:name]}%")
+  def self.find_by_attribute(search_term)
+    businesses = AttributeItem
+      .where("name ILIKE :name", name: "#{search_term}%")
       .extract_associated(:businesses)
+
+    businesses.flatten.uniq
   end
 
   def self.find_by_menu_item(search_term)
-    ServiceItem.includes(:business)
+    ServiceItem
+      .joins(:service)
       .where(
-        "name ILIKE :name && service_type IN :menus", 
-        name: "#{search_term}%", 
-        menus: Service.menu_types
+        "service_items.name ILIKE :name", 
+        service: {service_type: Service.menu_types},  
+        name: "#{search_term}%"
       ).extract_associated(:business)
+      .uniq
   end
 
   def self.find_by_service(search_term)
-    businesses = Service.includes(:business)
-      .where("name ILIKE :name", name: "#{search_term}%")
+    businesses = Service
+      .where("name ILIKE :term1 OR name ILIKE :term2 OR service_type ILIKE :term1 OR service_type ILIKE :term2", 
+        term1: "#{search_term}%", 
+        term2: "% #{search_term}%"
+      )
       .extract_associated(:business)
+      .uniq
 
-    businesses += ServiceItem.includes(:business)
+    businesses += ServiceItem
+      .joins(:service)
       .where(
-        "name ILIKE :name && service_type NOT IN :menus", 
-        name: "#{search_term}%", 
-        menus: Service.menu_types
+        "service_items.name ILIKE :name", 
+        name: "#{search_term}%"
+      ).or(
+        ServiceItem
+          .joins(:service)
+          .where.not(
+            service: {service_type: Service.menu_types}
+          )
       ).extract_associated(:business)
+      .uniq
   end
 
   def main_review
