@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { fetchBusiness } from '../../actions/business_actions'
+import { executeSearch } from '../../actions/search_actions'
 
 const SearchDropDown = ({filteredResults, setResults}) => {
     const history = useHistory()
@@ -25,20 +26,46 @@ const SearchDropDown = ({filteredResults, setResults}) => {
         )
     }
 
-    const handleClick = (category, result) => {
+    const handleClick = (e, category, result) => {
         if(category == "businesses") {
-            console.log(result)
-            dispatch(fetchBusiness(result.id))
-                .then(action => 
-                    history.push(`/businesses/${action.business.id}`)
-                ).then(() => setResults(null)
-                ).then(() => 
-                    document.getElementById("search-input").value = ""
-                )
+            loadBusinessPage(result.id)
         } else {
-            console.log(result)
+            searchByCategory(e, category)
         }
     }
+
+    const loadBusinessPage = businessId => {
+        dispatch(fetchBusiness(businessId))
+            .then(action =>
+                history.push(`/businesses/${action.business.id}`)
+            ).then(() => setResults(null)
+            ).then(() =>
+                document.getElementById("search-input").value = ""
+            )
+    }
+
+    const searchByCategory = (e, category) => {
+        const categoriesToSnakeCase = {
+            businesses: "businesses",
+            menuItems: "menu_items",
+            services: "services",
+            attributeItems: "attrs"
+        }
+
+        const input = e.target.innerText
+
+        const searchRequest = {
+            [categoriesToSnakeCase[category]]: input
+        }
+
+        debugger
+        dispatch(executeSearch(searchRequest))
+            .then(() => setResults(null))
+            .then(() =>
+                document.getElementById("search-input").value = ""
+            )
+    }
+
 
     const displayCategory = category => {
         if(filteredResults[category] && filteredResults[category].length > 0){
@@ -49,7 +76,7 @@ const SearchDropDown = ({filteredResults, setResults}) => {
                         {filteredResults[category].slice(0, 5).map(result => (
                             <p className="search-drop-down-item" 
                                 key={result.name}
-                                onClick={() =>handleClick(category, result)}
+                                onClick={(e) =>handleClick(e, category, result)}
                             >
                                 {result.name}
                             </p>

@@ -47,6 +47,10 @@ const SearchBar = () => {
     }
 
     dispatch(executeSearch(searchRequest))
+      .then(() => setResults(null))
+      .then(() =>
+        document.getElementById("search-input").value = ""
+      )
   }
 
   return (
@@ -56,6 +60,7 @@ const SearchBar = () => {
   
         <input type="text"
           name={inputName} 
+          id="search-input"
           className={`search-input`}
           placeholder="wand shops, broomstick repair, potions supply"
           onChange={handleInput}/>

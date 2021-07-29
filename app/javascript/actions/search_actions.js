@@ -20,9 +20,9 @@ const receiveSearchResults = searchResults => {
   debugger
   return ({
     type: RECEIVE_SEARCH_RESULTS,
-    businesses: searchResults.businesses,
-    reviews: searchResults.reviews,
-    users: searchResults.users
+    businesses: searchResults.businesses || {},
+    reviews: searchResults.reviews || {},
+    users: searchResults.users || {}
   })
 }
 
