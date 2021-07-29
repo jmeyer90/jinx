@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import usePath from '../../utils/path_util'
 import SearchDropDown from './searchDropDown'
+import { executeSearch } from '../../actions/search_actions'
 
 const SearchBar = () => {
   const searchables = useSelector(state => state.search)
   const [results, setResults] = useState(null)
+  const dispatch = useDispatch()
 
+  const inputName = "search"
   const path = usePath()
   const splashClassName = path == "/" ? "splash-" : ""
 
@@ -21,7 +24,6 @@ const SearchBar = () => {
       tempResults.menuItems = filter(searchables.menuItems, input)
       tempResults.attributeItems = filter(searchables.attributeItems, input)
       tempResults.services = filter(searchables.services, input)
-      console.log("tempResults", tempResults)
       setResults(tempResults)
     }
   }
@@ -38,7 +40,13 @@ const SearchBar = () => {
   }
 
   const handleSubmit = e => {
-    console.log(results)
+    e.preventDefault()
+    const input = e.target[inputName]
+    const searchRequest = {
+      general: input.value
+    }
+
+    dispatch(executeSearch(searchRequest))
   }
 
   return (
@@ -47,7 +55,7 @@ const SearchBar = () => {
         <label className={`search-label`}>Find</label>
   
         <input type="text"
-          id="search-input" 
+          name={inputName} 
           className={`search-input`}
           placeholder="wand shops, broomstick repair, potions supply"
           onChange={handleInput}/>

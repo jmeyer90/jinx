@@ -1,6 +1,6 @@
 json.businesses do
 
-  json.array! @businesses do |business|
+  @businesses.each do |business|
 
     json.set! business.id do
 
@@ -14,7 +14,7 @@ end
 
 json.reviews do
 
-  json.array! @businesses do |business|
+  @businesses.each do |business|
 
     json.set! business.main_review.id do
 
@@ -30,7 +30,7 @@ end
 
 json.users do
 
-  json.array! @businesses do |business|
+  @businesses.each do |business|
 
     json.set! business.main_reviewer.id do
       json.f_name business.main_reviewer.f_name

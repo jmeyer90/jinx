@@ -1,10 +1,9 @@
 import * as searchUtils from "../utils/search_utils";
 
 export const RECEIVE_SEARCH_RESULTS = "RECEIVE_SEARCH_RESULTS";
-export const REMOVE_SEARCH_RESULTS = "REMOVE_SEARCH_RESULTS";
 export const LOAD_SEARCHABLES = "LOAD_SEARCHABLES";
 
-const receiveSearchables = searchables =>{
+const receiveSearchables = searchables => {
   searchables.services ||= []
   const services = searchables.services.concat(searchables.service_items)
   
@@ -17,10 +16,28 @@ const receiveSearchables = searchables =>{
   })
 }
 
+const receiveSearchResults = searchResults => {
+  debugger
+  return ({
+    type: RECEIVE_SEARCH_RESULTS,
+    businesses: searchResults.businesses,
+    reviews: searchResults.reviews,
+    users: searchResults.users
+  })
+}
+
 export const loadSearchableItems = () => dispatch => {
-  return(
+  return (
     searchUtils.loadSearchables().then(
       searchables => dispatch(receiveSearchables(searchables))
+    )
+  )
+}
+
+export const executeSearch = (searchRequest) => dispatch => {
+  return (
+    searchUtils.executeSearch(searchRequest).then(
+      searchResults => dispatch(receiveSearchResults(searchResults))
     )
   )
 }
