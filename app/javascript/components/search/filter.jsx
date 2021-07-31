@@ -9,9 +9,11 @@ const Filter = ({categories, section}) => {
 
   const imgIfBusinessType = category => (
     section == "business-type-" ?
-      <img className="business-type-img" 
-        alt="business filter image"
-        src={mapCategoryToImage[category]}/>
+      <div className="business-type-img">
+        <img className="business-type-img-src" 
+          alt="business filter image"
+          src={mapCategoryToImage[category]}/>
+      </div>
       : null
   )
 
