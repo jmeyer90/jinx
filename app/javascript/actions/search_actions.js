@@ -17,7 +17,6 @@ const receiveSearchables = searchables => {
 }
 
 const receiveSearchResults = searchResults => {
-  debugger
   return ({
     type: RECEIVE_SEARCH_RESULTS,
     businesses: searchResults.businesses || {},

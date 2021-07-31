@@ -25,7 +25,6 @@ const ReviewsReducer = (state={}, action) =>{
       return newState;
 
     case RECEIVE_SEARCH_RESULTS:
-      debugger
       return action.reviews
 
     default:

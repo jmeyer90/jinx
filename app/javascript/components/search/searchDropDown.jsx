@@ -53,13 +53,12 @@ const SearchDropDown = ({filteredResults, setResults}) => {
         }
 
         const searchCategory = categoriesToSnakeCase[category]
-        const input = e.target.innerText
+        const input = e.target.innerText.toLowerCase()
 
         const searchRequest = {
             [searchCategory]: input
         }
 
-        debugger
         dispatch(executeSearch(searchRequest))
             .then(() =>
                 history.push(`/search?category=${searchCategory}&input=${input}`))

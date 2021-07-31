@@ -24,7 +24,6 @@ const UsersReducer = ( state={}, action ) => {
       return Object.assign({}, state, newState );
     
     case RECEIVE_SEARCH_RESULTS:
-      debugger
       return action.users
       
     default:

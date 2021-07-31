@@ -1,15 +1,25 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import QueryString from 'query-string'
 import SearchCategoryResults from './searchCategoryResults';
+import { executeSearch } from '../../actions/search_actions'
 
 const SearchResults = () => {
   const searchables = useSelector(state => state.search)
   const { search } = useLocation()
+  const dispatch = useDispatch()
 
   const {input, category} = QueryString.parse(search)
-  debugger
+
+  useEffect(() => {
+    const searchRequest = {
+      [category]: input
+    }
+
+    dispatch(executeSearch(searchRequest))
+  })
+
   const renderGeneralOrCategory = () => (
     category == "general" ?
       renderGeneralResults()
@@ -26,7 +36,7 @@ const SearchResults = () => {
 
     return (
       renderedCategories.map(category =>
-        <SearchCategoryResults category={category} input={input} />
+        <SearchCategoryResults key={category} category={category} input={input} />
       )
     )
   }
