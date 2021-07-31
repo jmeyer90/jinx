@@ -9,6 +9,9 @@ const BusinessIndexItem = ({business}) => {
   const user = useSelector(state => state.entities.users[business.main_reviewer_id])
   const path = usePath()
 
+  const attr_types = business.attrs.map(attr => attr.attribute_type)
+  const locationIndex = attr_types.indexOf("Neighborhood")
+  const businessLocation = business.attrs.splice(locationIndex, 1)[0]
   debugger
   const searchClassName = path == "/search" ? "-search" : ""
 
@@ -46,7 +49,7 @@ const BusinessIndexItem = ({business}) => {
           <p className={`business-index-num-reviews`}>10 reviews</p>
         </span>
         {displayAttributes()}
-        <p className={`business-index-location${searchClassName}`}>Location</p>
+        <p className={`business-index-location${searchClassName}`}>{businessLocation.name}</p>
         {displayReviewIfSearch()}
       </section>
     </Link>
