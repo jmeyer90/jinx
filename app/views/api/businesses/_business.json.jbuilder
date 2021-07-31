@@ -11,5 +11,8 @@ json.extract! business,
   :main_reviewer_id,
   :average_rating,
   :attr_types,
-  :operating_days
+  :operating_days,
+  :num_reviews
+
+json.image_url url_for(business.main_image)
 

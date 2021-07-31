@@ -15,6 +15,7 @@ const BusinessIndexItem = ({business}) => {
 
   const searchClassName = path == "/search" ? "-search" : ""
 
+  debugger
   const displayReviewIfSearch = () => (
     path == "/search" ? 
       displayUserReview()
@@ -37,19 +38,27 @@ const BusinessIndexItem = ({business}) => {
     )
   }
 
+  const displayNumReviews = () => {
+    const num = business.num_reviews
+    const plural = num == 1 ? "" : "s"
+    return(
+      <p className={`business-index-num-reviews`}>{business.num_reviews} Review{plural}</p>
+    )
+  }
+
   return (
     <Link className={`business-index-container${searchClassName}`} to={`/businesses/${business.id}`}>
       <div className={`business-index-image${searchClassName}`}>
-        <img className={`business-index-image-src${searchClassName}`} src="" alt="business review image" />
+        <img className={`business-index-image-src${searchClassName}`} src={`${business.image_url}`} alt="business review image" />
       </div>
       <section className={`business-index-description${searchClassName}`}>
         <h2 className={`business-index-title${searchClassName}`}>{business.name}</h2>
         <span className={`business-index-rating-container`}>
           {displayRating(business.average_rating)}
-          <p className={`business-index-num-reviews`}>10 reviews</p>
+          {displayNumReviews()}
         </span>
-        {displayAttributes()}
         <p className={`business-index-location${searchClassName}`}>{businessLocation.name}</p>
+        {displayAttributes()}
         {displayReviewIfSearch()}
       </section>
     </Link>

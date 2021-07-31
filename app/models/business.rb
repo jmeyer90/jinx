@@ -19,7 +19,6 @@ class Business < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :reviewers, through: :reviews, source: :user
-  has_many :review_images, through: :reviews, source: :image
 
   has_many :services, dependent: :destroy
   has_many :service_items, through: :services, source: :service_items
@@ -108,6 +107,10 @@ class Business < ApplicationRecord
     reviews.first
   end
 
+  def num_reviews
+    reviews.size
+  end
+
   def main_review_id
     reviews.first.id
   end
@@ -118,6 +121,10 @@ class Business < ApplicationRecord
 
   def main_reviewer_id
     reviews.first.user.id
+  end
+
+  def review_images
+    reviews.map(&:image)
   end
 
   def main_image

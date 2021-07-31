@@ -25,8 +25,12 @@
 }
 
 .business-index-image-search {
-    width: 300px;
-    height: 300px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.business-index-image-src-search {
+    height: 100%;
 }
 
 .business-index-description-search {

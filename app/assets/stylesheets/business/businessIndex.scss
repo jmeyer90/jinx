@@ -20,7 +20,14 @@
 }
 
 .business-index-image {
-  height: 150px;
+  margin: auto;
+  margin-top: 5px;
+  object-fit: contain;
+}
+
+.business-index-image-src {
+  height: 100%;
+  width: 100%;
 }
 
 .business-index-title {
@@ -38,6 +45,7 @@
 .business-index-num-reviews {
   font-size: 14px;
   color: gray;
+  margin-left: 5px;
 }
 
 .business-index-rating-container {
