@@ -21,7 +21,9 @@ const receiveSearchResults = searchResults => {
     type: RECEIVE_SEARCH_RESULTS,
     businesses: searchResults.businesses || {},
     reviews: searchResults.reviews || {},
-    users: searchResults.users || {}
+    users: searchResults.users || {},
+    attrs: searchResults.attrs || {},
+    businessAttrs: searchResults.business_attributes || {}
   })
 }
 

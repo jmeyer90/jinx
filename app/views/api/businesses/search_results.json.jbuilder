@@ -40,3 +40,35 @@ json.users do
   end
 
 end
+
+json.business_attributes do
+
+  @businesses.each do |business|
+
+    business.business_attributes.each do |business_attribute|
+      json.set! business_attribute.id do
+        json.id business_attribute.id
+        json.attribute_id business_attribute.attribute_item.id
+        json.business_id business_attribute.business.id
+      end
+    end
+
+  end
+
+end
+
+json.attrs do
+
+  @businesses.each do |business|
+
+    business.attrs.each do |attr|
+      json.set! attr.id do
+        json.id attr.id
+        json.attribute_type attr.attribute_type
+        json.name attr.name
+      end
+    end
+
+  end
+
+end

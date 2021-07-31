@@ -48,17 +48,20 @@ class Api::BusinessesController < ApplicationController
     if business_params.has_key?(:general)
       @businesses = Business.includes(
         :services,
-        :attrs, 
+        :attrs,
+        :business_attributes
       ).general_search(business_params[:general])
     elsif business_params.has_key?(:neighborhood)
       @businesses = Business.includes(
         :services,
         :attrs, 
+        :business_attributes
       ).neighborhood_search(business_params[:neighborhood])
     else
       @businesses = Business.includes(
         :services,
         :attrs, 
+        :business_attributes
       ).category_search(business_params)
     end
 
