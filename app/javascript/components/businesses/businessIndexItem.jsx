@@ -9,13 +9,8 @@ const BusinessIndexItem = ({business}) => {
   const user = useSelector(state => state.entities.users[business.main_reviewer_id])
   const path = usePath()
 
+  debugger
   const searchClassName = path == "/search" ? "-search" : ""
-
-  const attributes = [
-    "attr1",
-    "attr2",
-    "attr3"
-  ]
 
   const displayReviewIfSearch = () => (
     path == "/search" ? 
@@ -32,21 +27,26 @@ const BusinessIndexItem = ({business}) => {
       : null
   )
 
-  const displayAttributes = () => (
-        <p className="business-index-attributes">{attributes.join(", ")}</p>
-  )
+  const displayAttributes = () => {
+    const attr_names = business.attrs.map(attr => attr.name)
+    return (
+        <p className="business-index-attributes">{attr_names.join(", ")}</p>
+    )
+  }
 
   return (
     <Link className={`business-index-container${searchClassName}`} to={`/businesses/${business.id}`}>
-      <img className={`business-index-image${searchClassName}`} src="" alt="business review image" />
+      <div className={`business-index-image${searchClassName}`}>
+        <img className={`business-index-image-src${searchClassName}`} src="" alt="business review image" />
+      </div>
       <section className={`business-index-description${searchClassName}`}>
         <h2 className={`business-index-title${searchClassName}`}>{business.name}</h2>
-        <span className={`business-index-rating-container${searchClassName}`}>
+        <span className={`business-index-rating-container`}>
           {displayRating(business.average_rating)}
-          <p className={`business-index-num-reviews${searchClassName}`}>10 reviews</p>
+          <p className={`business-index-num-reviews`}>10 reviews</p>
         </span>
         {displayAttributes()}
-        <p>Location</p>
+        <p className={`business-index-location${searchClassName}`}>Location</p>
         {displayReviewIfSearch()}
       </section>
     </Link>

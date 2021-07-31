@@ -12,10 +12,14 @@ const SearchCategoryResults = ({category, input}) => {
         attrs: "Attributes & Ammenities"
     }
 
+    const titleInput = input.split(" ").map(word => 
+        word[0].toUpperCase() + word.substr(1).toLowerCase())
+        .join(" ")
+
     return(
         <div className="category-results-container">
             <h1 className="category-results-title">
-                Businesess with {categories[category]} Matching {input}:
+                Businesess with {categories[category]} Matching {titleInput}:
             </h1>
             <ul className="category-business-index-container">
                 {Object.values(businesses).map(business => 

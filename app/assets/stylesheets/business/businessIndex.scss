@@ -43,3 +43,12 @@
 .business-index-rating-container {
   display: flex;
 }
+
+.business-index-attributes {
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

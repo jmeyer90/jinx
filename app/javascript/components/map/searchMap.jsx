@@ -24,7 +24,8 @@ const SearchMap = ({ businesses }) => {
     }
 
     const mapStyles = {
-        height: "40vh"
+        height: "100vh",
+        width: "45%"
     }
 
     const renderMarkers = () => (
