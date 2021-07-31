@@ -9,7 +9,7 @@ const BusinessIndexItem = ({business}) => {
   const user = useSelector(state => state.entities.users[business.main_reviewer_id])
   const path = usePath()
 
-  const searchClassName = path == "/search" ? "-search" : null
+  const searchClassName = path == "/search" ? "-search" : ""
 
   const attributes = [
     "attr1",
@@ -37,13 +37,13 @@ const BusinessIndexItem = ({business}) => {
   )
 
   return (
-    <Link className="business-index-container" to={`/businesses/${business.id}`}>
-      <img className="business-index-image" src="" alt="business review image" />
-      <section className="business-index-description">
-        <h2 className="business-index-title">{business.name}</h2>
-        <span className="business-index-rating-container">
+    <Link className={`business-index-container${searchClassName}`} to={`/businesses/${business.id}`}>
+      <img className={`business-index-image${searchClassName}`} src="" alt="business review image" />
+      <section className={`business-index-description${searchClassName}`}>
+        <h2 className={`business-index-title${searchClassName}`}>{business.name}</h2>
+        <span className={`business-index-rating-container${searchClassName}`}>
           {displayRating(business.average_rating)}
-          <p className="business-index-num-reviews">10 reviews</p>
+          <p className={`business-index-num-reviews${searchClassName}`}>10 reviews</p>
         </span>
         {displayAttributes()}
         <p>Location</p>
