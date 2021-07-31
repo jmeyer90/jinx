@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import usePath from '../../utils/path_util'
 import SearchDropDown from './searchDropDown'
 import { executeSearch } from '../../actions/search_actions'
+import { useHistory } from 'react-router-dom'
 
 const SearchBar = () => {
   const searchables = useSelector(state => state.search)
   const [results, setResults] = useState(null)
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const inputName = "search"
   const path = usePath()
@@ -42,11 +44,14 @@ const SearchBar = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const input = e.target[inputName]
+    const inputValue = input.value.toLowerCase()
     const searchRequest = {
-      general: input.value
+      general: inputValue
     }
 
     dispatch(executeSearch(searchRequest))
+      .then(() => 
+        history.push(`/search?category=general&input=${inputValue}`))
       .then(() => setResults(null))
       .then(() =>
         document.getElementById("search-input").value = ""

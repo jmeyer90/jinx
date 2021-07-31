@@ -52,14 +52,17 @@ const SearchDropDown = ({filteredResults, setResults}) => {
             attributeItems: "attrs"
         }
 
+        const searchCategory = categoriesToSnakeCase[category]
         const input = e.target.innerText
 
         const searchRequest = {
-            [categoriesToSnakeCase[category]]: input
+            [searchCategory]: input
         }
 
         debugger
         dispatch(executeSearch(searchRequest))
+            .then(() =>
+                history.push(`/search?category=${searchCategory}&input=${input.value}`))
             .then(() => setResults(null))
             .then(() =>
                 document.getElementById("search-input").value = ""

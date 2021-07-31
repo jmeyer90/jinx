@@ -7,17 +7,17 @@ import Login from '../components/session/login'
 import SignUp from '../components/session/signup'
 import Footer from '../components/footer/footer'
 import { AuthRoute, ProtectedRoute } from '../utils/route_util'
-import NavModal from '../components/nav/navModal';
+import SearchResults from '../components/search/searchResults'
 
 const App = () =>{
   return(
     <>
       <Route path="/" component={ NavComponent } />
       <Route exact path="/" component={ Splash } />
-      {/* <Route path ="/search" component={ Search } /> */}
       <Route path={`/businesses/:businessId`} component={ Business } />
       <AuthRoute path="/signup" component={ SignUp } />
       <AuthRoute path="/login" component={ Login } />
+      <Route path ="/search" component={ SearchResults } />
       <Route path="/" component={ Footer } />
     </>
   )
