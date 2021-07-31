@@ -5,9 +5,6 @@ import BusinessIndexItem from '../businesses/businessIndexItem'
 const SearchCategoryResults = ({category, input}) => {
     const businesses = useSelector(state => state.entities.businesses)
 
-    console.log("Category: ", category)
-    console.log("Input: ", input)
-
     const categories = {
         businesses: "Names",
         menu_items: "Menu Items",
@@ -16,9 +13,11 @@ const SearchCategoryResults = ({category, input}) => {
     }
 
     return(
-        <div>
-            <h1>Businesess with {categories[category]} Matching {input}:</h1>
-            <ul>
+        <div className="category-results-container">
+            <h1 className="category-results-title">
+                Businesess with {categories[category]} Matching {input}:
+            </h1>
+            <ul className="category-business-index-container">
                 {Object.values(businesses).map(business => 
                     <BusinessIndexItem key={business.id} business={business}/>
                 )}

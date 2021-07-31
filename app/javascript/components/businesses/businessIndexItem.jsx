@@ -2,16 +2,26 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {displayRating} from '../../utils/displayUtils'
+import usePath from '../../utils/path_util'
 
 const BusinessIndexItem = ({business}) => { 
   const review = useSelector(state => state.entities.reviews[business.main_review_id]) 
-  const user = useSelector(state => state.entities.users[business.main_reviewer_id])  
+  const user = useSelector(state => state.entities.users[business.main_reviewer_id])
+  const path = usePath()
+
+  const searchClassName = path == "/search" ? "-search" : null
 
   const attributes = [
     "attr1",
     "attr2",
     "attr3"
   ]
+
+  const displayReviewIfSearch = () => (
+    path == "/search" ? 
+      displayUserReview()
+      : null
+  )
 
   const displayUserReview = () => (
     user && review ? 
@@ -37,6 +47,7 @@ const BusinessIndexItem = ({business}) => {
         </span>
         {displayAttributes()}
         <p>Location</p>
+        {displayReviewIfSearch()}
       </section>
     </Link>
     
