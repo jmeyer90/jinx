@@ -12,8 +12,13 @@
     padding-bottom: 10px;
 }
 
-.locaiton-filter-item {
+.location-filter-item {
     font-weight: 650;
+}
+
+.location-filter-item:hover {
+    font-weight: 650;
+    cursor: pointer;
 }
 
 .location-filter-text {

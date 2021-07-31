@@ -45,6 +45,16 @@ class Business < ApplicationRecord
     businesses.uniq
   end
 
+  def self.neighborhood_search(neighborhood)
+    businesses = AttributeItem
+      .where("name ILIKE :neighborhood", 
+      attribute_type: "Neighborhood", 
+      neighborhood: "#{neighborhood}%")
+      .extract_associated(:businesses)
+
+    businesses.flatten.uniq
+  end
+
   def self.category_search(search_hash)
     if search_hash.has_key?(:name)
       Business.where("name ILIKE :name", name: "#{search_hash[:name]}%")

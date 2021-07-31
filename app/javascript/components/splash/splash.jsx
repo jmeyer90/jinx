@@ -2,7 +2,6 @@ import React from 'react';
 import Businesses from '../businesses/businesses'
 import Filter from '../search/filter'
 
-
 const Splash = () => {
   
   return (
@@ -17,7 +16,7 @@ const Splash = () => {
         </section>
         <section className="filter-section">
           <h2 className="splash-header">Jinx New York</h2>
-          <Filter section="location-" categories={["New York", "San Francisco", "Chicago", "Austin", "London"]}/>
+          <Filter section="location-" categories={["The Shire", "Hogsmeade", "Diagon Alley", "Helm's Deep", "Atlantis"]}/>
         </section>
         <div className="hor-line"></div>
         <h3 className="splash-subheader">Magically Marvelous Businesses</h3>

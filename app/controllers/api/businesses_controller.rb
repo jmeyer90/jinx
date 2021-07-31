@@ -50,6 +50,11 @@ class Api::BusinessesController < ApplicationController
         :services,
         :attrs, 
       ).general_search(business_params[:general])
+    elsif business_params.has_key?(:neighborhood)
+      @businesses = Business.includes(
+        :services,
+        :attrs, 
+      ).neighborhood_search(business_params[:neighborhood])
     else
       @businesses = Business.includes(
         :services,
@@ -71,8 +76,9 @@ class Api::BusinessesController < ApplicationController
       :attrs, 
       :services,
       :general,
-      :menu_items
-      )
+      :menu_items,
+      :neighborhood
+    )
   end
 
 end
