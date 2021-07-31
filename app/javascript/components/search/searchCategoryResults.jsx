@@ -9,7 +9,9 @@ const SearchCategoryResults = ({category, input}) => {
         businesses: "Names",
         menu_items: "Menu Items",
         services: "Services",
-        attrs: "Attributes & Ammenities"
+        attrs: "Attributes & Ammenities",
+        attributeItems: "Attributes & Ammenities",
+        menuItems: "Menu Items",
     }
 
     const titleInput = input.split(" ").map(word => 

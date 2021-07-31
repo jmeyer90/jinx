@@ -38,7 +38,6 @@ const Filter = ({categories, section}) => {
       searchRequest.neighborhood = category
     }
 
-    debugger
     dispatch(executeSearch(searchRequest))
       .then(() =>
         history.push(`/search?category=${searchCategory}&input=${category}`))

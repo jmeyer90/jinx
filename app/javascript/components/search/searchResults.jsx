@@ -30,16 +30,18 @@ const SearchResults = () => {
   )
 
   const renderGeneralResults = () => {
-    const renderedCategories = searchables.keys.filter(category =>
-      category.values.some(searchable =>{ 
-        const searchName = searchable.name.toLowerCase()
-        return searchName.startsWith(input)
+    const renderedCategories = Object.keys(searchables).filter(category =>
+      searchables[category].some(searchableData =>{ 
+        const searchableTerms = searchableData.name.split(" ")
+        return searchableTerms.some(word => word.toLowerCase().startsWith(input))
     }))
 
     return (
-      renderedCategories.map(category =>
-        <SearchCategoryResults key={category} category={category} input={input} />
-      )
+      <ul className="general-results-container">
+        {renderedCategories.map(category =>
+          <SearchCategoryResults key={category} category={category} input={input} />
+        )}
+      </ul>
     )
   }
 

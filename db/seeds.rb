@@ -54,9 +54,9 @@ attr32 = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Pets All
 attr33 = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Wheelchair Accessible")
 
 # Seed Business
-business1 = Business.create!(name: "Filona's Fanciful Foods", address:"address1", lat: -37.872125, lng: 175.682933)
-business2 = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", lat: -37.872125, lng: 175.682933)
-business3 = Business.create!(name: "Windburg's Wonderful Wands", address:"address3", lat: -37.872125, lng: 175.682933)
+business1 = Business.create!(name: "Filona's Fanciful Foods", address:"address1", lat: -37.972125, lng: 175.682933)
+business2 = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", lat: -37.872125, lng: 175.782933)
+business3 = Business.create!(name: "Windburg's Wonderful Wands", address:"address3", lat: -37.872125, lng: 175.582933)
 
 # Seed OperationHour
 sunOpen = OperationHour.create!(day: 0, biz_time: 10)
@@ -75,8 +75,8 @@ satOpen = OperationHour.create!(day: 6, biz_time: 10.5)
 satClose = OperationHour.create!(day: 6, biz_time: 23)
 
 # Seed Service
-service1 = Service.create!(business_id: business1.id, service_type: "Brunch Menu")
-service2 = Service.create!(business_id: business2.id, service_type: "Dinner Menu")
+service1 = Service.create!(business_id: business1.id, service_type: "Brunch Menu", name: "Brunch Menu")
+service2 = Service.create!(business_id: business2.id, service_type: "Dinner Menu", name: "Dinner Menu")
 service3 = Service.create!(business_id: business3.id, service_type: "Cocktails", name: "Happy Hour")
 
 # Seed ServiceItem

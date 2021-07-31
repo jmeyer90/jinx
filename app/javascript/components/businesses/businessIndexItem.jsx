@@ -15,7 +15,6 @@ const BusinessIndexItem = ({business}) => {
 
   const searchClassName = path == "/search" ? "-search" : ""
 
-  debugger
   const displayReviewIfSearch = () => (
     path == "/search" ? 
       displayUserReview()
@@ -46,6 +45,12 @@ const BusinessIndexItem = ({business}) => {
     )
   }
 
+  const displayLocation = () => (
+    businessLocation ? 
+      <p className={`business-index-location${searchClassName}`}>{businessLocation.name}</p>
+      : null
+  )
+
   return (
     <Link className={`business-index-container${searchClassName}`} to={`/businesses/${business.id}`}>
       <div className={`business-index-image${searchClassName}`}>
@@ -57,7 +62,7 @@ const BusinessIndexItem = ({business}) => {
           {displayRating(business.average_rating)}
           {displayNumReviews()}
         </span>
-        <p className={`business-index-location${searchClassName}`}>{businessLocation.name}</p>
+        {displayLocation()}
         {displayAttributes()}
         {displayReviewIfSearch()}
       </section>

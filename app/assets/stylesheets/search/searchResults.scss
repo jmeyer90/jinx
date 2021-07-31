@@ -8,11 +8,15 @@
 .category-results-container {
     width: 1000px;
     margin: 0px 20px;
-
 }
 
 .category-business-index-container {
     width: 95%;
+}
+
+.category-results-title {
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 .business-index-container-search{
@@ -77,4 +81,9 @@
     height: 45px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.general-results-container {
+    display: flex;
+    flex-direction: column;
 }
