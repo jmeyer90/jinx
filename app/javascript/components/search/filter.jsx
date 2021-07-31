@@ -1,6 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { executeSearch } from '../../actions/search_actions'
 
 const Filter = ({categories, section}) => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+
   const mapCategoryToImage = {}
   mapCategoryToImage["Wand Shops"] = window.wandShop
   mapCategoryToImage["Broomstick Repair"] = window.broomstickRepair
@@ -17,9 +23,36 @@ const Filter = ({categories, section}) => {
       : null
   )
 
+  const handleClick = category => {
+    const searchRequest = {}
+    let searchCategory = ""
+
+    if (section == "business-type-") {
+      searchCategory = "attrs"
+      if (category.slice(-1) == "s") {
+        category = category.slice(0, -1)
+      }
+      searchRequest.attrs = category
+    } else {
+      searchCategory = "neighborhood"
+      searchRequest.neighborhood = category
+    }
+
+    debugger
+    dispatch(executeSearch(searchRequest))
+      .then(() =>
+        history.push(`/search?category=${searchCategory}&input=${category}`))
+      .then(() => setResults(null))
+      .then(() =>
+        document.getElementById("search-input").value = ""
+      )
+  }
+
   const renderCategories = () => (
     categories.map((category, idx) => (
-      <div key={idx} className={`${section}filter-item`}>
+      <div key={idx} 
+        className={`${section}filter-item`}
+        onClick={() => handleClick(category)}>
         {section == "business-type-" ? 
           imgIfBusinessType(category)
           : null
