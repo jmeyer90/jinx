@@ -12,7 +12,7 @@ const BusinessIndexItem = ({business}) => {
   const attr_types = business.attrs.map(attr => attr.attribute_type)
   const locationIndex = attr_types.indexOf("Neighborhood")
   const businessLocation = business.attrs.splice(locationIndex, 1)[0]
-  debugger
+
   const searchClassName = path == "/search" ? "-search" : ""
 
   const displayReviewIfSearch = () => (

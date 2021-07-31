@@ -140,7 +140,7 @@ sbhB1H1 = BusinessOperationHour.create!(business_id: business3.id, operation_hou
 sbhB1H1 = BusinessOperationHour.create!(business_id: business3.id, operation_hour_id: satClose.id)
 
 # Seeding images
-# review1.photo.attach(io: File.open("public/images/cauldron.jpg"), filename: "cauldron.jpg" )
-# review2.photo.attach(io: File.open("public/images/cauldron.jpg"), filename: "cauldron.jpg" )
-# review3.photo.attach(io: File.open("public/images/cauldron.jpg"), filename: "cauldron.jpg" )
-# review4.photo.attach(io: File.open("public/images/cauldron.jpg"), filename: "cauldron.jpg" )
+review1.image.attach(io: File.open("app/assets/images/cauldron.jpg"), filename: "cauldron.jpg" )
+review2.image.attach(io: File.open("app/assets/images/cauldron.jpg"), filename: "cauldron.jpg" )
+review3.image.attach(io: File.open("app/assets/images/cauldron.jpg"), filename: "cauldron.jpg" )
+review4.image.attach(io: File.open("app/assets/images/cauldron.jpg"), filename: "cauldron.jpg" )
