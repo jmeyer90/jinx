@@ -62,7 +62,7 @@ const SearchDropDown = ({filteredResults, setResults}) => {
         debugger
         dispatch(executeSearch(searchRequest))
             .then(() =>
-                history.push(`/search?category=${searchCategory}&input=${input.value}`))
+                history.push(`/search?category=${searchCategory}&input=${input}`))
             .then(() => setResults(null))
             .then(() =>
                 document.getElementById("search-input").value = ""

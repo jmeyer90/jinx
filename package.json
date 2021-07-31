@@ -12,6 +12,7 @@
     "global-prefix": "^3.0.0",
     "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
+    "query-string": "^4.3.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
