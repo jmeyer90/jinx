@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BusinessImages = ({business}) => {
-  // debugger
   return (
     <ul className="business-img-container">
       {business.image_urls.map(image_url => 
