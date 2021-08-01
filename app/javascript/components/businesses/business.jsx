@@ -20,7 +20,8 @@ const Business = () => {
   const loggedIn = useSelector( state => state.session.currentUserId)
 
   useEffect(() => {
-    dispatch(fetchBusiness(businessId))
+    dispatch(fetchBusiness(businessId)),
+    window.scrollTo(0,0)
   }, [dispatch])
 
   const renderBusinessDetails = () => (
