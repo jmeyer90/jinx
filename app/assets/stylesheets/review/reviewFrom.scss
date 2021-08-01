@@ -14,6 +14,12 @@
     font-weight: 1000;
 }
 
+.review-form-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .review-form-input-fields {
     display: flex;
     flex-direction: column;

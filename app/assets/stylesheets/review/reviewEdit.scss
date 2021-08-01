@@ -9,6 +9,17 @@
     width: 100%;
 }
 
+.review-form-data-edit {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.review-form-radio-section-edit{
+    display: flex;
+    flex-direction: row;
+}
+
 .review-image-preview-edit{
     width: 400px;
 }

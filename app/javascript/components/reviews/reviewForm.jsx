@@ -123,16 +123,18 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
           <p className="review-form-subtitle">Select your rating</p>
         </section>
 
-        <input className={`review-form-image-upload${editClassName}`} type="file"
-          onChange={ e => handleImage(e)}/>
-        {displayImagePreview()}
+        <section className={`review-form-data${editClassName}`}>
+          <input className={`review-form-image-upload${editClassName}`} type="file"
+            onChange={ e => handleImage(e)}/>
+          {displayImagePreview()}
 
-        <textarea
-          className={`review-form-body${editClassName}`}
-          name="review[body]" 
-          placeholder="By golly, what a joyfull occassion! The dancing chocolates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff!" 
-          value={body} 
-          onChange={ e => setBody(e.target.value) }/>
+          <textarea
+            className={`review-form-body${editClassName}`}
+            name="review[body]" 
+            placeholder="By golly, what a joyfull occassion! The dancing chocolates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff!" 
+            value={body} 
+            onChange={ e => setBody(e.target.value) }/>
+          </section>
       </section>
 
       {formButtons()}
