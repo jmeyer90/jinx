@@ -36,11 +36,15 @@ const SearchResults = () => {
         return searchableTerms.some(word => word.toLowerCase().startsWith(input))
     }))
 
+    console.log(renderedCategories)
     return (
       <ul className="general-results-container">
-        {renderedCategories.map(category =>
-          <SearchCategoryResults key={category} category={category} input={input} />
-        )}
+        {renderedCategories >= 1 ? 
+          renderedCategories.map(category =>
+            <SearchCategoryResults key={category} category={category} input={input} />
+          )
+          : <h1 className="category-results-title">No Results Found</h1>
+          }
       </ul>
     )
   }

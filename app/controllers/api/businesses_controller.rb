@@ -5,7 +5,6 @@ class Api::BusinessesController < ApplicationController
       :services,
       :attrs, 
       :operation_hours
-      # :main_review
     )
 
     if @businesses
@@ -61,9 +60,8 @@ class Api::BusinessesController < ApplicationController
         :business_attributes
       ).neighborhood_search(business_params[:neighborhood])
 
-      @attrs = @businesses.map(&:businesses.attrs)
+      @attrs = @businesses.map(&:attrs).flatten
       @business_attributes = @businesses.map(&:business_attributes).flatten
-
     else
       @businesses = Business.includes(
         :services,
@@ -71,8 +69,8 @@ class Api::BusinessesController < ApplicationController
         :business_attributes
       ).category_search(business_params)
 
-      @attrs = @businesses.map(&:businesses.attrs)
-      @business_attributes = @businesses.map(&:business_attributes)
+      @attrs = @businesses.map(&:attrs).flatten
+      @business_attributes = @businesses.map(&:business_attributes).flatten
     end
 
     render :search_results
