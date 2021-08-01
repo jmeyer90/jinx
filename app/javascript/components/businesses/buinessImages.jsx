@@ -1,14 +1,16 @@
 import React from 'react'
 
 const BusinessImages = ({business}) => {
+  // debugger
   return (
     <ul className="business-img-container">
-      <li className="business-img-index">Business Images</li>
-      <li className="business-img-index">Business Images</li>
-      <li className="business-img-index">Business Images</li>
-      <li className="business-img-index">Business Images</li>
-      <li className="business-img-index">Business Images</li>
-      <li className="business-img-index">Business Images</li>
+      {business.image_urls.map(image_url => 
+        <img
+          className="business-img-index"
+          alt="image from user review"
+          src={`${image_url}`}
+        />
+      )}
     </ul>
   )
 }

@@ -134,7 +134,7 @@ class Business < ApplicationRecord
   end
 
   def review_images
-    reviews.map(&:image)
+    reviews.map{|review| review.image}
   end
 
   def main_image

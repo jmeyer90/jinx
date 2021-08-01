@@ -50,10 +50,16 @@ const Business = () => {
       <button onClick={() => dispatch(REVIEW_MODAL_ACTION)}>Write a Review</button>
       : null
   )
+
+  const renderBusinessImages = () => (
+    business ?
+      <BusinessImages business={business}/>
+      : null
+  )
   
   return (
     <section className="business-show-container">
-      <BusinessImages business={business}/>
+      {renderBusinessImages()}
       <section className="business-info-container">
         <section className="business-details-reviews-container">
           <ReviewModal />

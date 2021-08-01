@@ -1,4 +1,4 @@
-json.image_urls @business.review_images.each{|image| url_for(image)}
+json.image_urls @image_urls
 
 json.extract! @business,
   :id, 

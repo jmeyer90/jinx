@@ -17,7 +17,8 @@ class Api::BusinessesController < ApplicationController
   def show
     @business = Business.find(params[:id])
     @reviews = @business.reviews.includes(:user)
-
+    @image_urls = @reviews.map{|review| url_for(review.image)}
+    debugger
     if @business
       render :show
     else
