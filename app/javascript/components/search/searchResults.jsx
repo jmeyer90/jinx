@@ -36,7 +36,6 @@ const SearchResults = () => {
         return searchableTerms.some(word => word.toLowerCase().startsWith(input))
     }))
 
-    console.log(renderedCategories)
     return (
       <ul className="general-results-container">
         {renderedCategories >= 1 ? 

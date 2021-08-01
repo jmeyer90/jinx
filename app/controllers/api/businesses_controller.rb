@@ -69,8 +69,8 @@ class Api::BusinessesController < ApplicationController
         :business_attributes
       ).category_search(business_params)
 
-      @attrs = @businesses.map(&:attrs).flatten
-      @business_attributes = @businesses.map(&:business_attributes).flatten
+      @attrs = {}
+      @business_attributes = {}
     end
 
     render :search_results
