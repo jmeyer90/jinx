@@ -9,9 +9,9 @@ const BusinessContact = ({business}) => {
       </a>
 
       <div className="hor-line"></div>
-      <a className="business-contact-index" href="https://www.linkedin.com/in/justin-meyer-39a915181/">
+      <a className="business-contact-index" href="https://www.linkedin.com/in/justin-james-meyer">
         <h1 className="business-section-header">LinkedIn</h1>
-        <p  className="business-contact-detail">https://www.linkedin.com/in/justin-meyer-39a915181/</p>
+        <p  className="business-contact-detail">https://www.linkedin.com/in/justin-james-meyer</p>
       </a>
       <div className="hor-line"></div>
       
