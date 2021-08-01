@@ -19,6 +19,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
   const [image, setImage] = useState(defaultImage)
   const [imageUrl, setImageUrl] = useState(defaultImage)
   
+  const editClassName = action == "edit" ? "-edit" : ""
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -62,7 +63,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
   const displayImagePreview = () => (
     imageUrl ? 
       <img 
-        className="review-image-preview"
+        className={`review-image-preview${editClassName}`}
         src={imageUrl} 
         alt="upload-photo-preview" />
       : null
@@ -83,9 +84,32 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
       })
   )
 
+  const formButtons = () => {
+    if (action == "create") {
+      return (
+        <button className="review-form-button">Check-In</button>
+      )
+    } else {
+      return (
+        <span className="edit-buttons-container">
+          <button 
+            className={`review-form-button${editClassName}`}
+          >
+            Check-In
+          </button>
+          <div 
+            className={`review-form-button${editClassName}`}
+            onClick={() => setEdit(false)}
+          >
+            Cancel Edit
+          </div>
+        </span>
+      )
+    }
+  }
+
   return (
-    <form className="review-form" onSubmit={e => handleSubmit(e) }>
-      <h1 className="review-form-title">{action}</h1>
+    <form className={`review-form${editClassName}`} onSubmit={e => handleSubmit(e) }>
 
       <ul className="errors-container">
         {errors.map((error, idx) => (
@@ -93,25 +117,25 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
         ))}
       </ul>
       
-      <section className="review-form-input-fields">
-        <section className="review-form-radio-section">
+      <section className={`review-form-input-fields${editClassName}`}>
+        <section className={`review-form-radio-section${editClassName}`}>
           <ul className="review-form-radio-ul">{radioButtons()}</ul>
           <p className="review-form-subtitle">Select your rating</p>
         </section>
 
-        <input className="review-form-image-upload" type="file"
+        <input className={`review-form-image-upload${editClassName}`} type="file"
           onChange={ e => handleImage(e)}/>
         {displayImagePreview()}
 
         <textarea
-          className="review-form-body"
+          className={`review-form-body${editClassName}`}
           name="review[body]" 
           placeholder="By golly, what a joyfull occassion! The dancing chocolates were superb and such a wonder to behold. And what a pleasure it was to be served by such fantastic staff!" 
           value={body} 
           onChange={ e => setBody(e.target.value) }/>
       </section>
 
-      <button className="review-form-button">Check-In</button>
+      {formButtons()}
     </form>
   )
 }
