@@ -26,6 +26,14 @@ class AttributeItem < ApplicationRecord
   validates :attribute_type, presence: true, inclusion: { in: ATTRIBUTE_TYPES }
   validates :name, presence: true
 
+  def self.find_by_search_term(search_term)
+    AttributeItem
+      .where("name ILIKE :term1 OR name ILIKE :term2 OR attribute_type ILIKE :term1 OR attribute_type ILIKE :term2", 
+        term1: "#{search_term}%", 
+        term2: "% #{search_term}%"
+      ).where.not(attribute_type: "Business Type")
+  end
+
   # Having an attr_accessor stop items from being saved to the databse
   # attr_accessor :name, :attribute_type
 end

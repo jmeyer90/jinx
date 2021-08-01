@@ -51,18 +51,28 @@ class Api::BusinessesController < ApplicationController
         :attrs,
         :business_attributes
       ).general_search(business_params[:general])
+
+      @attrs = AttributeItem.includes(:business_attributes).find_by_search_term(business_params[:general])
+      @business_attributes = @attrs.map(&:business_attributes).flatten
     elsif business_params.has_key?(:neighborhood)
       @businesses = Business.includes(
         :services,
         :attrs, 
         :business_attributes
       ).neighborhood_search(business_params[:neighborhood])
+
+      @attrs = @businesses.map(&:businesses.attrs)
+      @business_attributes = @businesses.map(&:business_attributes).flatten
+
     else
       @businesses = Business.includes(
         :services,
         :attrs, 
         :business_attributes
       ).category_search(business_params)
+
+      @attrs = @businesses.map(&:businesses.attrs)
+      @business_attributes = @businesses.map(&:business_attributes)
     end
 
     render :search_results
