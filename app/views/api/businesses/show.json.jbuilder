@@ -1,4 +1,20 @@
-json.partial! "api/businesses/business", business: @business
+json.image_urls @business.review_images.each{|image| url_for(image)}
+
+json.extract! @business,
+  :id, 
+  :name, 
+  :address, 
+  :lng, 
+  :lat, 
+  :services, 
+  :attrs, 
+  :operation_hours,
+  :main_review_id,
+  :main_reviewer_id,
+  :average_rating,
+  :attr_types,
+  :operating_days,
+  :num_reviews
 
 json.reviews @reviews do |review|
     json.partial! "api/reviews/review", review: review
