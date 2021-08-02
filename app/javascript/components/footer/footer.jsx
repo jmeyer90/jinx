@@ -9,7 +9,7 @@ const Footer = () =>{
           <p className="footer-bio-item">Justin James Meyer, based out of Brooklyn, NY</p>
           <p className="footer-bio-item">Full-Stack Developer.</p>
           <p className="footer-bio-item">Sr Instructor for App Academy, the top rated coding bootcamp</p>
-          <p className="footer-bio-item">Proficiency in: Rails, JavaScript, React, Redux, the MERN stack, CSS, HTML, and TDD.</p>
+          <p className="footer-bio-item">Fluent in: Ruby, Ruby on Rails, JavaScript, React, Redux, the MERN stack, CSS, HTML, and TDD.</p>
           <p className="footer-bio-item">I have a background in mathematics education and proved an original theorem in Number Theory, which was presented at CANT 2018 and MAA Metro NY.</p>
           <p className="footer-bio-item">In my spare time, I write poetry and frequently explore hiking trails around New York City.</p>
         </section>
