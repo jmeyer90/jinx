@@ -39,7 +39,7 @@ const NavComponent = () => {
   const loggedOutActions = () => (
     <span className={`${ splashClassName }session-buttons`}>
       <button className={`session-button`} onClick={toggleModal}>
-        Login
+        Log In
       </button>
       <NavModal />
       <Link className={`session-button`}to="/signup">
