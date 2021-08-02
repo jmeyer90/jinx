@@ -16,7 +16,7 @@ const Splash = () => {
         </section>
         <section className="filter-section">
           <h2 className="splash-header">Jinx New York</h2>
-          <Filter section="location-" categories={["The Shire", "Hogsmeade", "Diagon Alley", "Helm's Deep", "Atlantis"]}/>
+          <Filter section="location-" categories={["Little Whinging", "Hogsmeade", "Diagon Alley", "Knockturn Alley", "Godric's Hollow"]}/>
         </section>
         <div className="hor-line"></div>
         <h3 className="splash-subheader">Magically Marvelous Businesses</h3>
