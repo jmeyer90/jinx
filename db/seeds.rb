@@ -37,7 +37,7 @@ diagon_alley = AttributeItem.create!(attribute_type: "Neighborhood", name: "Diag
 knockturn_alley = AttributeItem.create!(attribute_type: "Neighborhood", name: "Knockturn Alley")
 godrics_hollow = AttributeItem.create!(attribute_type: "Neighborhood", name: "Godric's Hollow")
 
-wand_repair = AttributeItem.create!(attribute_type: "Business Type", name: "Wand Repair")
+wand_repair = AttributeItem.create!(attribute_type: "Business Type", name: "Wand Shop")
 potion_supplies = AttributeItem.create!(attribute_type: "Business Type", name: "Potion Supplies")
 curse_removal = AttributeItem.create!(attribute_type: "Business Type", name: "Curse Removal")
 restaurant = AttributeItem.create!(attribute_type: "Business Type", name: "Restaurant")
@@ -311,11 +311,11 @@ sbhB1H1 = BusinessOperationHour.create!(business_id: plenty_potions.id, operatio
 # Seeding images
 
 # Filonas
-review1.image.attach(io: File.open("app/assets/images/filonass/pastries1.jpg"), filename: "filonass/pastries1.jpg" )
-review2.image.attach(io: File.open("app/assets/images/filonass/pastries2.jpg"), filename: "filonass/pastries2.jpg" )
-review3.image.attach(io: File.open("app/assets/images/filonass/pastries3.jpg"), filename: "filonass/pastries3.jpg" )
-review4.image.attach(io: File.open("app/assets/images/filonass/pastries4.jpg"), filename: "filonass/pastries4.jpg" )
-review5.image.attach(io: File.open("app/assets/images/filonass/pastries5.jpg"), filename: "filonass/pastries5.jpg" )
+review1.image.attach(io: File.open("app/assets/images/filonas/pastries1.jpg"), filename: "filonas/pastries1.jpg" )
+review2.image.attach(io: File.open("app/assets/images/filonas/pastries2.jpg"), filename: "filonas/pastries2.jpg" )
+review3.image.attach(io: File.open("app/assets/images/filonas/pastries3.jpg"), filename: "filonas/pastries3.jpg" )
+review4.image.attach(io: File.open("app/assets/images/filonas/pastries4.jpg"), filename: "filonas/pastries4.jpg" )
+review5.image.attach(io: File.open("app/assets/images/filonas/pastries5.jpg"), filename: "filonas/pastries5.jpg" )
 
 # Rambunctious Raclettery
 review6.image.attach(io: File.open("app/assets/images/raclette/raclette1.jpg"), filename: "raclette/raclette1.jpg" )

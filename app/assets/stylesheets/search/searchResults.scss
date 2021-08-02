@@ -35,7 +35,8 @@
 
 .business-index-image-search {
     height: 180px;
-    overflow: hidden;
+    width: 200px;
+    overflow: clip;
 }
 
 .business-index-image-src-search {
@@ -47,6 +48,7 @@
     line-height: 1.2;
     color: black;
     position: relative;
+    width: 100%;
 }
 
 .business-index-title-search {
