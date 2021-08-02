@@ -70,7 +70,7 @@ const SearchBar = () => {
           placeholder="wand shops, broomstick repair, potions supply"
           onChange={handleInput}/>
   
-        <button className={`${splashClassName}search-button`}>🪄</button>
+        <button className={`${splashClassName}search-button`}>🔮</button>
       </form>
       {results ?
         <SearchDropDown filteredResults={results} setResults={setResults} />
