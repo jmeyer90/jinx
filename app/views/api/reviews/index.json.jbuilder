@@ -10,11 +10,11 @@ end
 
 json.users do 
 
-  json.array! @reviews do |review|
+  json.array! @users do |user|
 
-    json.set! review.user_id do
+    json.set! user.id do
 
-      json.partial! "api/users/user", user: review.user
+      json.partial! "api/users/user", user: user
 
     end
 

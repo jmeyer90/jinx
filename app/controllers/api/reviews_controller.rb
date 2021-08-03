@@ -1,6 +1,8 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.includes(:user).where(business: params[:business_id]).references(:reviews)
+    @reviews = Review.includes(:user, :business).where(business: params[:business_id]).references(:reviews)
+    @business = reviews.first.business
+    @users = reviews.map{|review| review.user}
 
     if @reviews
         render :index
