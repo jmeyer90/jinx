@@ -8,9 +8,11 @@
   display: flex;
 }
 
-.review-user-profile-image {
-    width: 50px;
+.review-user-profile-image {    
     margin-right: 15px;
+    height: 50px;
+    overflow: clip;
+    clip-path: circle(50%);
 }
 
 .review-username {
