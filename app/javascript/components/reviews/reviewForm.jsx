@@ -47,6 +47,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
   }
 
   const handleImage = (e) => {
+    e.preventDefault()
     e.stopPropagation()
     const file = e.currentTarget.files[0]
     const fileReader = new FileReader()
@@ -125,7 +126,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
         </section>
 
         <section className={`review-form-data${editClassName}`}>
-          <label
+          {/* <label
             className={`review-form-image-drag-drop${editClassName}`}
             for="image-drag-drop"
             onClick={() => document.getElementById("image-drag-drop").ondrop()}
@@ -135,10 +136,10 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
             className={`review-form-drag-drop-input`} 
             type="file"
             accept=".png, .jpg, .jpeg"
-            onChange={ e => handleImage(e)}/>
+            onChange={ e => handleImage(e)}/> */}
 
-          <span className={`review-form-drag-drop-span${editClassName}`}>
-            <h1 className="business-section-header">Drag and Drop Images</h1>
+          {/* <span className={`review-form-drag-drop-span${editClassName}`}> */}
+            {/* <h1 className="business-section-header">Drag and Drop Images</h1> */}
             <label 
               className="image-upload-click-label"
               for="image-upload-click"
@@ -152,7 +153,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
               type="file"
               accept=".png, .jpg, .jpeg"
               onChange={e => handleImage(e)} />
-          </span>
+          {/* </span> */}
 
           {displayImagePreview()}
 
