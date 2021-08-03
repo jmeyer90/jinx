@@ -26,6 +26,7 @@ json.users @reviews do |review|
     json.id review.user.id
     json.f_name review.user.f_name
     json.l_name review.user.l_name
+    json.imageUrl url_for(review.user.profile_image)
   end
 
 end
