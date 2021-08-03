@@ -40,10 +40,7 @@ const Filter = ({categories, section}) => {
 
     dispatch(executeSearch(searchRequest))
       .then(() =>
-        history.push(`/search?category=${searchCategory}&input=${category}`))
-      .then(() => setResults(null))
-      .then(() =>
-        document.getElementById("search-input").value = ""
+        history.push(`/search?category=${searchCategory}&input=${category}`)
       )
   }
 

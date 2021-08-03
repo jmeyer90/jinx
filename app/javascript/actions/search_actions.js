@@ -28,6 +28,7 @@ const receiveSearchResults = searchResults => {
 }
 
 export const loadSearchableItems = () => dispatch => {
+  debugger
   return (
     searchUtils.loadSearchables().then(
       searchables => dispatch(receiveSearchables(searchables))
@@ -36,6 +37,7 @@ export const loadSearchableItems = () => dispatch => {
 }
 
 export const executeSearch = (searchRequest) => dispatch => {
+  debugger
   return (
     searchUtils.executeSearch(searchRequest).then(
       searchResults => dispatch(receiveSearchResults(searchResults))

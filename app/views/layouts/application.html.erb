@@ -10,8 +10,8 @@
       window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
     </script>
     
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
     <%= favicon_link_tag asset_path('jinx_logo_circle.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <% if logged_in? %>

@@ -15,21 +15,26 @@ export const editReviewPartial = {
   modal: false
 };
 
-export const fetchReviews = businessId =>(
+export const fetchReviews = businessId =>{
+  debugger
+  return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews`,
     method: "GET"
   })
-);
+)};
 
-export const fetchReview = (businessId, reviewId) => (
+export const fetchReview = (businessId, reviewId) => {
+  debugger
+  return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews/${reviewId}`,
     method: "GET"
   })
-);
+)};
 
 export const createReview = (businessId, formData) => {
+  debugger
   return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews`,
@@ -41,6 +46,7 @@ export const createReview = (businessId, formData) => {
 )}
 
 export const updateReview = (businessId, reviewId, formData)  => {
+  debugger
   return(
     $.ajax({
       url: `/api/businesses/${businessId}/reviews/${reviewId}`,

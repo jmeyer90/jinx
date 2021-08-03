@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Businesses from '../businesses/businesses'
 import Filter from '../search/filter'
 
 const Splash = () => {
-  
+  useEffect(() => window.scrollTo(0, 0), [])
+
   return (
     <section className="splash">
       <figure className="splash-img">

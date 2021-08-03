@@ -9,11 +9,12 @@ const SearchCategoryResults = ({category, input}) => {
     category = category == "attributeItems" || category == "attrs" ? "businessAttrs" : category
 
     const categories = {
-        businesses: "Names",
-        services: "Services",
-        businessAttrs: "Attributes & Ammenities",
-        menuItems: "Menu Items",
-        general: "are"
+        businesses: "with Names ",
+        services: "with Services ",
+        businessAttrs: "with Attributes & Ammenities ",
+        menuItems: "with Menu Items ",
+        neighborhood: "with Neighborhood ",
+        general: ""
     }
 
     const titleInput = input.split(" ").map(word => 
@@ -22,7 +23,7 @@ const SearchCategoryResults = ({category, input}) => {
 
     const renderTitle = () => {
         const text = businesses.length > 0 ?
-            `Businesess with ${ categories[category]} Matching ${ titleInput }:`
+            `Businesess ${ categories[category]}Matching ${ titleInput }:`
             :
             `There Are No Businesses with Attributes Matching "${input}".`
 

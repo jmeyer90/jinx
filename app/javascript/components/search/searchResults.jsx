@@ -15,6 +15,8 @@ const SearchResults = () => {
   const {input, category} = QueryString.parse(search)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+    
     const searchRequest = {
       [category]: input
     }

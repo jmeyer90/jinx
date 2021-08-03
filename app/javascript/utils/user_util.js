@@ -1,11 +1,15 @@
-export const fetchUser = userId => (
+export const fetchUser = userId => {
+debugger
+  return(
   $.ajax({
     url: `/api/users/${userId}`,
     method: "GET"
   })
-);
+)};
 
-export const createUser = user => (
+export const createUser = user => {
+debugger
+  return(
   $.ajax({
     url: `/api/users`,
     method: "POST",
@@ -13,4 +17,4 @@ export const createUser = user => (
     processData: false,
     contentType: false,
   })
-);
+)};

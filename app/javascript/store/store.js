@@ -6,7 +6,7 @@ import RootReducer from '../reducers/root';
 
 const configureStore = ( preloadedState={} )=>createStore( 
   RootReducer, preloadedState, 
-  composeWithDevTools( applyMiddleware( thunk, logger))
+  composeWithDevTools( applyMiddleware( thunk ))
 );
 
 export default configureStore;

@@ -18,7 +18,7 @@ const Reviews = ({businessId}) => {
   )
 
   useEffect(() => {
-    dispatch(fetchReviews(businessId))
+    if(businessId) dispatch(fetchReviews(businessId))
   }, [dispatch])
 
   const mapReviewsToIndexItems = () => (
