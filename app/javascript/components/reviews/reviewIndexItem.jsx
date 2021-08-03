@@ -55,7 +55,6 @@ const ReviewIndexItem = ({review}) => {
       : null
   }
 
-  debugger
   return (
     <div className="review-index-item">
       <section className="review-user-info">

@@ -47,6 +47,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
   }
 
   const handleImage = (e) => {
+    e.stopPropagation()
     const file = e.currentTarget.files[0]
     const fileReader = new FileReader()
 
@@ -124,8 +125,35 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
         </section>
 
         <section className={`review-form-data${editClassName}`}>
-          <input className={`review-form-image-upload${editClassName}`} type="file"
+          <label
+            className={`review-form-image-drag-drop${editClassName}`}
+            for="image-drag-drop"
+            onClick={() => document.getElementById("image-drag-drop").ondrop()}
+          />
+          <input
+            id="image-drag-drop-input"
+            className={`review-form-drag-drop-input`} 
+            type="file"
+            accept=".png, .jpg, .jpeg"
             onChange={ e => handleImage(e)}/>
+
+          <span className={`review-form-drag-drop-span${editClassName}`}>
+            <h1 className="business-section-header">Drag and Drop Images</h1>
+            <label 
+              className="image-upload-click-label"
+              for="image-upload-click"
+              onClick={() => document.getElementById("image-upload-click").click()}
+            >
+              Browse Files
+            </label>
+            <input
+              id="image-upload-click"
+              className={`review-form-image-upload${editClassName}`}
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              onChange={e => handleImage(e)} />
+          </span>
+
           {displayImagePreview()}
 
           <textarea

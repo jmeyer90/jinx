@@ -39,8 +39,41 @@
     padding: 5px;
 }
 
+.review-form-image-drag-drop{
+    border: solid 1px gray;
+    border-radius: 4px;
+    width: 100%;
+    height: 200px;
+}
+.review-form-drag-drop-input {
+    display: none;
+}
+
+.review-form-drag-drop-span {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    margin-top: 57px;
+    height: 80px;
+    justify-content: space-between;
+}
+
 .review-form-image-upload {
     padding: 20px 0px;
+    display: none;
+}
+
+.image-upload-click-label {
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 10px;
+    font-size: 16px;
+    color: #533A95;
 }
 
 .review-image-preview {
