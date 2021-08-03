@@ -99,16 +99,25 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
           >
             Check-In
           </button>
-          <div 
+          <button 
             className={`review-form-button${editClassName}`}
-            onClick={() => setEdit(false)}
+            onClick={e => { 
+              e.preventDefault()
+              setEdit(false)
+            }}
           >
             Cancel Edit
-          </div>
+          </button>
         </span>
       )
     }
   }
+
+  const displayRadioHeader = () =>(
+    action == "create" ?
+      <p className={`review-form-subheader${editClassName}`}>Select your rating</p>
+      : null
+  )
 
   return (
     <form className={`review-form${editClassName}`} onSubmit={e => handleSubmit(e) }>
@@ -122,7 +131,7 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
       <section className={`review-form-input-fields${editClassName}`}>
         <section className={`review-form-radio-section${editClassName}`}>
           <ul className="review-form-radio-ul">{radioButtons()}</ul>
-          <p className="review-form-subtitle">Select your rating</p>
+          {displayRadioHeader()}
         </section>
 
         <section className={`review-form-data${editClassName}`}>
@@ -140,16 +149,18 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
 
           {/* <span className={`review-form-drag-drop-span${editClassName}`}> */}
             {/* <h1 className="business-section-header">Drag and Drop Images</h1> */}
-            <label 
-              className="image-upload-click-label"
-              for="image-upload-click"
-              onClick={() => document.getElementById("image-upload-click").click()}
+            <button
+              className={`image-upload-click-label${editClassName}`}
+              onClick={e => {
+                e.preventDefault()
+                document.getElementById("image-upload-click").click()
+              }}
             >
               Browse Files
-            </label>
+            </button>
             <input
               id="image-upload-click"
-              className={`review-form-image-upload${editClassName}`}
+              className={`review-form-image-upload`}
               type="file"
               accept=".png, .jpg, .jpeg"
               onChange={e => handleImage(e)} />
