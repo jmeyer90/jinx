@@ -30,14 +30,14 @@ const ReviewForm = ({action, review, setEdit, modal}) => {
 
     if (action == "create") {
       dispatch(createReview(businessId, formData))
-      .then((reviewAction )=> {
-        if(modal && reviewAction.review) dispatch(REVIEW_MODAL_ACTION)
-      })
+        .then((reviewAction )=> {
+          if(modal && reviewAction.review) dispatch(REVIEW_MODAL_ACTION)
+        })
       
     } else {
       const reviewId = review.id
       dispatch(updateReview(businessId, reviewId, formData))
-      setEdit(false)
+        .then(() => setEdit(false))
     }
 
     setBody("")

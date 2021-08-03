@@ -12,7 +12,8 @@ class Api::ReviewsController < ApplicationController
   def show
     @review = Review.includes(:user).find(params[:id])
     @user = review.user
-    @business = review.business
+    @business = review.business.includes(:reviews)
+    @image_urls = @business.reviews.map{|review| review.image}
 
     if @review
       render json: show

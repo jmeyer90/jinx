@@ -7,5 +7,21 @@ json.user do
 end
 
 json.business do
-  json.partial! "api/businesses/business", business: @business
+  json.extract! @business,
+  :id, 
+  :name, 
+  :address, 
+  :lng, 
+  :lat, 
+  :services, 
+  :attrs, 
+  :operation_hours,
+  :main_review_id,
+  :main_reviewer_id,
+  :average_rating,
+  :attr_types,
+  :operating_days,
+  :num_reviews
+
+  json.image_urls @image_urls
 end

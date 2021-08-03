@@ -14,4 +14,3 @@ json.extract! business,
   :num_reviews
 
 json.image_url url_for(business.main_image)
-

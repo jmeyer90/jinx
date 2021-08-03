@@ -54,7 +54,7 @@ const Business = () => {
 
   const renderBusinessImages = () => (
     business ?
-      <BusinessImages business={business}/>
+      <BusinessImages businessId={businessId}/>
       : null
   )
   

@@ -9,6 +9,7 @@ gem 'gon'
 gem 'figaro'
 gem 'react-rails'
 gem "aws-sdk-s3"
+gem 'mini_magick'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
