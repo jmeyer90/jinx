@@ -6,9 +6,7 @@ const BusinessImages = ({businessId}) => {
   const image_urls = useSelector(state => state.entities.businesses[businessId].image_urls)
   const dispatch = useDispatch()
 
-  if(image_urls){
-    if(image_urls.length == 0) dispatch(fetchBusiness(businessId))
-  }
+  if(!image_urls || image_urls.length == 0) dispatch(fetchBusiness(businessId))
 
   const renderImages = () => (
     image_urls ?
