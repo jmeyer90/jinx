@@ -57,16 +57,16 @@ pets = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Pets Allow
 wheelchair_access = AttributeItem.create!(attribute_type: "Misc Attribute", name: "Wheelchair Accessible")
 
 # Seed Business
-filonas = Business.create!(name: "Filona's Fanciful Foods", address:"address1", lat: -37.972125, lng: 175.682933)
-randerys = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", lat: -37.872125, lng: 175.782933)
-mutton_man = Business.create!(name: "Mutton Man", address:"address3", lat: -37.872125, lng: 175.582933)
-tea_house = Business.create!(name: "The Black Tea House", address:"address4", lat: -37.872125, lng: 175.582933)
-windburgs_wands = Business.create!(name: "Windburg's Wonderful Wands", address:"address5", lat: -37.872125, lng: 175.582933)
-brooms = Business.create!(name: "Better Brooms", address:"address6", lat: -37.872125, lng: 175.582933)
-curious_cocktails = Business.create!(name: "Curiously Conspicuous Cocktails", address:"address7", lat: -37.872125, lng: 175.582933)
-racers = Business.create!(name: "Razzling Racers", address:"address8", lat: -37.872125, lng: 175.582933)
-hibbidy = Business.create!(name: "Hibbidy Dippity Bad", address:"address9", lat: -37.872125, lng: 175.582933)
-plenty_potions = Business.create!(name: "Plenty'O'Potions", address:"address10", lat: -37.872125, lng: 175.582933)
+filonas = Business.create!(name: "Filona's Fanciful Foods", address:"address1", lat: 40.720212, lng: -73.995069)
+randerys = Business.create!(name: "Randery's Rambunctious Raclettery", address:"address2", lat: 40.7284755, lng: -73.9807169)
+mutton_man = Business.create!(name: "Mutton Man", address:"address3", lat: 40.712544, lng: -73.951471)
+tea_house = Business.create!(name: "The Black Tea House", address:"address4", lat: 40.712041, lng: -73.951229)
+windburgs_wands = Business.create!(name: "Windburg's Wonderful Wands", address:"address5", lat: 40.712653, lng: -74.007097)
+brooms = Business.create!(name: "Better Brooms", address:"address6", lat: 40.714192, lng: -74.003188)
+curious_cocktails = Business.create!(name: "Curiously Conspicuous Cocktails", address:"address7", lat: 40.721741, lng: -73.997483)
+racers = Business.create!(name: "Razzling Racers", address:"address8", lat: 40.735396, lng: -73.990450)
+hibbidy = Business.create!(name: "Hibbidy Dippity Bad", address:"address9", lat: 40.735664, lng: -73.988744)
+plenty_potions = Business.create!(name: "Plenty'O'Potions", address:"address10", lat: 40.731266, lng: -73.985716)
 
 # Seed OperationHour
 sunOpen = OperationHour.create!(day: 0, biz_time: 10)
@@ -236,7 +236,7 @@ AttrListB3A33 = BusinessAttribute.create!(business_id: hibbidy.id, attribute_ite
 AttrListB3A33 = BusinessAttribute.create!(business_id: hibbidy.id, attribute_item_id: wifi.id)
 
 AttrListB3A8 = BusinessAttribute.create!(business_id: plenty_potions.id, attribute_item_id: potion_supplies.id)
-AttrListB3A10 = BusinessAttribute.create!(business_id: hibbidy.id, attribute_item_id: curse_removal.id)
+AttrListB3A10 = BusinessAttribute.create!(business_id: plenty_potions.id, attribute_item_id: curse_removal.id)
 AttrListB3A17 = BusinessAttribute.create!(business_id: plenty_potions.id, attribute_item_id: knockturn_alley.id)
 AttrListB3A29 = BusinessAttribute.create!(business_id: plenty_potions.id, attribute_item_id: full_bar.id)
 AttrListB3A33 = BusinessAttribute.create!(business_id: plenty_potions.id, attribute_item_id: wheelchair_access.id)

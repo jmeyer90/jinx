@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 
 const SearchMap = ({ businesses }) => {
@@ -49,8 +49,9 @@ const SearchMap = ({ businesses }) => {
         <LoadScript
             googleMapsApiKey={window.googleAPIKey}>
             <GoogleMap
+                id="map"
                 mapContainerStyle={mapStyles}
-                zoom={13}
+                zoom={14}
                 center={center}>
                 {renderMarkers()}
             </GoogleMap>
