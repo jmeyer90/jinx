@@ -9,7 +9,7 @@ const Filter = ({categories, section}) => {
 
   const mapCategoryToImage = {}
   mapCategoryToImage["Wand Shops"] = window.wandShop
-  mapCategoryToImage["Broomstick Repair"] = window.broomstickRepair
+  mapCategoryToImage["Broomstick Dealership"] = window.broomstickRepair
   mapCategoryToImage["Restaurants"] = window.restaurant
   mapCategoryToImage["Curse Removal"] = window.curseRemoval
 

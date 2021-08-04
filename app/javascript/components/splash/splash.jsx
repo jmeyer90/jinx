@@ -13,7 +13,7 @@ const Splash = () => {
       <section className="splash-details">
         <section className="filter-section">
           <h2 className="splash-header">Find the Best Businesses in Town</h2>
-          <Filter section="business-type-" categories={["Wand Shops", "Broomstick Repair", "Restaurants", "Curse Removal"]} />
+          <Filter section="business-type-" categories={["Wand Shops", "Broomstick Dealership", "Restaurants", "Curse Removal"]} />
         </section>
         <section className="filter-section">
           <h2 className="splash-header">Jinx New York</h2>

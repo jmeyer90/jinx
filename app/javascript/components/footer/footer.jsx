@@ -7,11 +7,19 @@ const Footer = () =>{
         <section className="footer-bio">
           <h1 className="footer-header">About Me</h1>
           <p className="footer-bio-item">Justin James Meyer, based out of Brooklyn, NY</p>
-          <p className="footer-bio-item">Full-Stack Web Developer.</p>
-          <p className="footer-bio-item">Sr Instructor for App Academy, the top rated coding bootcamp</p>
-          <p className="footer-bio-item">Fluent in: Ruby, Ruby on Rails, JavaScript, React, Redux, the MERN stack, CSS, HTML, and TDD.</p>
-          <p className="footer-bio-item">I have a background in mathematics education and proved an original theorem in Number Theory, which was presented at CANT 2018 and MAA Metro NY.</p>
-          <p className="footer-bio-item">In my spare time, I write poetry and frequently explore hiking trails around New York City.</p>
+          <p className="footer-bio-item">
+            I'm a full-stack developer with a background in mathematics and passion for lifelong learning. 
+            The continuous challenge of exploring new concepts and technologies is one which should be met 
+            with excitement and genuine curiosity. The field of computer science keeps us on our toes, 
+            leading us towards a never ending and captivating journey where we can always learn more.
+          </p>
+          <p className="footer-bio-item">
+            In my spare time, I write poetry and frequently explore hiking trails around New York City.
+          </p>
+          <p className="footer-bio-item">
+            Fluency in JavaScript, React, Redux, Express, Node.js, MongoDB, Ruby, Ruby on Rails,
+            SQL, PostgreSQL, AWS, Heroku, HTML, CSS, and git.
+          </p>
         </section>
 
         <section className="footer-contact-container">
