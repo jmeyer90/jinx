@@ -25,7 +25,6 @@ const receiveBusiness = business => {
 };
 
 const businessErrors = (errors) => {
-  
   return {
     type: BUSINESS_ERRORS,
     errors
@@ -33,7 +32,6 @@ const businessErrors = (errors) => {
 };
 
 export const fetchBusinesses = () => dispatch =>{
-  debugger
   return(BusinessUtils.fetchBusinesses()
   .then( 
     businesses => dispatch( receiveBusinesses( businesses )),
@@ -42,7 +40,6 @@ export const fetchBusinesses = () => dispatch =>{
 };
 
 export const fetchBusiness = businessId => dispatch =>{
-  debugger
   return(
     BusinessUtils.fetchBusiness( businessId )
     .then( 

@@ -16,7 +16,6 @@ export const editReviewPartial = {
 };
 
 export const fetchReviews = businessId =>{
-  debugger
   return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews`,
@@ -25,7 +24,6 @@ export const fetchReviews = businessId =>{
 )};
 
 export const fetchReview = (businessId, reviewId) => {
-  debugger
   return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews/${reviewId}`,
@@ -34,7 +32,6 @@ export const fetchReview = (businessId, reviewId) => {
 )};
 
 export const createReview = (businessId, formData) => {
-  debugger
   return (
   $.ajax({
     url: `/api/businesses/${businessId}/reviews`,
@@ -46,7 +43,6 @@ export const createReview = (businessId, formData) => {
 )}
 
 export const updateReview = (businessId, reviewId, formData)  => {
-  debugger
   return(
     $.ajax({
       url: `/api/businesses/${businessId}/reviews/${reviewId}`,

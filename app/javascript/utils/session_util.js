@@ -4,7 +4,6 @@ export const demoUserCredentials = {
 }
 
 export const createSession = user => {
-  debugger
   return(
   $.ajax({
     url: '/api/session',
@@ -14,7 +13,6 @@ export const createSession = user => {
 )};
 
 export const deleteSession = () => {
-  debugger
   return(
   $.ajax({
     url: '/api/session',

@@ -34,6 +34,4 @@ class AttributeItem < ApplicationRecord
       ).where.not(attribute_type: "Business Type")
   end
 
-  # Having an attr_accessor stop items from being saved to the databse
-  # attr_accessor :name, :attribute_type
 end

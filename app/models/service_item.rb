@@ -23,7 +23,5 @@ class ServiceItem < ApplicationRecord
   def menu_item?
     Service.menu_types.include?(service_type)
   end
-
-  # Having an attr_accessor stop items from being saved to the database
-  # attr_accessor :name, :price, :description
+  
 end

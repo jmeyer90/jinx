@@ -1,5 +1,4 @@
 export const fetchUser = userId => {
-debugger
   return(
   $.ajax({
     url: `/api/users/${userId}`,
@@ -8,7 +7,6 @@ debugger
 )};
 
 export const createUser = user => {
-debugger
   return(
   $.ajax({
     url: `/api/users`,

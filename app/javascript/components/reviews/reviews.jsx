@@ -5,7 +5,6 @@ import ReviewIndexItem from './reviewIndexItem'
 import {fetchReviews} from '../../actions/review_actions'
 import {createReviewPartial} from '../../utils/review_util'
 
-// only listen to reviews slice of state
 const Reviews = ({businessId}) => {
   const currentUserId = useSelector(state => state.session.currentUserId)
   const reviews = useSelector(state => state.entities.reviews)

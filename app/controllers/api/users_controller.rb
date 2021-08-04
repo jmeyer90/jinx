@@ -17,7 +17,6 @@ class Api::UsersController < ApplicationController
     rescue
       render json: ["Please attach a photo to see all errors"], status: 402
     else
-    # @user.default_image_if_unattached
       if @user.save
         login!(@user)
         render json: @user

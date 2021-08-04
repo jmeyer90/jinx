@@ -24,10 +24,6 @@ class Business < ApplicationRecord
   has_many :service_items, through: :services, source: :service_items
 
   validates :name, :address, presence: true, uniqueness: true
-  
-  # Having an attr_accessor stop items from being saved to the database
-  # attr_accessor :name
-  # attr_reader :address
 
   def self.extract_all(businesses, association)
     all_items = []

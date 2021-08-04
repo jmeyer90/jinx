@@ -18,8 +18,7 @@ require 'securerandom'
 class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  has_one_attached :profile_image #, dependent: destroy
-  # validates :image, content_type: [:png, :jpg, :jpeg]
+  has_one_attached :profile_image
 
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, :f_name, :l_name, :zip_code, presence: true
