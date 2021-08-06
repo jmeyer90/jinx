@@ -17,7 +17,6 @@
 }
 
 .location-filter-item:hover {
-    font-weight: 650;
     cursor: pointer;
 }
 
@@ -35,6 +34,10 @@
     height: 210px;
     width: 210px;
     background-color: white;
+}
+
+.business-type-filter-item:hover{
+    cursor: pointer;
 }
 
 .business-type-img {
